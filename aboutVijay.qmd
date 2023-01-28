@@ -2,7 +2,7 @@
 title: "Vijaykumar Muley, Ph.D."
 about:
   template: marquee
-  image: chicago.jpeg
+  image: "images/chicago.jpeg"
   links:
     - icon: orcid
       text: ORCID 
