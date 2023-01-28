@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Laboratory of organismal science!"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - research.qmd
+      - team.qmd
+      - publications.qmd
+      - resources.qmd
+      - positions.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

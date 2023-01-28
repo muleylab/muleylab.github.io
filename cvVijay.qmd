@@ -1,0 +1,88 @@
+---
+title: "Curriculum vitae"
+---
+
+## Academic experience
+
+
+Apr 2018 – Nov 2022 | **Assistant Professor** | 
+
+[Institute of Neurobiology, National Autonomous University of Mexico (UNAM)](http://www.inb.unam.mx/index.php/neurobiologia-del-desarrollo-y-neurofisiologia-2/#), Queretaro, Mexico
+
+Sep 2017 – Apr 2018 | **Post-doctoral Researcher** | 
+
+[APC Microbiome, University College Cork, National University of Ireland](https://www.ucc.ie/en/), Cork, Ireland
+
+Feb 2016 – Apr 2017 | **Assistant Professor** | 
+
+[Centre for Computational Sciences, Central University of Punjab](http://www.cup.edu.in/index_home.php), Bathinda, India
+
+Oct 2013 – Dec 2015 | **Post-doctoral Researcher** | 
+
+[Leibniz Institute for Natural Product Research and Infection Biology - Hans-Knöll-Institut](https://www.leibniz-hki.de/en/institut-staff-details.html?member=295), Jena, Germany 
+
+Apr 2012 – Aug 2013 | **Post-doctoral Researcher** | 
+
+[Centre for Excellence in Epigenetics, Indian Institute of Science, Education and Research](https://www.iiserpune.ac.in/), Pune, India
+
+
+## Education
+
+2005-2012 | [**Ph.D. Bioinformatics**](http://hdl.handle.net/10603/5399) | Centre for DNA Fingerprinting and Diagnostics, India 
+
+2003-2005 | **M.Sc. Bioinformatics** | Savitribai Phule Pune University, India 
+
+2000-2002 | **M.Sc. Biotechnology** | Dr. Babasaheb Ambedkar Marathwada University, India 
+
+1997-2000 | **Bachelor of Science** | Dr. Babasaheb Ambedkar Marathwada University, India
+
+## Honours, awards and fellowships
+
+Jan 2020 - Nov 2022 | **Sistema Nacional de Investigadores Nivel I** (National System of Investigators) | 
+
+*Honorary distinction and fellowship* from National Council for Science and Technology (CONACyT), Government of Mexico
+
+Sep 2010 | **Travel fellowship to Belgium** | International Society for Computational Biology
+
+Apr 2010 | **Travel fellowship to Germany**, | European Science Foundation
+
+Apr 2010 | **Best poster presentation** | 4th ESF conference on Functional Genomics and Diseases, Germany
+
+Sep 2005 - Sep 2010 | **Junior Research Fellowship** | Department of Biotechnology, Government of India
+
+Dec 2005 - Dec 2010 | **Junior Research Fellowship** | University Grant Commission, Government of India, *Not availed*
+
+Jun 2004 - Lifetime | **National Eligibility Test for Lectureship** | University Grant Commission, Government of India
+
+
+## Research grants and projects
+
+1 Jan 2020 – 31 Dec 2021 | **Principal Investigator** | 
+
+*Identification of brain-specific cell death genetic modules and their relevance in neurodegeneration* 
+
+| Funded by General Directorate for Academic Personnel Affairs, National Autonomous University of México, Mexico
+
+1 Jan 2011 – 31 Dec 2013 | **Co-investigator** | *Genetic diversity and first generation linkage map of Clarias batrachus* | Funded by Department of Biotechnology, Government of India, India
+
+## Software and database developed
+
+[Neurodegenerative Disease Gene Expression database (NDGEx)](http://ndgex.lavis.unam.mx/) : A database of differential expression results in 25 neurodegenerative diseases from 155 independent microarray datasets
+
+[Cell Death and Survival gene database (CDSG)](http://cdsg.lavis.unam.mx) : A database of 8,380 predicted genes from 175 species linked with literature on cell death and survival
+
+[Escherichia coli functional protein-protein interactions (EcoFunPPI)](http://www.cdfd.org.in/ecofunppi/) : A database of functional protein-protein interactions in Escherichia coli K12 predicted using a combination of 9 machine learning methods
+
+[pub2path](https://github.com/vijaykumarmuley/pub2path/blob/main/README.md) : R package to reconstruct biological pathway or process of your interest without a prior knowledge of gene functions from PubMed literature. Access will be given on request since its in final stage of development. For example, above- mentioned CDSG database created using pub2path.
+
+
+## Invited talks
+
+2 Jan 2023 | **Probing TMPRSS2 and ACE2 SARS-CoV-2 cell entry receptors to reveal COVID-19 pathogenesis and potential drug targets** at the International Conference on Drug Development and Drug Discovery, Swami Ramanand Teerth Marathwada University, Nanded, India
+
+16 Apr 2021 | [**Cross-species transcriptomic analysis of SARS-CoV-2 cell entry receptors reveal potential targets**](https://www.youtube.com/watch?v=0NrnXQExuqU&list=WL) at the Institute of Neurobiology, National Autonomous University of Mexico, Queretaro, Mexico
+
+16 Jun 2018 | **Differential Expression Analysis using R** at the III interactional Summer School in Bioinformatics, Institute of Mathematics, National Autonomous University of Mexico, Queretaro, Mexico
+
+
+

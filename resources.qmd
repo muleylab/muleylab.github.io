@@ -1,0 +1,30 @@
+---
+title: "Resources"
+listing: 
+  contents: posts # all Quarto docs in the `posts` directory will be included on your listing page
+  type: grid # or `default` or `table`; each type has its own set of yaml options to include
+  sort: "date desc" # can also sort on more than one field
+  categories: true # allows you to sort posts by assigned categories 
+
+---
+
+**Page under constructions**
+
+Resources developed by our group
+
+## Publications to Pathway mapping (pub2path)
+
+[pub2path](https://github.com/vijaykumarmuley/pub2path/blob/main/README.md) is a R package to reconstruct biological pathway or process of your interest without a prior knowledge of gene functions from PubMed literature. Access will be given on request since pub2path manuscript is under preparation. CDSG database (see below) was created using pub2path results.
+
+## Neurodegenerative Disease Gene Expression database (NDGEx)
+
+[NDGEx](http://ndgex.lavis.unam.mx/) is a database of differential expression results in 25 neurodegenerative diseases from 155 independent microarray datasets. 
+
+## Cell Death and Survival gene database (CDSG)
+
+[CDSG](http://cdsg.lavis.unam.mx) ia a database of 8,380 predicted genes from 175 species linked with literature pub2path algorithm (unpublished) on cell death and survival.
+
+## Escherichia coli functional protein-protein interactions (EcoFunPPI)
+
+[EcofunPPI](http://www.cdfd.org.in/ecofunppi/) ia a database of functional protein-protein interactions in *Escherichia coli* K12 predicted using a combination of 9 machine learning methods. It is highly reliable database than several existing published database on PPI and could provide a experimentally testable hypothesis on proteins of interest.
+

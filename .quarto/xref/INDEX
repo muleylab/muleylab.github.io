@@ -1,0 +1,32 @@
+{
+  "research.qmd": {
+    "research.html": "084d04f6"
+  },
+  "positions.qmd": {
+    "positions.html": "bacfebb4"
+  },
+  "team.qmd": {
+    "team.html": "ef0c1e52"
+  },
+  "bsVijay.qmd": {
+    "bsVijay.html": "d82bdd95"
+  },
+  "index.qmd": {
+    "index.html": "d6191711"
+  },
+  "publications.qmd": {
+    "publications.html": "f87558b6"
+  },
+  "about.qmd": {
+    "about.html": "96d0c115"
+  },
+  "aboutVijay.qmd": {
+    "aboutVijay.html": "d5c8d5cb"
+  },
+  "cvVijay.qmd": {
+    "cvVijay.html": "8acda5f3"
+  },
+  "resources.qmd": {
+    "resources.html": "96fc0dca"
+  }
+}

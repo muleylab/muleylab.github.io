@@ -1,0 +1,14 @@
+{
+  "hash": "4f9f42612ad59ef2aa5b1f978068477f",
+  "result": {
+    "markdown": "---\ntitle: \"Members\"\n\n---\n\n\n\n\n# Principal Investigator\n\n\n<div style= \"float:left;position: relative; top: 0px;\">\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](images/passportpic.jpeg){width=40%}\n:::\n:::\n\n\n</div>\n\n## Vijaykumar Yogesh Muley\n\n<a href=\"aboutVijay.qmd\" class=\"btn btn-outline-primary btn-sm\" role=\"button\">About me</a>  <a href=\"bsVijay.qmd\" class=\"btn btn-outline-primary btn-sm\" role=\"button\">Biographical sketch</a> <a href=\"cvVijay.qmd\" class=\"btn btn-outline-primary btn-sm\" role=\"button\">Curriculum vitae</a> \n\n\n# Students\n\nComing soon\n\n\n# Collaborators\n\n## Dr. Pravin kendrekar\n\n## Dr. Ashish Gulve\n\n## Prof. Dr. Kapil Devidas Kamble ",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

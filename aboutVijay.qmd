@@ -1,0 +1,38 @@
+---
+title: "Vijaykumar Muley, Ph.D."
+about:
+  template: marquee
+  image: chicago.jpeg
+  links:
+    - icon: orcid
+      text: ORCID 
+      href: https://orcid.org/0000-0001-5329-600X 
+    - icon: loops 
+      text: Loops 
+      href: https://loop.frontiersin.org/people/534929/overview 
+    - icon: research-gate 
+      text: ResearchGate 
+      href: https://www.researchgate.net/profile/Vijaykumar-Muley
+    - icon: google
+      text: GoogleScolar
+      href: https://scholar.google.com/citations?user=FoyJkwcAAAAJ&hl=en 
+    - icon: facebook
+      text: facebook
+      href: https://www.facebook.com/vijaykumar.muley.1 
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/vijaykumarmuley
+    - icon: linkedin 
+      text: LinkedIn 
+      href: https://www.linkedin.com/in/vijaykumarmuley/ 
+    - icon: github
+      text: Github
+      href: https://github.com/vijaykumarmuley 
+---
+
+
+As a highly-skilled and accomplished scientist, I specialize in the cutting-edge field of computational biology, utilizing my expertise in bioinformatics and data science to uncover the mysteries of molecular biology, microbiology, neurobiology, immunology, evolution, and developmental biology. With a wealth of experience working in government and public universities in India, Germany, Ireland, and Mexico, I have a deep understanding of the advanced computational methods required to study the intricate inner workings of living organisms, cells, subcellular structures, genes, proteins, and their interactions.
+
+In addition to my professional pursuits, I am also a lifelong learner, with a passion for writing books and invited book chapters, learning salsa and bachata dance, playing cricket or chess, reading science fiction books, watching movies, hiking mountains, and spending time in nature.
+
+If you share my passion for using science and data to improve productivity and living standards, I would love to hear from you. Whether you are interested in research, internships, collaboration, or consultancy (paid), please don't hesitate to contact me via the social media links provided. I am always open to discussing new opportunities and exciting projects.
