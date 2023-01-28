@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Laboratory of organismal science!"
+  page-footer: "© 2023 Vijaykumar Muley. All rights reserved."
   navbar:
     left:
       - href: index.qmd
