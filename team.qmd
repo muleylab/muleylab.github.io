@@ -16,7 +16,7 @@ knitr::include_graphics("images/passportpic.jpeg")
 
 <a href="https://github.com/"><i class="fa-brands fa-facebook fa-xl fa-spin" style="color: #1877f2;"></i></a>
 
-<a href="aboutVijay.qmd" class="btn btn-outline-primary btn-sm" role="button">About me</a> <a href="bsVijay.qmd" class="btn btn-outline-primary btn-sm" role="button">Biographical sketch</a> <a href="cvVijay.qmd" class="btn btn-outline-primary btn-sm" role="button">Curriculum vitae</a>
+<a href="aboutVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">About me</a> <a href="bsVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Biographical sketch</a> <a href="cvVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Curriculum vitae</a>
 
 # Students
 
@@ -24,7 +24,15 @@ Coming soon
 
 # Collaborators
 
+
+![](images/pravin.jpeg)
+
 ## Dr. Pravin kendrekar
+
+
+<i class="bi bi-envelope"></i> kkpravin at gmail dot com
+
+<a href="https://www.linkedin.com/in/pravin-kendrekar-5594318/" target="_blank" class="btn btn-outline-primary btn-sm" role="button">LinkedIn</a> <a href="https://scholar.google.co.za/citations?user=r56eEGgAAAAJ&hl=en" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Google Scholar</a> 
 
 ## Dr. Ashish Gulve
 
