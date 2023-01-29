@@ -5,10 +5,6 @@ project:
 website:
   title: "Laboratory of organismal science!"
   page-footer: "© 2023 Vijaykumar Muley. All rights reserved."
-  cookie-consent:
-    type: express
-    style: headline
-    palette: dark
   google-analytics:
     tracking-id: "G-B5FVC80FWJ"
     anonymize-ip: true
