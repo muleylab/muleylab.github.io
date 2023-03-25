@@ -10,7 +10,6 @@ listing:
 
 **Page under construction**
 
-Resources developed by our group
 
 ## Publications to Pathway mapping (pub2path)
 

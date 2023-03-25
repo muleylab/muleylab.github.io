@@ -31,7 +31,7 @@ about:
 ---
 
 
-As a highly-skilled and accomplished scientist, I specialize in the cutting-edge field of computational biology, utilizing my expertise in bioinformatics and data science to uncover the mysteries of molecular biology, microbiology, neurobiology, immunology, evolution, and developmental biology. With a wealth of experience working in government and public universities in India, Germany, Ireland, and Mexico, I have a deep understanding of the advanced computational methods required to study the intricate inner workings of living organisms, cells, subcellular structures, genes, proteins, and their interactions.
+I specialize in the cutting-edge field of computational biology, utilizing my expertise in bioinformatics and data science to uncover the mysteries of molecular biology, microbiology, neurobiology, immunology, evolution, and developmental biology. With a wealth of experience working in government and public universities in India, Germany, Ireland, and Mexico, I have a deep understanding of the advanced computational methods required to study the intricate inner workings of living organisms, cells, subcellular structures, genes, proteins, and their interactions.
 
 In addition to my professional pursuits, I am also a lifelong learner, with a passion for writing books and invited book chapters, learning salsa and bachata dance, playing cricket or chess, reading science fiction books, watching movies, hiking mountains, and spending time in nature.
 

@@ -2,8 +2,10 @@
 title: ""
 ---
 
-## Welcome to the Laboratory of Organismal Science!
+##  
 
 We study how genes work in different situations like diseases, cleaning the environment, and how living things survive in different conditions. We use advanced methods to look at big sets of data and find sets of genes that are important in these situations. We also look at how these genes work in specific parts of the body and how they interact with other genes. All this helps us understand how genes work and change over time to help living things survive and adapt.
 
-Our team consists of skilled researchers from various backgrounds who work together to develop cutting-edge algorithms and tools. We focus on machine learning and AI to revolutionize disease treatment and crop yields. We publish research in leading journals and present at conferences. We welcome anyone interested in joining our team or contributing to our research efforts. Together, we can continue to push the boundaries of what is possible in computational biology and data science and make a positive impact on the world.
+# 
+
+*Murphy's law : Anything that can happen generally will happen sooner or later*

@@ -42,13 +42,6 @@
     "text": "Systems biology of diseases\nDespite significant progress in the field of biology, the lack of early diagnostic markers or effective treatments for numerous debilitating diseases and infections remains a significant challenge for society. These include neuropsychiatric, neurodegenerative, autoimmune, as well as viral infections such as genital herpes, hepatitis, mononucleosis, papillomavirus infection, AIDS, and COVID-19.\n\n\n\n\n \n\n\nFigure 5: Impaired protein-protein interactions encoded by genes in a red color subnetwork during cerebrum development may lead to neuropsychirtic disorders (left panel). PPI network of autism spectrucm disorder associated proteins identified by integrative analysis of transcriptomic and protein-protein interaction data (right panel)\n\n\nTo address this challenge, we have developed methods for large-scale or meta-analysis of gene expression data, as well as next-generation tissue and single-cell RNA-Seq data, using systems biology of disease approach. This approach aims to understand the underlying mechanisms of diseases using computational methods and data from multiple sources, and to identify the complex interactions between genes, proteins, and other biomolecules that contribute to disease development and progression. By taking a systems-level approach, we are able to identify new insights and connections that might not have been apparent from traditional reductionist methods, leading to a better understanding of the underlying causes of diseases and new strategies for diagnosis, treatment, and prevention."
   },
   {
-    "objectID": "research.html#section",
-    "href": "research.html#section",
-    "title": "Research",
-    "section": "",
-    "text": "Do you like our projects or have new ideas and passion for research ? Join our team"
-  },
-  {
     "objectID": "positions.html",
     "href": "positions.html",
     "title": "Join us",
@@ -60,28 +53,7 @@
     "href": "team.html",
     "title": "Members",
     "section": "",
-    "text": "vijay dot muley at gmail dot com\n\nAbout me Biographical sketch Curriculum vitae"
-  },
-  {
-    "objectID": "team.html#dr.-pravin-kendrekar",
-    "href": "team.html#dr.-pravin-kendrekar",
-    "title": "Members",
-    "section": "Dr. Pravin kendrekar",
-    "text": "Dr. Pravin kendrekar\n kkpravin at gmail dot com\nLinkedIn Google Scholar"
-  },
-  {
-    "objectID": "team.html#dr.-ashish-gulve",
-    "href": "team.html#dr.-ashish-gulve",
-    "title": "Members",
-    "section": "Dr. Ashish Gulve",
-    "text": "Dr. Ashish Gulve"
-  },
-  {
-    "objectID": "team.html#prof.-dr.-kapil-devidas-kamble",
-    "href": "team.html#prof.-dr.-kapil-devidas-kamble",
-    "title": "Members",
-    "section": "Prof. Dr. Kapil Devidas Kamble",
-    "text": "Prof. Dr. Kapil Devidas Kamble"
+    "text": "muleylab at gmail dot com"
   },
   {
     "objectID": "bsVijay.html",
@@ -95,7 +67,7 @@
     "href": "index.html",
     "title": "Laboratory of organismal science!",
     "section": "",
-    "text": "We study how genes work in different situations like diseases, cleaning the environment, and how living things survive in different conditions. We use advanced methods to look at big sets of data and find sets of genes that are important in these situations. We also look at how these genes work in specific parts of the body and how they interact with other genes. All this helps us understand how genes work and change over time to help living things survive and adapt.\nOur team consists of skilled researchers from various backgrounds who work together to develop cutting-edge algorithms and tools. We focus on machine learning and AI to revolutionize disease treatment and crop yields. We publish research in leading journals and present at conferences. We welcome anyone interested in joining our team or contributing to our research efforts. Together, we can continue to push the boundaries of what is possible in computational biology and data science and make a positive impact on the world."
+    "text": "We study how genes work in different situations like diseases, cleaning the environment, and how living things survive in different conditions. We use advanced methods to look at big sets of data and find sets of genes that are important in these situations. We also look at how these genes work in specific parts of the body and how they interact with other genes. All this helps us understand how genes work and change over time to help living things survive and adapt."
   },
   {
     "objectID": "publications.html#section",
@@ -186,7 +158,7 @@
     "href": "aboutVijay.html",
     "title": "Vijaykumar Muley, Ph.D.",
     "section": "",
-    "text": "As a highly-skilled and accomplished scientist, I specialize in the cutting-edge field of computational biology, utilizing my expertise in bioinformatics and data science to uncover the mysteries of molecular biology, microbiology, neurobiology, immunology, evolution, and developmental biology. With a wealth of experience working in government and public universities in India, Germany, Ireland, and Mexico, I have a deep understanding of the advanced computational methods required to study the intricate inner workings of living organisms, cells, subcellular structures, genes, proteins, and their interactions.\nIn addition to my professional pursuits, I am also a lifelong learner, with a passion for writing books and invited book chapters, learning salsa and bachata dance, playing cricket or chess, reading science fiction books, watching movies, hiking mountains, and spending time in nature.\nIf you share my passion for using science and data to improve productivity and living standards, I would love to hear from you. Whether you are interested in research, internships, collaboration, or consultancy (paid), please don’t hesitate to contact me via the social media links provided. I am always open to discussing new opportunities and exciting projects."
+    "text": "I specialize in the cutting-edge field of computational biology, utilizing my expertise in bioinformatics and data science to uncover the mysteries of molecular biology, microbiology, neurobiology, immunology, evolution, and developmental biology. With a wealth of experience working in government and public universities in India, Germany, Ireland, and Mexico, I have a deep understanding of the advanced computational methods required to study the intricate inner workings of living organisms, cells, subcellular structures, genes, proteins, and their interactions.\nIn addition to my professional pursuits, I am also a lifelong learner, with a passion for writing books and invited book chapters, learning salsa and bachata dance, playing cricket or chess, reading science fiction books, watching movies, hiking mountains, and spending time in nature.\nIf you share my passion for using science and data to improve productivity and living standards, I would love to hear from you. Whether you are interested in research, internships, collaboration, or consultancy (paid), please don’t hesitate to contact me via the social media links provided. I am always open to discussing new opportunities and exciting projects."
   },
   {
     "objectID": "cvVijay.html",
@@ -235,7 +207,7 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "Page under constructions\nResources developed by our group"
+    "text": "Page under construction"
   },
   {
     "objectID": "resources.html#publications-to-pathway-mapping-pub2path",
