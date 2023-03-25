@@ -85,4 +85,5 @@ Jun 2004 - Lifetime | **National Eligibility Test for Lectureship** | University
 16 Jun 2018 | **Differential Expression Analysis using R** at the III interactional Summer School in Bioinformatics, Institute of Mathematics, National Autonomous University of Mexico, Queretaro, Mexico
 
 
+## [Publications](publications.qmd#Published)
 

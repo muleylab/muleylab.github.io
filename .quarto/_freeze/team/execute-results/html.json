@@ -1,7 +1,7 @@
 {
-  "hash": "fed403c3e2f2d023a1ffdd91b91c5509",
+  "hash": "fc02f7f1e6bccf9595c8aea79b2dfc4d",
   "result": {
-    "markdown": "---\ntitle: \"Members\"\n---\n\n\n#  \n\n::: {style=\"float:left;position: relative; top: 0px;\"}\n\n::: {.cell}\n::: {.cell-output-display}\n![](images/passportpic.jpeg){width=40%}\n:::\n:::\n\n:::\n\n\n## Vijaykumar Yogesh Muley\n\n<i class=\"bi bi-envelope\"></i> muleylab at gmail dot com\n\n<a href=\"https://github.com/\"><i class=\"fa-brands fa-facebook fa-xl fa-spin\" style=\"color: #1877f2;\"></i></a>\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n\n# Students\n\nComing soon\n\n\n# \n*Falkland’s Law: When there is no need to make a decision, Don't make a decision*\n\n",
+    "markdown": "---\ntitle: \"Members\"\n---\n\n\n#  \n\n::: {style=\"float:left;position: relative; top: 0px;\"}\n\n::: {.cell}\n::: {.cell-output-display}\n![](images/passportpic.jpeg){width=40%}\n:::\n:::\n\n:::\n\n\n## Vijaykumar Yogesh Muley\n\n<i class=\"bi bi-envelope\"></i> muleylab at gmail dot com\n\n<a href=\"cvVijay.qmd\" target=\"_blank\" class=\"btn btn-outline-primary btn-sm\" role=\"button\">Curriculum vitae</a>\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n\n# Students\n\nComing soon\n\n\n# \n*Falkland’s Law: When there is no need to make a decision, Don't make a decision*\n\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

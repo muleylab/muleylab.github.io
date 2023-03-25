@@ -53,7 +53,7 @@
     "href": "team.html",
     "title": "Members",
     "section": "",
-    "text": "muleylab at gmail dot com"
+    "text": "muleylab at gmail dot com\nCurriculum vitae"
   },
   {
     "objectID": "bsVijay.html",
@@ -201,6 +201,13 @@
     "title": "Curriculum vitae",
     "section": "Invited talks",
     "text": "Invited talks\n2 Jan 2023 | Probing TMPRSS2 and ACE2 SARS-CoV-2 cell entry receptors to reveal COVID-19 pathogenesis and potential drug targets at the International Conference on Drug Development and Drug Discovery, Swami Ramanand Teerth Marathwada University, Nanded, India\n16 Apr 2021 | Cross-species transcriptomic analysis of SARS-CoV-2 cell entry receptors reveal potential targets at the Institute of Neurobiology, National Autonomous University of Mexico, Queretaro, Mexico\n16 Jun 2018 | Differential Expression Analysis using R at the III interactional Summer School in Bioinformatics, Institute of Mathematics, National Autonomous University of Mexico, Queretaro, Mexico"
+  },
+  {
+    "objectID": "cvVijay.html#publications",
+    "href": "cvVijay.html#publications",
+    "title": "Curriculum vitae",
+    "section": "Publications",
+    "text": "Publications"
   },
   {
     "objectID": "resources.html",
