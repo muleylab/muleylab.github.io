@@ -118,13 +118,14 @@ Kamble KD, More A, **Muley VY**. (2012): *Effect of incubation on DNase producti
 
 ## In preparation
 
-**Muley VY**. (2023): *Search, retrieve, visualize and analyze protein-protein interactions from multiple databases*, Methods in Molecular Biology, **Accepted**
+**Muley VY**. (2023): *Search, retrieve, visualize and analyze protein-protein interactions from multiple databases*, Methods in Molecular Biology, **In production**
 
-**Muley VY**. (2023): *Centrality analysis of protein-protein interaction networks using R*, Methods in Molecular Biology, **Accepted**
+**Muley VY**. (2023): *Centrality analysis of protein-protein interaction networks using R*, Methods in Molecular Biology, **In production**
 
-Rakshit S, More A, Gaikwad S, Gade A, **Muley VY**, Mukherjee A, Kamble KD. (2023): *Helicteres isora L plant formulations and extracted diosgenin exhibits anti-HIV action mediated by inhibition of HIV-1 integrase and HIV-RTase*, Journal of Herbal Medicine, **Under Review**
+Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O. (2023): *Temporal dynamics of microbial colonisation during the postnatal period in the digestive tract of calves*, Animal science journal, **Accepted**
 
-Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O. (2023): *Temporal dynamics of microbial colonisation during the postnatal period in the digestive tract of calves*, Animal science journal, **Under Review**
+Rakshit S, More A, Gaikwad S, Gade A, **Muley VY**, Mukherjee A, Kamble KD. (2023): *Anti-HIV activity of Helicteres isora L. plant formulations and extracted diosgenin mediated by inhibition of
+HIV-1 integrase and reverse transcriptase enzymes*, Archives in Microbiology, **Submitted**
 
 **Muley VY**, Islas AV, García-Sotelo JS, Aguilar LA, Varela-Echavarría A. (2023): *NDGEx: A database of differential gene expression in 25 neurodegenerative diseases*, **Submitted**
 
