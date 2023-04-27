@@ -15,9 +15,10 @@ knitr::include_graphics("images/passportpic.jpeg")
 
 <i class="bi bi-envelope"></i> muleylab at gmail dot com
 
-<a href="cvVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Curriculum vitae</a>
 
 ```{r echo=FALSE, eval=FALSE}
+<a href="cvVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Curriculum vitae</a>
+
 <a href="https://github.com/"><i class="fa-brands fa-facebook fa-xl fa-spin" style="color: #1877f2;"></i></a>
 
 <a href="aboutVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">About me</a> <a href="bsVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Biographical sketch</a> <a href="cvVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Curriculum vitae</a>
