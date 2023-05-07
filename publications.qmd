@@ -4,6 +4,15 @@ title: "Publications"
 
 ## Published
 
+## 2023
+
+Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O. (2023): *Microbial colonization dynamics of the posnatal digestive tract of calves*, Animal science journal, **Accepted**
+
+**Muley VY**. (2023): *Search, retrieve, visualize and analyze protein-protein interactions from multiple databases*, Methods in Molecular Biology, **In production**
+
+**Muley VY**. (2023): *Centrality analysis of protein-protein interaction networks using R*, Methods in Molecular Biology, **In production**
+
+
 ## 2022
 
 **Muley VY**, König R. (2022): *Human transcriptional gene regulatory network compiled from 14 data resources*, Biochimie, 2022 Feb 1;193:115-125, Impact factor : 4.372
@@ -119,17 +128,10 @@ Kamble KD, More A, **Muley VY**. (2012): *Effect of incubation on DNase producti
 ## In preparation
 
 
-
-**Muley VY**. (2023): *Search, retrieve, visualize and analyze protein-protein interactions from multiple databases*, Methods in Molecular Biology, **In production**
-
-**Muley VY**. (2023): *Centrality analysis of protein-protein interaction networks using R*, Methods in Molecular Biology, **In production**
-
-Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O. (2023): *Temporal dynamics of microbial colonisation during the postnatal period in the digestive tract of calves*, Animal science journal, **Accepted**
-
-**Muley VY**. (2023): *Prediction and Analysis of Transcription Factor Binding Sites to Understand Gene Regulation: Practical Examples and Case Studies using R programming*, Methods in Molecular Biology, **Submitted**
+**Muley VY**. (2023): *Prediction and Analysis of Transcription Factor Binding Sites to Understand EOMES Gene Regulation, **Submitted**
 
 Rakshit S, More A, Gaikwad S, Gade A, **Muley VY**, Mukherjee A, Kamble KD. (2023): *Anti-HIV activity of Helicteres isora L. plant formulations and extracted diosgenin mediated by inhibition of
-HIV-1 integrase and reverse transcriptase enzymes*, Archives in Microbiology, **Submitted**
+HIV-1 integrase and reverse transcriptase enzymes*, **Submitted**
 
 **Muley VY**, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): *Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway*, **In preparation**, A part of this work is available in preprint at BioRxiv
 
