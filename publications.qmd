@@ -6,8 +6,6 @@ title: "Publications"
 
 ## 2023
 
-Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O. (2023): *Microbial colonization dynamics of the posnatal digestive tract of calves*, Animal science journal, **Accepted**
-
 **Muley VY**. (2023): *Search, retrieve, visualize and analyze protein-protein interactions from multiple databases*, Methods in Molecular Biology, **In production**
 
 **Muley VY**. (2023): *Centrality analysis of protein-protein interaction networks using R*, Methods in Molecular Biology, **In production**
@@ -126,6 +124,9 @@ Kamble KD, More A, **Muley VY**. (2012): *Effect of incubation on DNase producti
 <a href="https://microbiologyjournal.org/effect-of-incubation-on-dnase-production-by-a-moderate-thermophilic-bacterium-screened-from-arid-land/" target="_blank" class="btn btn-outline-primary btn-sm" role="button">WebLink</a>
 
 ## In preparation
+
+
+Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O. (2023): *Microbial colonization dynamics of the posnatal digestive tract of calves*, Animal science journal, **Under Revision**
 
 
 **Muley VY**. (2023): *Prediction and Analysis of Transcription Factor Binding Sites to Understand EOMES Gene Regulation*, **Submitted**
