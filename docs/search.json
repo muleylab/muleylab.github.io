@@ -4,7 +4,7 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Our research group uses computational, mathematical, and statistical methods to analyze large-scale public data to address key questions in autoimmune, neurodegenerative, and neuropsychiatric diseases. We focus on identifying context-dependent genes, known as genetic modules, and investigate their physiological roles in various diseases. We also study tissue- and cell-specific gene expression, regulation, and intra- and intercellular interactions between genes and their protein products. Additionally, we use comparative genomics to trace the evolutionary history of these genetic modules, with the ultimate goal of understanding their organization during adaptation, embryonic development, and pathological conditions."
+    "text": "Our research group uses computational, mathematical, and statistical methods to analyze large-scale public data to address key questions in infectious, autoimmune, neurodegenerative, and neuropsychiatric diseases and disorders. We focus on identifying context-dependent genes, known as genetic modules, and investigate their physiological roles in various diseases. We also study tissue- and cell-specific gene expression, regulation, and intra- and intercellular interactions between genes and their protein products. Additionally, we use comparative genomics to trace the evolutionary history of these genetic modules, with the ultimate goal of understanding their organization during adaptation, embryonic development, and pathological conditions."
   },
   {
     "objectID": "research.html#gene-expression-and-regulation",
@@ -65,7 +65,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Laboratory of Functional Medicine!",
+    "title": "Laboratory of Genomic Medicine!",
     "section": "",
     "text": "Our research is dedicated to delving into the multifaceted realm of gene functionality, with a specific focus on autoimmune, neurodegenerative, and neuropsychiatric diseases. Utilizing cutting-edge methodologies, we conduct in-depth analyses of extensive data to identify essential genetic modules that play pivotal roles in the genesis and progression of these conditions.\nOur approach goes beyond the mere identification of crucial genes. We intricately explore the interplay between these genes and their specific anatomical locations, aiming for a comprehensive understanding of their operations within the intricate tapestry of genetic components. Through the utilization of simulations, statistical modeling, artificial intelligence, and network theoretical analysis, we unravel the complex relationships and regulatory mechanisms underlying autoimmune, neurodegenerative, and neuropsychiatric diseases.\nBy unraveling these complexities, we gain invaluable insights into the dynamic nature of genes and their profound impact on the survival and adaptability of living organisms. This knowledge forms the foundation of our research, empowering us to develop novel therapeutic strategies and interventions that precisely target these genes and their associated pathways. Our ultimate goal is to make transformative discoveries that pave the way for personalized treatments, improved patient outcomes, and a deeper understanding of the intricate mechanisms governing health and disease."
   },
@@ -74,84 +74,84 @@
     "href": "publications.html#section",
     "title": "Publications",
     "section": "2023",
-    "text": "2023\nMuley VY. (2023): Search, retrieve, visualize and analyze protein-protein interactions from multiple databases, Methods in Molecular Biology, In production\nMuley VY. (2023): Centrality analysis of protein-protein interaction networks using R, Methods in Molecular Biology, In production"
+    "text": "2023\nMuley VY*. (2023): Centrality Analysis of Protein-Protein Interaction Networks Using R, Methods in Molecular Biology. 2023 Jul 15;2690:445-456\nPubMed Journal\nMuley VY*. (2023): Search, Retrieve, Visualize and Analyze Protein-Protein Interactions From Multiple Databases: A Guide to Experimental Biologists, Methods in Molecular Biology. 2023 Jul 15;2690:429-443\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-1",
     "href": "publications.html#section-1",
     "title": "Publications",
     "section": "2022",
-    "text": "2022\nMuley VY, König R. (2022): Human transcriptional gene regulatory network compiled from 14 data resources, Biochimie, 2022 Feb 1;193:115-125, Impact factor : 4.372\nWebLink"
+    "text": "2022\nMuley VY*, König R. (2022): Human transcriptional gene regulatory network compiled from 14 data resources, Biochimie, 2022 Feb 1;193:115-125\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-2",
     "href": "publications.html#section-2",
     "title": "Publications",
     "section": "2021",
-    "text": "2021\nMuley VY. (2021): Mathematical Linear Programming to Model MicroRNAs-Mediated Gene Regulation Using Gurobi Optimizer, Methods in Molecular Biology, 2021 Jul 13;2328:287-301, Book chapter\nWebLink\nMuley VY. (2021): Mathematical Programming for Modeling Expression of a Gene Using Gurobi Optimizer to Identify Its Transcriptional Regulators, Methods in Molecular Biology, 2021 Jul 13;2328:99-113, Book chapter\nWebLink\nAviña-Padilla K, Ramírez-Rafael JA, Herrera-Oropeza GE, Muley VY, Valdivia DI, Díaz-Valenzuela E, García-García A, Varela-Echavarría A, Hernández-Rosales M. (2021): Evolutionary Perspective and Expression Analysis of Intronless Genes Highlight the Conservation of Their Regulatory Role, Frontiers in Genetics, 2021 Jul 9;12:654256, Impact factor : 4.772\nWebLink\nMuley VY, Bojórquez SAF, Kamble KD. (2021): Nervous System of Invertebrates, Encyclopedia of Animal Cognition and Behavior, 2021 Mar 12: Springer, Cham, Book chapter\nWebLink"
+    "text": "2021\nMuley VY*. (2021): Mathematical Linear Programming to Model MicroRNAs-Mediated Gene Regulation Using Gurobi Optimizer, Methods in Molecular Biology, 2021 Jul 13;2328:287-301\nPubMed Journal\nMuley VY*. (2021): Mathematical Programming for Modeling Expression of a Gene Using Gurobi Optimizer to Identify Its Transcriptional Regulators, Methods in Molecular Biology, 2021 Jul 13;2328:99-113\nPubMed Journal\nAviña-Padilla K, Ramírez-Rafael JA, Herrera-Oropeza GE, Muley VY, Valdivia DI, Díaz-Valenzuela E, García-García A, Varela-Echavarría A, Hernández-Rosales M. (2021): Evolutionary Perspective and Expression Analysis of Intronless Genes Highlight the Conservation of Their Regulatory Role, Frontiers in Genetics, 2021 Jul 9;12:654256\nPubMed Journal\nMuley VY*, Bojórquez SAF, Kamble KD. (2021): Nervous System of Invertebrates, Encyclopedia of Animal Cognition and Behavior, 2021 Mar 12: Springer, Cham\nWebLink"
   },
   {
     "objectID": "publications.html#section-3",
     "href": "publications.html#section-3",
     "title": "Publications",
     "section": "2020",
-    "text": "2020\nMuley VY, López-Victorio CJ, Ayala-Sumuano JT, González-Gallardo A, González-Santos L, Lozano-Flores C, Wray G, Hernández-Rosales M, Varela-Echavarría A. (2020): Conserved and divergent expression dynamics during early patterning of the telencephalon in mouse and chick embryos, Progress in Neurobiology, 2020 Mar 1;186:101735, Impact factor : 10.885\nWebLink"
+    "text": "2020\nMuley VY*, López-Victorio CJ, Ayala-Sumuano JT, González-Gallardo A, González-Santos L, Lozano-Flores C, Wray G, Hernández-Rosales M, Varela-Echavarría A. (2020): Conserved and divergent expression dynamics during early patterning of the telencephalon in mouse and chick embryos, Progress in Neurobiology, 2020 Mar 1;186:101735\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-4",
     "href": "publications.html#section-4",
     "title": "Publications",
     "section": "2019",
-    "text": "2019\nMuley VY, Larriva-Sánchez F. (2019): Nervous System, The, Encyclopedia of Animal Cognition and Behavior, 2019 Aug 29: Springer, Cham, Book chapter\nWebLink\nMuley VY, Gijón CET, García IM, Cueva LX. (2019): Vertebrate Nervous System, Encyclopedia of Animal Cognition and Behavior, 2019 Jun 26: Springer, Cham, Book chapter\nWebLink\nMuley VY, Akhter Y, Galande S. (2019): PDZ Domains Across the Microbial World: Molecular Link to the Proteases, Stress Response, and Protein Synthesis, Genome Biology and Evolution, 2019 Mar 1;11(3):644-659, Impact factor : 4.070\nWebLink"
+    "text": "2019\nMuley VY*, Larriva-Sánchez F. (2019): Nervous System, The, Encyclopedia of Animal Cognition and Behavior, 2019 Aug 29: Springer, Cham\nWebLink\nMuley VY*, Gijón CET, García IM, Cueva LX. (2019): Vertebrate Nervous System, Encyclopedia of Animal Cognition and Behavior, 2019 Jun 26: Springer, Cham\nWebLink\nMuley VY*, Akhter Y, Galande S. (2019): PDZ Domains Across the Microbial World: Molecular Link to the Proteases, Stress Response, and Protein Synthesis, Genome Biology and Evolution, 2019 Mar 1;11(3):644-659\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-5",
     "href": "publications.html#section-5",
     "title": "Publications",
     "section": "2018",
-    "text": "2018\nMuley VY, Pathania A. (2018): Gene Expression, Encyclopedia of Animal Cognition and Behavior, 2018 Oct 20: Springer, Cham, Book chapter\nWebLink\nJangid RK, Kelkar A, Muley VY, Galande S. (2018): Bidirectional promoters exhibit characteristic chromatin modification signature associated with transcription elongation in both sense and antisense directions, BMC Genomics, 2018 May 2;19(1):313, Impact factor : 4.560\nWebLink"
+    "text": "2018\nMuley VY*, Pathania A. (2018): Gene Expression, Encyclopedia of Animal Cognition and Behavior, 2018 Oct 20: Springer, Cham\nWebLink\nJangid RK, Kelkar A, Muley VY, Galande S. (2018): Bidirectional promoters exhibit characteristic chromatin modification signature associated with transcription elongation in both sense and antisense directions, BMC Genomics, 2018 May 2;19(1):313\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-6",
     "href": "publications.html#section-6",
     "title": "Publications",
     "section": "2017",
-    "text": "2017\nMuley VY. (2017): Bioinformatics, Encyclopedia of Animal Cognition and Behavior, 2017 Sept 5: Springer, Cham, Book chapter\nWebLink\nPathania A, Muley VY. (2017): Gene Expression Profiling, Encyclopedia of Animal Cognition and Behavior, 2017 Aug 22: Springer, Cham, Book chapter\nWebLink\nVenkatRao V, Kumar SK, Sridevi P, Muley VY, Chaitanya RK. (2017): Cloning, characterization and transmission blocking potential of midgut carboxypeptidase A in Anopheles stephensi, Acta Tropica, 2017 Apr;168:21-28, Impact factor : 3.222\nWebLink\nHaldar KK, Muley VY, Datar S, Patra A. (2017): Structural and electronic investigation of metal-semiconductor hybrid tetrapod hetero-structures, Gold Bulletin, 2017 Mar 9;50:105–110, Impact factor : 1.637\nWebLink"
+    "text": "2017\nMuley VY*. (2017): Bioinformatics, Encyclopedia of Animal Cognition and Behavior, 2017 Sept 5: Springer, Cham\nWebLink\nPathania A, Muley VY*. (2017): Gene Expression Profiling, Encyclopedia of Animal Cognition and Behavior, 2017 Aug 22: Springer, Cham\nWebLink\nVenkatRao V, Kumar SK, Sridevi P, Muley VY, Chaitanya RK. (2017): Cloning, characterization and transmission blocking potential of midgut carboxypeptidase A in Anopheles stephensi, Acta Tropica, 2017 Apr;168:21-28\nPubMed Journal\nHaldar KK, Muley VY, Datar S, Patra A. (2017): Structural and electronic investigation of metal-semiconductor hybrid tetrapod hetero-structures, Gold Bulletin, 2017 Mar 9;50:105–110\nJournal"
   },
   {
     "objectID": "publications.html#section-7",
     "href": "publications.html#section-7",
     "title": "Publications",
     "section": "2016",
-    "text": "2016\nMuley VY, Hahn A. (2016): Protein-protein functional linkage predictions: bringing regulation to context, Computational Biology & Bioinformatics: Gene Regulation, 2016 May 12, Taylor & Francis, Book chapter\nWebLink\nSalah FS, Ebbinghaus M, Muley VY, Zhou Z, Al-Saadi KR, Pacyna-Gengelbach M, O’Sullivan GA, Betz H, König R, Wang ZQ, Bräuer R, Petersen I. (2016): Tumor suppression in mice lacking GABARAP, an Atg8/LC3 family member implicated in autophagy, is associated with alterations in cytokine secretion and cell death, Cell Death & Disease, 2016 Apr 28;7(4):e2205, Impact factor : 9.685\nWebLink"
+    "text": "2016\nMuley VY*, Hahn A. (2016): Protein-protein functional linkage predictions: bringing regulation to context, Computational Biology & Bioinformatics: Gene Regulation, 2016 May 12, Taylor & Francis\nWebLink\nSalah FS, Ebbinghaus M, Muley VY, Zhou Z, Al-Saadi KR, Pacyna-Gengelbach M, O’Sullivan GA, Betz H, König R, Wang ZQ, Bräuer R, Petersen I. (2016): Tumor suppression in mice lacking GABARAP, an Atg8/LC3 family member implicated in autophagy, is associated with alterations in cytokine secretion and cell death, Cell Death & Disease, 2016 Apr 28;7(4):e2205\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-8",
     "href": "publications.html#section-8",
     "title": "Publications",
     "section": "2014",
-    "text": "2014\nKarmodiya K, Anamika K, Muley VY, Pradhan SJ, Bhide Y, Galande S. (2014): Camello, a novel family of Histone Acetyltransferases that acetylate histone H4 and is essential for zebrafish development, Scientific Reports, 2014 Aug 15;4:6076, Impact factor : 4.996\nWebLink"
+    "text": "2014\nKarmodiya K, Anamika K, Muley VY, Pradhan SJ, Bhide Y, Galande S. (2014): Camello, a novel family of Histone Acetyltransferases that acetylate histone H4 and is essential for zebrafish development, Scientific Reports, 2014 Aug 15;4:6076\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-9",
     "href": "publications.html#section-9",
     "title": "Publications",
     "section": "2013",
-    "text": "2013\nMuley VY, Ranjan A. (2013): Evaluation of physical and functional protein-protein interaction prediction methods for detecting biological pathways, PLOS One, 2013 Jan 17;8(1):e54325, Impact factor : 3.752\nWebLink"
+    "text": "2013\nMuley VY, Ranjan A. (2013): Evaluation of physical and functional protein-protein interaction prediction methods for detecting biological pathways, PLOS One, 2013 Jan 17;8(1):e54325\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-10",
     "href": "publications.html#section-10",
     "title": "Publications",
     "section": "2012",
-    "text": "2012\nMuley VY, Acharya V. (2012): Genome-wide prediction and analysis of protein-protein functional linkages in bacteria, SpringerBriefs in Systems Biology, 2012 Jul 28:Volume 2, Springer Nature (ISBN 978-1-4614-4705-4), Book\nWebLink\nMuley VY, Ranjan A. (2012): Effect of reference genome selection on the performance of computational methods for genome-wide protein-protein interaction prediction, PLOS One, 2012 Jul 26;7(7):e42057, Impact factor : 3.752\nWebLink\nKamble KD, Bidwe PR, Muley VY, Kamble LH, Bhadange DG, Musaddiq M. (2012): Characterization of L-asparaginase producing bacteria from water, farm and saline soil, Bioscience discovery, 2012 Jan 1;3 (1), 116-119\nWebLink\nKamble KD, More A, Muley VY. (2012): Effect of incubation on DNase production by a moderate thermophilic bacterium screened from arid land, Journal of Pure and Applied Microbiology, 2012 Mar 31;6(1):265-269, Impact factor : 0.483\nWebLink"
+    "text": "2012\nMuley VY, Acharya V. (2012): Genome-wide prediction and analysis of protein-protein functional linkages in bacteria, SpringerBriefs in Systems Biology, 2012 Jul 28:Volume 2, Springer Nature (ISBN 978-1-4614-4705-4), Book\nWebLink\nMuley VY, Ranjan A. (2012): Effect of reference genome selection on the performance of computational methods for genome-wide protein-protein interaction prediction, PLOS One, 2012 Jul 26;7(7):e42057\nPubMed Journal\nKamble KD, Bidwe PR, Muley VY, Kamble LH, Bhadange DG, Musaddiq M. (2012): Characterization of L-asparaginase producing bacteria from water, farm and saline soil, Bioscience discovery, 2012 Jan 1;3 (1), 116-119\nJournal\nKamble KD, More A, Muley VY. (2012): Effect of incubation on DNase production by a moderate thermophilic bacterium screened from arid land, Journal of Pure and Applied Microbiology, 2012 Mar 31;6(1):265-269\nJournal"
   },
   {
     "objectID": "publications.html#in-preparation",
     "href": "publications.html#in-preparation",
     "title": "Publications",
     "section": "In preparation",
-    "text": "In preparation\nRobles-Rodríguez C, Muley VY, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O. (2023): Microbial colonization dynamics of the posnatal digestive tract of calves, Animal science journal, Under Revision\nMuley VY. (2023): Prediction and Analysis of Transcription Factor Binding Sites to Understand EOMES Gene Regulation, Submitted\nRakshit S, More A, Gaikwad S, Gade A, Muley VY, Mukherjee A, Kamble KD. (2023): Anti-HIV activity of Helicteres isora L. plant formulations and extracted diosgenin mediated by inhibition of HIV-1 integrase and reverse transcriptase enzymes, Submitted\nMuley VY, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available in preprint at BioRxiv\nPreprint\nMuley VY, Islas AV, García-Sotelo JS, Aguilar LA, Varela-Echavarría A. (2023): NDGEx: A database of differential gene expression in 25 neurodegenerative diseases, In preparation\nDatabase\nMuley VY. (2022): pub2path: from PubMed search to assembly of molecular pathways without prior knowledge of gene function, In preparation"
+    "text": "In preparation\nRobles-Rodríguez C, Muley VY, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O. (2023): Microbial colonization dynamics of the posnatal digestive tract of calves, Animal science journal, Under Revision\nMuley VY. (2023): Transcriptional Regulation of EOMES Gene Promoter, Submitted\nRakshit S, More A, Gaikwad S, Gade A, Muley VY, Mukherjee A, Kamble KD. (2023): Anti-HIV activity of Helicteres isora L. plant formulations and extracted diosgenin mediated by inhibition of HIV-1 integrase and reverse transcriptase enzymes, Submitted\nMuley VY, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available in preprint at BioRxiv\nPreprint\nMuley VY, Islas AV, García-Sotelo JS, Aguilar LA, Varela-Echavarría A. (2023): NDGEx: A database of differential gene expression in 25 neurodegenerative diseases, In preparation\nDatabase\nMuley VY. (2022): pub2path: from PubMed search to assembly of molecular pathways without prior knowledge of gene function, In preparation"
   },
   {
     "objectID": "about.html",
@@ -250,5 +250,12 @@
     "title": "Resources",
     "section": "Escherichia coli functional protein-protein interactions (EcoFunPPI)",
     "text": "Escherichia coli functional protein-protein interactions (EcoFunPPI)\nEcofunPPI ia a database of functional protein-protein interactions in Escherichia coli K12 predicted using a combination of 9 machine learning methods. It is highly reliable database than several existing published database on PPI and could provide a experimentally testable hypothesis on proteins of interest."
+  },
+  {
+    "objectID": "publications.html#preprints-upcoming",
+    "href": "publications.html#preprints-upcoming",
+    "title": "Publications",
+    "section": "Preprints (Upcoming)",
+    "text": "Preprints (Upcoming)\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
   }
 ]

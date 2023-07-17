@@ -14,7 +14,7 @@ options(knitr.table.format = function() {
 
 <!-- This will be displayed in the page source code but not in the output. -->
 
-Our research group uses computational, mathematical, and statistical methods to analyze large-scale public data to address key questions in autoimmune, neurodegenerative, and neuropsychiatric diseases. We focus on identifying context-dependent genes, known as genetic modules, and investigate their physiological roles in various diseases. We also study tissue- and cell-specific gene expression, regulation, and intra- and intercellular interactions between genes and their protein products. Additionally, we use comparative genomics to trace the evolutionary history of these genetic modules, with the ultimate goal of understanding their organization during adaptation, embryonic development, and pathological conditions.
+Our research group uses computational, mathematical, and statistical methods to analyze large-scale public data to address key questions in infectious, autoimmune, neurodegenerative, and neuropsychiatric diseases and disorders. We focus on identifying context-dependent genes, known as genetic modules, and investigate their physiological roles in various diseases. We also study tissue- and cell-specific gene expression, regulation, and intra- and intercellular interactions between genes and their protein products. Additionally, we use comparative genomics to trace the evolutionary history of these genetic modules, with the ultimate goal of understanding their organization during adaptation, embryonic development, and pathological conditions.
 
 ## Gene expression and regulation
 
