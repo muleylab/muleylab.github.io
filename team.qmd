@@ -13,8 +13,9 @@ knitr::include_graphics("images/passportpic.jpeg")
 
 ## Vijaykumar Yogesh Muley
 
-<i class="bi bi-envelope"></i> muleylab at gmail dot com
+<a href="aboutVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">About me</a> 
 
+<i class="bi bi-envelope"></i> muleylab at gmail dot com
 
 ```{r echo=FALSE, eval=FALSE}
 <a href="cvVijay.qmd" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Curriculum vitae</a>
