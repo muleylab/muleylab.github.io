@@ -15,7 +15,7 @@ website:
       - research.qmd
       - team.qmd
       - publications.qmd
-      - resources.qmd
+#      - resources.qmd
       - protocols.qmd
 #      - positions.qmd
 
