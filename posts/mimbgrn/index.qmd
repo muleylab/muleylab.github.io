@@ -16,128 +16,30 @@ citation:
 draft: false 
 ---
 
-# Introduction
-
-In the past two decades, machine learning has become a
-powerful tool for predicting gene regulatory networks (GRN)
-or transcriptional regulatory networks (TRN), which involve
-transcription factors (TFs) and their target genes
-[@Marbach2012; @Li2023; @Muley2022]. TFs
-are a diverse family of DNA-binding proteins that regulate
-gene expression by binding to specific DNA sequences in the
-target gene's upstream regions [@Dynan1983;
-@Vaquerizas2009]. Understanding GRNs is crucial for studying
-transcriptional regulation in various cellular processes,
-such as development, diseases, and response to
-environmental stimuli [@Muley2020; @Levine2003; @Salah2016].
-
-Machine learning, a sub-field of artificial intelligence,
-has revolutionized complex problem-solving across various
-domains, including finance, marketing, engineering,
-medicine, and life sciences [@Greener2022; @Lecun2015]. It
-enables machines to learn and improve from experience
-without explicit programming. Machine learning has proven to
-be a successful approach in predicting GRNs by utilizing co-expression
-patterns among TFs and their target genes [@Marbach2012]. This is achieved by harnessing the vast amount of
-publickly available microarray and next-generation
-sequencing RNA-Seq data [@geo]. These
-datasets, known as expression profiles, are represented
-as a matrix with dimensions $m * n$. Where, $m$ represents the
-total number of genes expressed by an organism, and $n$
-corresponds to the number of physiological conditions or
-experimental contexts in which gene expression was measured.
-
-In simple terms, gene expression varies across different physiological conditions, resulting in distinct features or attributes. Genes and TFs themselves can be used as training examples for machine learning. Unsupervised machine learning algorithms can classify genes into groups based on similar features, particularly correlated expression. Genes that belong to the same group are often co-regulated and have functional relationships, offering insights into potential TFs that drive their correlated expression when they are part of the same group [@Barzel2013]. Clustering algorithms are examples of unsupervised machine learning methods that can infer TF-gene relationships without prior knowledge.
-
-In contrast, supervised machine learning algorithms work with pre-defined groups. For instance, pairs of TFs and genes can be divided into two pre-defined groups: regulatory and non-regulatory pairs. In machine learning, these pre-defined groups are referred to as labels. Supervised algorithms learn a mathematical function, known as a classifier or model, to distinguish between labels by identifying label-specific patterns/rules from the input features [@Marbach2012]. The resulting classifier can then be used to assign the most appropriate labels to unclassified TF-gene pairs. The labeled data used to train the model is known as the gold standard or ground truth. Both types of machine learning utilize the inherent structure of the input data to uncover complex and hidden trends for classifying unlabeled examples, regardless of whether prior knowledge is available.
-
-In traditional machine learning, researchers typically manually engineer features to train algorithms. However, deep learning, a subset of machine learning that utilizes neural networks, has the ability to automatically learn features from input data [@SCHMIDHUBER201585; @Lecun2015]. Deep learning models are structured into layers, with each layer responsible for transforming input data, extracting meaningful features that differentiate between labels, and generating output - the predicted labels. The depth of the model is determined by the number of layers it has. Within each layer, nodes or neurons perform calculations using activation functions, gradually transforming the data into more abstract representations [@Glorot2011; @Cybenko1989]. This process continues through the layers until the final output is produced. Through backpropagation, the model adjusts its parameters or weights to correct errors when the output doesn't match the expected gold standard labels, thereby improving accuracy. The resulting classifier can then be used to classify unclassified TF-gene pairs into either regulatory or non-regulatory groups based on the associated features. Deep learning models excel in analyzing and combining multiple features, leading to higher accuracy and greater capability compared to traditional machine learning models.
-
-
-This chapter focuses on implementing a deep learning classifier using TensorFlow, an open-source software framework developed by Google. The classifier is built using the Keras API within the RStudio environment. The main goal of this chapter is to demonstrate a step-by-step protocol for predicting regulatory interactions between TFs and genes, using their expression profiles as the key features.
-
-The protocol utilizes publicly available gene expression data and gold standard information for *Escherichia coli*, obtained from the DREAM5 project publication [@Marbach2012]. It guides readers through essential steps including data preprocessing, designing the neural network architecture, model training and validation, and making predictions for novel regulatory interactions. Additionally, the chapter provides valuable insights into parameter tuning for deep learning models.
-
-By the end of this chapter, readers will have a comprehensive understanding of how to apply deep learning techniques to predict regulatory interactions between TFs and genes. This knowledge can be directly applied to their own research projects, enabling them to harness the power of deep learning in their investigations.
-
-# Material
-
 ## Computational and software requirements
 
-1.  This protocol has been tested on a desktop
-    computer/laptop with 8 GB RAM running Windows and Mac
-    OS. The computer's configuration required to fulfill
-    learning and prediction tasks depend on the problem's
-    complexity and the size of the training and unlabeled
-    data. It is recommended to avoid running other
-    applications simultaneously.
-
-2.  While this protocol contains sufficient details to be
-    followed by scientists without programming experience,
-    basic to intermediate R programming skills are expected.
-
-3.  Download and install R and its graphical user interface,
-    RStudio, from <https://www.r-project.org> and
-    <https://www.rstudio.com>, respectively.
-
-4.  To efficiently execute R commands and document the
-    entire protocol, create a file in RStudio by navigating
-    to the File menu, selecting New File, and then choosing
-    R script. By default, the file will be named
-    "untitled.R". It is recommended to save this file with a
-    meaningful name in the folder where you will execute
-    this protocol.
-
-5.  Next, go to the Session menu in RStudio, select Set
-    Working Directory, and then click on To Source File
-    Location, i.e., the directory where the untitled.R file
-    was saved. This ensures that all the commands will be
-    executed in the same directory, and the location will be
-    used as a reference to import or export the data saved
-    and generated for this protocol.
-
-6.  Going forward, the "untitled.R" file will be used to
-    input and save all R commands, allowing you to easily
-    reproduce the results from scratch. To execute the
-    commands, simply select them using the mouse or
-    keyboard, and click on the "Run" option located in the
-    top right corner of the file in RStudio. The output of
-    the executed commands will be displayed in the console
-    panel located below the file panel.
-
-7.  This protocol relies on Keras and TensorFlow R packages,
-    i.e., external libraries for deep learning-specific
-    functions [@keras; @tensorflow]. To install these
-    packages, copy the commands described below to your
-    "untitled.R" file, select them, and execute them using
-    the Run option. For more details about the following
-    commands, please refer to their source website:
-    <https://tensorflow.rstudio.com/install/>, and also
-    <https://www.tensorflow.org/install>.
-
-8.  To install the tensorflow R package, run the following
-    command:
+1.  Install tensorflow R package
 
 ```{r, eval=FALSE}
 install.packages("tensorflow")
 ```
 
-9.  Before using the tensorflow package, we need to load the
-    reticulate library and configure R to use a Python
-    installation. If you already have Python installed, you
-    can skip the install_python() command and provide the
-    path to the Python executable. Here's an example of how
-    to do it on macOS or Unix/Linux operating systems:
+2.  TensorFlow uses Python programming language. Therefore, R should be configured to use Python
+
+3. If Python is already installed on computer then use following commands to configure R to use Python installation. 
 
 ```{r, eval=FALSE}
-# assuming python is not already installed
-
 library(reticulate)
-path_to_python <- install_python()
+path_to_python <- "/usr/local/bin/python3" 
 virtualenv_create("r-reticulate", python = path_to_python)
 
-# assuming that the python is already installed and 
-# executable is available in /usr/local/bin/ folder (check with /usr/bin/ also)
+```
+
+Here, we just provide a path to python executable (in this case, it is Python version 3). On macOS or Unix/Linux systems python's default location is /usr/local/bin/ folder. However, users should confirm the correct path on computers. 
+
+3. If Python is already not installed on computer then use following commands to install Python and then configure R to use Python installation. 
+
+```{r, eval=FALSE}
 
 library(reticulate)
 path_to_python <- "/usr/local/bin/python3" 
@@ -145,15 +47,15 @@ virtualenv_create("r-reticulate", python = path_to_python)
 
 ```
 
-10. Next, use the install_tensorflow() function from the
-    tensorflow package to install TensorFlow.
+
+10. Next, use the install_tensorflow() function from the tensorflow package to install TensorFlow.
 
 ```{r, eval=FALSE}
 library(tensorflow)
 install_tensorflow(envname = "r-reticulate")
 ```
 
-11. Alternatively, you can use the install_keras() function
+11. Use the install_keras() function
     from the keras package to install TensorFlow along with
     some commonly used packages such as "scipy" and
     "tensorflow-datasets" as shown below.
@@ -183,7 +85,7 @@ install.packages(c("readr", "tibble", "caret", "verification"))
 
 ## Data requirements
 
-1. To begin, download Supplementary Data 1 from the DREAM5 network inference challenge publication (https://doi.org/10.1038/nmeth.2016) and unzip it in your current working directory. This action will create a directory named "DREAM5_network_inference_challenge." For detailed information about this data, please refer to the original publication by Marbach et al. [@Marbach2012]. If you have your own data, it should have the format similar to that of first three files described below. 
+1. Download Supplementary Data 1 from the DREAM5 network inference challenge publication (https://doi.org/10.1038/nmeth.2016) and unzip it in your current working directory. Go to nealy created "DREAM5_network_inference_challenge" directory. 
 
 2. The required data for Escherichia coli is present in the "Network3" folder and its sub-folders. Copy four files listed below from these sub-folders into your current working directory to proceed with the analysis..
 
@@ -198,13 +100,9 @@ install.packages(c("readr", "tibble", "caret", "verification"))
 
 # Methods
 
-## Loading R libraries and preparing workspace
+## Load R libraries
 
-1.  Load the Keras and
-    TensorFlow libraries for use in the current RStudio
-    session as shown in below along with magrittr. The magrittr library provides a useful function
-    called *pipe* (i.e., %>%), which allows us to pass the
-    output of one operation to another.
+1. 
 
 ```{r, eval=FALSE}
 library(magrittr)
@@ -213,8 +111,7 @@ library(tensorflow)
 ```
 
 2.  Set a random odd number as a seed in the set.seed
-    function to reproduce the results of this workflow (see
-    **Note 1**). If you use seed number other than 1979, your results will be slightly different than the discusseed in the following text.
+    function to reproduce the results of this workflow. If you use seed number other than 1979, your results will be slightly different than the discusseed in the following text.
 
 ```{r, eval=FALSE}
 set.seed(1979)
