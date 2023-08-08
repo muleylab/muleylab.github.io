@@ -28,5 +28,11 @@
   },
   "resources.qmd": {
     "resources.html": "96fc0dca"
+  },
+  "protocols.qmd": {
+    "protocols.html": "fc3ad1ff"
+  },
+  "posts/mimbgrn/index.qmd": {
+    "index.html": "0042ceeb"
   }
 }

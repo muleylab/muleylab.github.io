@@ -2,6 +2,9 @@
   "listingMap": {
     "resources.qmd": [
       "posts"
+    ],
+    "protocols.qmd": [
+      "posts"
     ]
   }
 }

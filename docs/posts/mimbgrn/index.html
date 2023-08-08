@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Vijaykumar Yogesh Muley">
+
+<title>Laboratory of organismal science! - Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B5FVC80FWJ"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Laboratory of organismal science!</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html">
+ <span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../team.html">
+ <span class="menu-text">Members</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources.html">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../protocols.html">
+ <span class="menu-text">Protocols</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R</h1>
+            <p class="subtitle lead">Transcriptional regulatory network predictions</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Quarto</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">MEDS</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Vijaykumar Yogesh Muley </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a>
+  <ul class="collapse">
+  <li><a href="#computational-and-software-requirements" id="toc-computational-and-software-requirements" class="nav-link" data-scroll-target="#computational-and-software-requirements">Computational and software requirements</a></li>
+  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a></li>
+  </ul></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#loading-r-libraries-and-preparing-workspace" id="toc-loading-r-libraries-and-preparing-workspace" class="nav-link" data-scroll-target="#loading-r-libraries-and-preparing-workspace">Loading R libraries and preparing workspace</a></li>
+  <li><a href="#data-preparation-and-exploration" id="toc-data-preparation-and-exploration" class="nav-link" data-scroll-target="#data-preparation-and-exploration">Data preparation and exploration</a></li>
+  <li><a href="#defining-deep-learning-model-architecture" id="toc-defining-deep-learning-model-architecture" class="nav-link" data-scroll-target="#defining-deep-learning-model-architecture">Defining deep learning model architecture</a></li>
+  <li><a href="#defining-model-compilation-parameters" id="toc-defining-model-compilation-parameters" class="nav-link" data-scroll-target="#defining-model-compilation-parameters">Defining Model Compilation Parameters</a></li>
+  <li><a href="#training-deep-learning-model" id="toc-training-deep-learning-model" class="nav-link" data-scroll-target="#training-deep-learning-model">Training deep learning model</a></li>
+  <li><a href="#estimating-the-accuracy-of-deep-learning-model" id="toc-estimating-the-accuracy-of-deep-learning-model" class="nav-link" data-scroll-target="#estimating-the-accuracy-of-deep-learning-model">Estimating the accuracy of deep learning model</a></li>
+  <li><a href="#predicting-genome-wide-regulatory-interactions" id="toc-predicting-genome-wide-regulatory-interactions" class="nav-link" data-scroll-target="#predicting-genome-wide-regulatory-interactions">Predicting genome-wide regulatory interactions</a></li>
+  <li><a href="#tuning-deep-learning-for-improved-performance" id="toc-tuning-deep-learning-for-improved-performance" class="nav-link" data-scroll-target="#tuning-deep-learning-for-improved-performance">Tuning Deep Learning for Improved Performance</a></li>
+  </ul></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In the past two decades, machine learning has become a powerful tool for predicting gene regulatory networks (GRN) or transcriptional regulatory networks (TRN), which involve transcription factors (TFs) and their target genes <span class="citation" data-cites="Marbach2012 Li2023 Muley2022">[@Marbach2012; @Li2023; @Muley2022]</span>. TFs are a diverse family of DNA-binding proteins that regulate gene expression by binding to specific DNA sequences in the target gene’s upstream regions <span class="citation" data-cites="Dynan1983 Vaquerizas2009">[@Dynan1983; @Vaquerizas2009]</span>. Understanding GRNs is crucial for studying transcriptional regulation in various cellular processes, such as development, diseases, and response to environmental stimuli <span class="citation" data-cites="Muley2020 Levine2003 Salah2016">[@Muley2020; @Levine2003; @Salah2016]</span>.</p>
+<p>Machine learning, a sub-field of artificial intelligence, has revolutionized complex problem-solving across various domains, including finance, marketing, engineering, medicine, and life sciences <span class="citation" data-cites="Greener2022 Lecun2015">[@Greener2022; @Lecun2015]</span>. It enables machines to learn and improve from experience without explicit programming. Machine learning has proven to be a successful approach in predicting GRNs by utilizing co-expression patterns among TFs and their target genes <span class="citation" data-cites="Marbach2012">[@Marbach2012]</span>. This is achieved by harnessing the vast amount of publickly available microarray and next-generation sequencing RNA-Seq data <span class="citation" data-cites="geo">[@geo]</span>. These datasets, known as expression profiles, are represented as a matrix with dimensions <span class="math inline">\(m * n\)</span>. Where, <span class="math inline">\(m\)</span> represents the total number of genes expressed by an organism, and <span class="math inline">\(n\)</span> corresponds to the number of physiological conditions or experimental contexts in which gene expression was measured.</p>
+<p>In simple terms, gene expression varies across different physiological conditions, resulting in distinct features or attributes. Genes and TFs themselves can be used as training examples for machine learning. Unsupervised machine learning algorithms can classify genes into groups based on similar features, particularly correlated expression. Genes that belong to the same group are often co-regulated and have functional relationships, offering insights into potential TFs that drive their correlated expression when they are part of the same group <span class="citation" data-cites="Barzel2013">[@Barzel2013]</span>. Clustering algorithms are examples of unsupervised machine learning methods that can infer TF-gene relationships without prior knowledge.</p>
+<p>In contrast, supervised machine learning algorithms work with pre-defined groups. For instance, pairs of TFs and genes can be divided into two pre-defined groups: regulatory and non-regulatory pairs. In machine learning, these pre-defined groups are referred to as labels. Supervised algorithms learn a mathematical function, known as a classifier or model, to distinguish between labels by identifying label-specific patterns/rules from the input features <span class="citation" data-cites="Marbach2012">[@Marbach2012]</span>. The resulting classifier can then be used to assign the most appropriate labels to unclassified TF-gene pairs. The labeled data used to train the model is known as the gold standard or ground truth. Both types of machine learning utilize the inherent structure of the input data to uncover complex and hidden trends for classifying unlabeled examples, regardless of whether prior knowledge is available.</p>
+<p>In traditional machine learning, researchers typically manually engineer features to train algorithms. However, deep learning, a subset of machine learning that utilizes neural networks, has the ability to automatically learn features from input data <span class="citation" data-cites="SCHMIDHUBER201585 Lecun2015">[@SCHMIDHUBER201585; @Lecun2015]</span>. Deep learning models are structured into layers, with each layer responsible for transforming input data, extracting meaningful features that differentiate between labels, and generating output - the predicted labels. The depth of the model is determined by the number of layers it has. Within each layer, nodes or neurons perform calculations using activation functions, gradually transforming the data into more abstract representations <span class="citation" data-cites="Glorot2011 Cybenko1989">[@Glorot2011; @Cybenko1989]</span>. This process continues through the layers until the final output is produced. Through backpropagation, the model adjusts its parameters or weights to correct errors when the output doesn’t match the expected gold standard labels, thereby improving accuracy. The resulting classifier can then be used to classify unclassified TF-gene pairs into either regulatory or non-regulatory groups based on the associated features. Deep learning models excel in analyzing and combining multiple features, leading to higher accuracy and greater capability compared to traditional machine learning models.</p>
+<p>This chapter focuses on implementing a deep learning classifier using TensorFlow, an open-source software framework developed by Google. The classifier is built using the Keras API within the RStudio environment. The main goal of this chapter is to demonstrate a step-by-step protocol for predicting regulatory interactions between TFs and genes, using their expression profiles as the key features.</p>
+<p>The protocol utilizes publicly available gene expression data and gold standard information for <em>Escherichia coli</em>, obtained from the DREAM5 project publication <span class="citation" data-cites="Marbach2012">[@Marbach2012]</span>. It guides readers through essential steps including data preprocessing, designing the neural network architecture, model training and validation, and making predictions for novel regulatory interactions. Additionally, the chapter provides valuable insights into parameter tuning for deep learning models.</p>
+<p>By the end of this chapter, readers will have a comprehensive understanding of how to apply deep learning techniques to predict regulatory interactions between TFs and genes. This knowledge can be directly applied to their own research projects, enabling them to harness the power of deep learning in their investigations.</p>
+</section>
+<section id="material" class="level1">
+<h1>Material</h1>
+<section id="computational-and-software-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="computational-and-software-requirements">Computational and software requirements</h2>
+<ol type="1">
+<li><p>This protocol has been tested on a desktop computer/laptop with 8 GB RAM running Windows and Mac OS. The computer’s configuration required to fulfill learning and prediction tasks depend on the problem’s complexity and the size of the training and unlabeled data. It is recommended to avoid running other applications simultaneously.</p></li>
+<li><p>While this protocol contains sufficient details to be followed by scientists without programming experience, basic to intermediate R programming skills are expected.</p></li>
+<li><p>Download and install R and its graphical user interface, RStudio, from <a href="https://www.r-project.org" class="uri">https://www.r-project.org</a> and <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a>, respectively.</p></li>
+<li><p>To efficiently execute R commands and document the entire protocol, create a file in RStudio by navigating to the File menu, selecting New File, and then choosing R script. By default, the file will be named “untitled.R”. It is recommended to save this file with a meaningful name in the folder where you will execute this protocol.</p></li>
+<li><p>Next, go to the Session menu in RStudio, select Set Working Directory, and then click on To Source File Location, i.e., the directory where the untitled.R file was saved. This ensures that all the commands will be executed in the same directory, and the location will be used as a reference to import or export the data saved and generated for this protocol.</p></li>
+<li><p>Going forward, the “untitled.R” file will be used to input and save all R commands, allowing you to easily reproduce the results from scratch. To execute the commands, simply select them using the mouse or keyboard, and click on the “Run” option located in the top right corner of the file in RStudio. The output of the executed commands will be displayed in the console panel located below the file panel.</p></li>
+<li><p>This protocol relies on Keras and TensorFlow R packages, i.e., external libraries for deep learning-specific functions <span class="citation" data-cites="keras tensorflow">[@keras; @tensorflow]</span>. To install these packages, copy the commands described below to your “untitled.R” file, select them, and execute them using the Run option. For more details about the following commands, please refer to their source website: <a href="https://tensorflow.rstudio.com/install/" class="uri">https://tensorflow.rstudio.com/install/</a>, and also <a href="https://www.tensorflow.org/install" class="uri">https://www.tensorflow.org/install</a>.</p></li>
+<li><p>To install the tensorflow R package, run the following command:</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tensorflow"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="9" type="1">
+<li>Before using the tensorflow package, we need to load the reticulate library and configure R to use a Python installation. If you already have Python installed, you can skip the install_python() command and provide the path to the Python executable. Here’s an example of how to do it on macOS or Unix/Linux operating systems:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assuming python is not already installed</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>path_to_python <span class="ot">&lt;-</span> <span class="fu">install_python</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">virtualenv_create</span>(<span class="st">"r-reticulate"</span>, <span class="at">python =</span> path_to_python)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># assuming that the python is already installed and </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># executable is available in /usr/local/bin/ folder (check with /usr/bin/ also)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>path_to_python <span class="ot">&lt;-</span> <span class="st">"/usr/local/bin/python3"</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">virtualenv_create</span>(<span class="st">"r-reticulate"</span>, <span class="at">python =</span> path_to_python)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="10" type="1">
+<li>Next, use the install_tensorflow() function from the tensorflow package to install TensorFlow.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_tensorflow</span>(<span class="at">envname =</span> <span class="st">"r-reticulate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="11" type="1">
+<li>Alternatively, you can use the install_keras() function from the keras package to install TensorFlow along with some commonly used packages such as “scipy” and “tensorflow-datasets” as shown below.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"keras"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install_keras</span>(<span class="at">envname =</span> <span class="st">"r-reticulate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="12" type="1">
+<li>To confirm that the installation was successful, run the following command, which should return <em>tf.Tensor(b’Hello Tensorflow!’, shape=(), dtype=string)</em>. If not then try “install_tensorflow()” command again.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tf<span class="sc">$</span><span class="fu">constant</span>(<span class="st">"Hello Tensorflow!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="13" type="1">
+<li>Install following packages to facilitate data handling and analysis.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"readr"</span>, <span class="st">"tibble"</span>, <span class="st">"caret"</span>, <span class="st">"verification"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="data-requirements">Data requirements</h2>
+<ol type="1">
+<li><p>To begin, download Supplementary Data 1 from the DREAM5 network inference challenge publication (https://doi.org/10.1038/nmeth.2016) and unzip it in your current working directory. This action will create a directory named “DREAM5_network_inference_challenge.” For detailed information about this data, please refer to the original publication by Marbach et al. <span class="citation" data-cites="Marbach2012">[@Marbach2012]</span>. If you have your own data, it should have the format similar to that of first three files described below.</p></li>
+<li><p>The required data for Escherichia coli is present in the “Network3” folder and its sub-folders. Copy four files listed below from these sub-folders into your current working directory to proceed with the analysis..</p></li>
+<li><p><em>net3_expression_data.tsv</em>: This file contains the expression profile data.</p></li>
+<li><p><em>net3_transcription_factors.tsv</em>: This file contains the list of transcription factors.</p></li>
+<li><p><em>DREAM5_NetworkInference_GoldStandard_Network3.tsv</em>: This file contains the gold standard data, which includes both regulatory (positive examples) and non-regulatory (negative examples) TF-gene pairs.</p></li>
+<li><p><em>net3_gene_ids.tsv</em>: This file serves as a mapping between the anonymous gene codes used in other files and the original gene names.</p></li>
+</ol>
+</section>
+</section>
+<section id="methods" class="level1">
+<h1>Methods</h1>
+<section id="loading-r-libraries-and-preparing-workspace" class="level2">
+<h2 class="anchored" data-anchor-id="loading-r-libraries-and-preparing-workspace">Loading R libraries and preparing workspace</h2>
+<ol type="1">
+<li>Load the Keras and TensorFlow libraries for use in the current RStudio session as shown in below along with magrittr. The magrittr library provides a useful function called <em>pipe</em> (i.e., %&gt;%), which allows us to pass the output of one operation to another.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Set a random odd number as a seed in the set.seed function to reproduce the results of this workflow (see <strong>Note 1</strong>). If you use seed number other than 1979, your results will be slightly different than the discusseed in the following text.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1979</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-preparation-and-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation-and-exploration">Data preparation and exploration</h2>
+<ol type="1">
+<li>Import the gene expression data and store in a exp object and do a routine check up as shown below. <strong>Note 2</strong> enlists popular public resources to obtain gene expression data for species of interests.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_expression_data.tsv"</span>, <span class="at">header =</span> T)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">t</span>(exp)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(exp)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>exp[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The exp object is a data.frame containing the genes of <em>Escherichia coli</em> in the rows and their expression levels in diverse physiological conditions and time-points in the columns. Note that the genes are anonymized for the DREAM5 challenge <span class="citation" data-cites="Marbach2012">[@Marbach2012]</span>, and we will map them back to their original gene names later.</p>
+<ol start="2" type="1">
+<li>Normalization is a crucial step in data analysis, and gene expression data should be normalized if required (see <strong>Note 3</strong>). In this case, the data was already normalized, as indicated by the distribution plot generated using the following command and exported to PDF file i.e.&nbsp;<em>DeepLearning_Figure1.pdf</em>. The plot shows that the data is normally distributed and ready for further analysis (<a href="#fig-figure1">Figure&nbsp;1</a>).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(exp, <span class="dv">100</span>, <span class="at">col =</span> <span class="st">"darkgrey"</span>, <span class="at">border =</span> <span class="st">"white"</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Expression intensity'</span>, <span class="at">main =</span> <span class="st">"Gene expression"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># export plot to pdf file in the current directory</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">'DeepLearning_Figure1.pdf'</span>, </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">pointsize =</span> <span class="dv">10</span>, <span class="at">useDingbats =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(exp, <span class="dv">100</span>, <span class="at">col =</span> <span class="st">"darkgrey"</span>, <span class="at">border =</span> <span class="st">"white"</span>, </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Expression intensity'</span>, <span class="at">main =</span> <span class="st">"Gene expression"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fig-figure1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><embed src="DeepLearning_Figure1.pdf" style="height:100.0%" data-fig.pos="b"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: <strong>Expression distribution of Escherichia coli genes</strong>. The shape of the histogram reveals a normal distribution of expression data. This suggests that the expression data may not require additional processing.</figcaption><p></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Load the gold standard data using the read_table function from the readr package and display its contents, as shown below. <strong>Note 4</strong> enlists popular public resources that can be used to create gold standard data for species of interests.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>gold <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_table</span>(<span class="st">"DREAM5_NetworkInference_GoldStandard_Network3.tsv"</span>,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">col_names =</span> F)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>gold</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the gold object, the first two columns respectively list the TFs and genes, while the third column contains binary labels. A value of 1 in the label column indicates that experimental evidence exists for the regulation of the gene in column 2 by the transcription factor in column 1, while a value of 0 indicates that there is no known regulatory interaction between them.</p>
+<ol start="3" type="1">
+<li>With the following command, TFs and genes were retained in the gold standard data if they were also present in the expression data. Next, we use the table function from base R to count the number of regulatory and non-regulatory pairs.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gold <span class="ot">&lt;-</span> gold[gold<span class="sc">$</span>X1 <span class="sc">%in%</span> <span class="fu">rownames</span>(exp) <span class="sc">&amp;</span> gold<span class="sc">$</span>X2 <span class="sc">%in%</span> <span class="fu">rownames</span>(exp), ]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gold<span class="sc">$</span>X3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>The gold standard data is imbalanced, with 2066 regulatory pairs and 150,214 non-regulatory pairs. This is usually a common issue in biology, and training deep learning model on imbalanced gold standard can be tricky (see <strong>Note 5</strong>), which is explained in detail later. For time being, we will select all regulatory pairs and sample two times the number of non-regulatory pairs randomly as shown below. This is called down-sampling of majority class examples.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>keep_indices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">which</span>(gold<span class="sc">$</span>X3<span class="sc">==</span><span class="dv">1</span>), </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">sample</span>(<span class="fu">which</span>(gold<span class="sc">$</span>X3<span class="sc">==</span><span class="dv">0</span>), <span class="at">size =</span> <span class="fu">sum</span>(gold<span class="sc">$</span>X3)<span class="sc">*</span><span class="dv">2</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>gold <span class="ot">&lt;-</span> gold[keep_indices,]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gold<span class="sc">$</span>X3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>The data preparation process involves combining expression values for each TF-gene pair, allowing the raw data to be efficiently processed by a deep learning model for feature extraction. This step creates a data.frame that includes TF-gene pairs (optional) and their corresponding expression values. Next, the Pearson Correlation Coefficient (PCC) is calculated between the expression values of the TF and the gene in each pair. This correlation measure is a conventional approach for engineering features from raw data. The resulting correlation coefficients are added as a new column named “pcc” within the data.frame. Subsequently, labels are appended as the last column of the data.frame. The first two columns of the data.frame represent the names of the TF and gene, respectively. The remaining columns contain the expression values for the TF and gene, followed by the calculated PCC values between their expression values, and finally the gold standard label.</li>
+</ol>
+<p>To facilitate further analysis, the column names that correspond to the expression values and PCC are stored in the “featurenames” object, as they will serve as features for subsequent processing.</p>
+<p>The code snippet below demonstrates these steps:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>inputdata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">tf =</span> gold<span class="sc">$</span>X1, <span class="at">gene =</span> gold<span class="sc">$</span>X2, </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                        exp[gold<span class="sc">$</span>X1,], exp[gold<span class="sc">$</span>X2,])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>inputdata<span class="sc">$</span>pcc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">seq.int</span>(<span class="fu">dim</span>(gold)[<span class="dv">1</span>]), <span class="cf">function</span>(i) </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">cor</span>(exp[gold<span class="sc">$</span>X1[i],], exp[gold<span class="sc">$</span>X2[i],]))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>inputdata<span class="sc">$</span>class <span class="ot">&lt;-</span> gold<span class="sc">$</span>X3</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>inputdata <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(inputdata)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>featurenames <span class="ot">&lt;-</span> <span class="fu">colnames</span>(inputdata) <span class="sc">%&gt;%</span> <span class="fu">setdiff</span>(<span class="st">"class"</span>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setdiff</span>(<span class="st">"tf"</span>) <span class="sc">%&gt;%</span> <span class="fu">setdiff</span>(<span class="st">"gene"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>Machine learning models are built upon certain assumptions, that the input data inherently contains relevant structure for the classification task at hand. In our specific case, we assume that the expression of TFs is directly proportional to the expression of their target genes, as TFs regulate the activity of these genes. However, it’s important to acknowledge that this assumption may not always hold true due to various factors, such as post-translational modifications <span class="citation" data-cites="Deribe2010">[@Deribe2010]</span>. This introduces non-linearity into the input data, making machine learning in non-linear high-dimensional spaces challenging and potentially leading to the creation of poor models.</li>
+</ol>
+<p>Therefore, it is crucial to exercise caution when selecting data for modeling purposes. <a href="#fig-figure2">Figure&nbsp;2</a> visually illustrates a clear distinction between expression values of TF-gene regulatory pairs and randomly selected pairs, thus indicating the suitability of using supervised learning techniques. The provided code snippet generates <a href="#fig-figure2">Figure&nbsp;2</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>h1 <span class="ot">&lt;-</span> <span class="fu">hist</span>(<span class="fu">as.matrix</span>(inputdata[inputdata<span class="sc">$</span>class<span class="sc">==</span><span class="st">"1"</span>,featurenames]), </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">breaks =</span> <span class="dv">100</span>, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>h2 <span class="ot">&lt;-</span> <span class="fu">hist</span>(<span class="fu">as.matrix</span>(inputdata[inputdata<span class="sc">$</span>class<span class="sc">==</span><span class="st">"0"</span>,featurenames]), </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">breaks =</span> <span class="dv">100</span>, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">'DeepLearning_Figure2.pdf'</span>, </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">pointsize =</span> <span class="dv">10</span>, <span class="at">useDingbats =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(h2, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.4</span>), <span class="at">freq =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Expression intensity'</span>, </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribution of feature values for training data"</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(h1, <span class="at">xaxt =</span> <span class="st">'n'</span>, <span class="at">yaxt =</span> <span class="st">'n'</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.4</span>), </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fig-figure2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="DeepLearning_Figure2.png" style="height:100.0%" data-fig.pos="b" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: <strong>Expression distribution of Escherichia coli TF-gene pairs</strong>. The expression value distribution of non-regulatory TF-gene pairs shows unimodal normal distribution (purple color), while regulatory pairs show bimodal distribution, in which expression values surronding the first peak overlaps with the distribution of non-regulatory pairs, and the other peak ranges in a higher expression value zone, and distinct from the other two peaks. One of the explaination for this trend is that TF and genes of the regulatory pairs are dependant and express at higher levels than those form non-regulatory pairs. It indicate that expression data without processing contains regulatory signals and can be used for deep learning.</figcaption><p></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>In general, gold standard data is divided into training, validation, and test sets, which is for training the model, validating the performance while model is being produced, and to estimate the accuracy final model in real world data. The division is often based on availability of the data. Typically, 60-80% of the input data retains for training, while 40-20% is equally divided between validation and test datasets. The following code implements this process and create train,validation and test datasets in 80:10:10 proportions.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>indices <span class="ot">&lt;-</span> <span class="fu">nrow</span>(inputdata) <span class="sc">%&gt;%</span> <span class="fu">sample.int</span>(., <span class="fu">ceiling</span>( . <span class="sc">*</span> <span class="fl">0.8</span>))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>traindata <span class="ot">&lt;-</span> inputdata[indices, ]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>testdata <span class="ot">&lt;-</span> inputdata[<span class="sc">-</span>indices, ]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>indices <span class="ot">&lt;-</span> <span class="fu">nrow</span>(testdata) <span class="sc">%&gt;%</span> <span class="fu">sample.int</span>(., <span class="fu">ceiling</span>( . <span class="sc">*</span> <span class="fl">0.5</span>))</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>valdata <span class="ot">&lt;-</span> testdata[<span class="sc">-</span>indices, ]</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>testdata <span class="ot">&lt;-</span> testdata[indices, ]</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(traindata<span class="sc">$</span>class)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(valdata<span class="sc">$</span>class)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(testdata<span class="sc">$</span>class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="defining-deep-learning-model-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="defining-deep-learning-model-architecture">Defining deep learning model architecture</h2>
+<ol type="1">
+<li>To define the architecture of our deep learning model, we first create a sequential deep neural network (DNN) using the keras_model_sequential() function from the Keras library. We then add two dense layers using the layer_dense() function. The input layer is defined with the input_shape parameter, which needs to be equal to the total number of features in the input data or represents the shape of the features. Next, the single hidden layer contains 806 neurons and applies the “relu” activation function to introduce non-linearity in the layer’s output <span class="citation" data-cites="Glorot2011">@Glorot2011</span>. The second layer_dense() function adds another fully connected layer with a single output unit. This output layer computes a weighted sum of the inputs from the previous layer feeds and applies the sigmoid activation function to produce a probability value between 0 and 1 <span class="citation" data-cites="Cybenko1989">@Cybenko1989</span>, indicating the likelihood that the input corresponds to the positive class (regulatory pairs, in this case) based on input features. It is worth mentioning that successive layers are able to dynamically interpret the number of expected inputs based on the previous layer. Below is a typical code to define the DNN architecture.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set_random_seed</span>(<span class="dv">1979</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">keras_model_sequential</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">input_shape =</span> <span class="fu">c</span>(<span class="fu">length</span>(featurenames))) <span class="sc">%&gt;%</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">806</span>, <span class="at">activation =</span> <span class="st">"relu"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">1</span>, <span class="at">activation =</span> <span class="st">"sigmoid"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><p>The code above includes a set_random_seed function for setting a random seed for TensorFlow operations to reproduce deep learning model (see <strong>Note 6</strong>).</p></li>
+<li><p>The number of layers and units can be adjusted to improve the model’s capacity to learn, but too much capacity can lead to overfitting, and too low underfit the data (see <strong>Note 7</strong>). The single hidden layer contains 806 neurons which is equivalent to the total number of physiological conditions in the expression data (columns) and the pcc column representing PCC for each TF-gene pair.</p></li>
+<li><p>The summary function gives an overview of the model’s architecture. The model has a simple architecture with input layer which feeds feature matrix and labels to fully connected layers hidden layer with “relu” activation, and a another fully connected output layer with “sigmoid” activation to produces a single probability value for each training example of being regulatory pair.</p></li>
+</ol>
+</section>
+<section id="defining-model-compilation-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="defining-model-compilation-parameters">Defining Model Compilation Parameters</h2>
+<ol type="1">
+<li>To configure the learning process, the model’s compilation parameters are specified using the following code. During training, the DNN randomly assigns weights to all the neurons and their connections, and predicts the output. The DNN then assesses the accuracy of the output, and if necessary, automatically adjusts these weights to improve accuracy via the backpropagation process. The DNN requires an objective function to measure performance, which is referred to as the loss or objective function, as well as an optimizer function that directs learning towards the minimum loss by keeping track of previous best performances. The following code defines the compilation parameters for the DNN.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span> <span class="fu">compile</span>(<span class="at">optimizer =</span> <span class="fu">optimizer_adam</span>(),</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> <span class="at">loss =</span> <span class="st">"binary_crossentropy"</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a> <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">"accuracy"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><p>The compile() function configures the model.</p></li>
+<li><p>The optimizer_adam() function is a widely used optimization algorithm that computes adaptive learning rates for each parameter based on the moment estimates of the gradient and past gradients and helps neural network to converge faster <span class="citation" data-cites="kingma2017adam">@kingma2017adam</span>. See <strong>Note 8</strong> for more details on learning and optimizer.</p></li>
+<li><p>The loss function measures the difference between predicted and actual values. The “binary_crossentropy” loss function is commonly used for binary classification tasks.</p></li>
+<li><p>In the above example, the “accuracy” metric is used to calculate the percentage of correctly predicted labels by the model. Accuracy metric is fine for prototyping DNN, but use more reliable metrics for practical application (see <strong>Note 9</strong>).</p></li>
+</ol>
+</section>
+<section id="training-deep-learning-model" class="level2">
+<h2 class="anchored" data-anchor-id="training-deep-learning-model">Training deep learning model</h2>
+<ol type="1">
+<li>The following code chunk fits the DNN model to the training data and validates its performance using a validation dataset by using the fit() function:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(<span class="fu">as.matrix</span>(traindata[,featurenames]), </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                         traindata<span class="sc">$</span>class,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">epochs=</span><span class="dv">100</span>, <span class="at">batch_size =</span> <span class="dv">64</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">validation_data =</span> <span class="fu">list</span>(<span class="fu">as.matrix</span>(valdata[,featurenames]), </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                                valdata<span class="sc">$</span>class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li><p>The fit() function takes the training data in the form of a matrix of predictor variables, and the corresponding binary class labels, epochs, batch size, and validation data.</p></li>
+<li><p>Epochs determine how many times the entire dataset is used for training the DNN. More epochs can improve performance, but there is a risk of overfitting to the training data (see <strong>Note 10</strong>).</p></li>
+<li><p>Batch size refers to the number of examples processed together in each training iteration. Smaller batch sizes can improve generalization, but convergence may be slower. Larger batch sizes speed up training but may result in poorer generalization. The optimal batch size depends on the dataset size and available computational resources, especially memory (see <strong>Note 11</strong>).</p></li>
+<li><p>The code uses validation data (optional) to assess the model’s performance during training. Alternatively, use the validation_split parameter to specify the percentage of training data for validation (see <strong>Note 12</strong>). These parameters are optional and can be adjusted to suit the model and data requirements.</p></li>
+</ol>
+</section>
+<section id="estimating-the-accuracy-of-deep-learning-model" class="level2">
+<h2 class="anchored" data-anchor-id="estimating-the-accuracy-of-deep-learning-model">Estimating the accuracy of deep learning model</h2>
+<ol type="1">
+<li>The history object records the loss and accuracy during the training over specified number of epochs. This information can be used to quickly check the performance of the model during training. The print(history) command shows that at the final epoch, the loss was 0.4628 on training data which is higher than the validation data i.e.&nbsp;0.4296. Lower loss is better fit. Then, the accuracy was 0.7937 and 0.8174 respectively. We can also use evaluate function to compute accuracy and loss function over all epochs as shown below. The code plot(history) generates a plot of the training and validation loss and accuracy over the course of the training process. This visualization can help identify trends or patterns in the performance of the model.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(history)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluate</span>(model, <span class="at">x =</span> <span class="fu">as.matrix</span>(traindata[,featurenames]), <span class="at">y =</span> traindata<span class="sc">$</span>class)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluate</span>(model, <span class="at">x =</span> <span class="fu">as.matrix</span>(valdata[,featurenames]), <span class="at">y =</span> valdata<span class="sc">$</span>class)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(history)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>However, I prefer to access the ‘loss’ and ‘accuracy’ attributes from the history object, as this allows me the flexibility to visualize the data in a customized manner. For instance, <a href="#fig-figure3">Figure&nbsp;3</a> was generated using the customized code provided below.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">'DeepLearning_Figure3.pdf'</span>,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">pointsize =</span> <span class="dv">10</span>, <span class="at">useDingbats =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">cex =</span> <span class="fl">0.8</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>maxLoss <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">c</span>(history<span class="sc">$</span>metrics<span class="sc">$</span>loss, history<span class="sc">$</span>metrics<span class="sc">$</span>val_loss))</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(history<span class="sc">$</span>metrics<span class="sc">$</span>loss, <span class="at">main=</span><span class="st">"Model Loss"</span>, <span class="at">xlab =</span> <span class="st">"Epoch"</span>, <span class="at">ylab=</span><span class="st">"Loss"</span>, </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">length</span>(history<span class="sc">$</span>metrics<span class="sc">$</span>loss)), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, maxLoss),</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">"red2"</span>, <span class="at">type=</span><span class="st">"b"</span>,<span class="at">lwd=</span><span class="dv">1</span>)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(history<span class="sc">$</span>metrics<span class="sc">$</span>val_loss, <span class="at">col=</span><span class="st">"steelblue1"</span>, <span class="at">type=</span><span class="st">"b"</span>,<span class="at">lwd=</span><span class="dv">1</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="fu">c</span>(<span class="st">"Training"</span>,<span class="st">"Validation"</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="st">"red2"</span>, <span class="st">"steelblue1"</span>), </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">lty=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">bty =</span> <span class="st">"n"</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(history<span class="sc">$</span>metrics<span class="sc">$</span>accuracy, <span class="at">col=</span><span class="st">"red2"</span>, <span class="at">type=</span><span class="st">"b"</span>,<span class="at">lwd=</span><span class="dv">1</span>, </span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Model Accuracy"</span>, <span class="at">xlab =</span> <span class="st">"Epoch"</span>, <span class="at">ylab=</span><span class="st">"Accuracy"</span>, </span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">length</span>(history<span class="sc">$</span>metrics<span class="sc">$</span>accuracy)), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(history<span class="sc">$</span>metrics<span class="sc">$</span>val_accuracy, <span class="at">col=</span><span class="st">"steelblue1"</span>, <span class="at">type=</span><span class="st">"b"</span>,<span class="at">lwd=</span><span class="dv">1</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">"grey"</span>, <span class="at">lty =</span> <span class="dv">3</span>)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fig-figure3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="DeepLearning_Figure3.png" style="height:100.0%" data-fig.pos="b" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: <strong>Expression distribution of Escherichia coli TF-gene pairs</strong>. The distribution of expression values for non-regulatory TF-gene pairs follows a unimodal normal distribution (purple color). However, regulatory pairs exhibit a bimodal distribution (showed in reddish-orange colors). The first peak of the regulatory pairs’ distribution overlaps with the distribution of non-regulatory pairs, while the second peak corresponds to higher expression values (orange color) and is distinct from the other two peaks. One possible explanation for this trend is that the TF and genes in regulatory pairs are dependent on each other and express at higher levels compared to non-regulatory pairs.</figcaption><p></p>
+</figure>
+</div>
+<p>Upon observing the plot, we can identify certain inconsistencies (<a href="#fig-figure3">Figure&nbsp;3</a>). In a typical training process, the loss and accuracy gradually improve over multiple epochs, as evident in the plot. Initially, the loss experiences a steep decline up to the fifth epoch, after which it stabilizes from the tenth epoch onwards. The overall accuracy demonstrates a similar trend. These step-wise improvements indicate the model’s effectiveness as it undergoes more training. The accuracy and loss after 30 epochs do not change much and can be set as the optimum number for epochs.</p>
+<p>Ideally, the accuracy and loss on the validation data should not exceed those on the training data since the model is trained on the latter. However, our results violate this assumption because validation data has low loss and high accuracy than the training data. If such discrepancies occur, it could indicate issues with the training process, model architecture, or the training and validation data itself and often referred to as over- or under-fitting of the input data.</p>
+<p>In our specific case, multiple issues may coexist due to arbitrary parameter settings, incomplete gold standard data, an uneven distribution of positive and negative examples in the training and validation data, and the accuracy metric may not be good for our imbalanced data. However, these problems can be addressed during the model parameter tuning process, and explained in the next section. It is important to note that despite the model’s performance not being ideal, the features do support the assumed classification task. The improvements in the loss and accuracy functions during training are smooth and indicative of good performance. While there is an issue with training and validation accuracy, it is marginal and may be a result of the imbalance in the gold standard data. Hence, it is crucial to evaluate the model’s performance on the test data to estimate its practical accuracy.</p>
+<ol start="2" type="1">
+<li>The code provided below utilizes our model to predict the probabilities of outcomes for the test dataset, which is unlabelled and completely unknown to the model. This prediction is achieved by using the predict() function, and the resulting probabilities are stored in the variable predprob for further utilization.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>predprob <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">predict</span>(<span class="fu">as.matrix</span>(testdata[,featurenames]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>To evaluate the performance of the DNN model on the test data and compare it with the training and validation data, the confusionMatrix() function from the caret package can be used. This function takes the predicted class probabilities in a binary format, specifically using a threshold of 0.5 or above (i.e., as.numeric(predprob &gt; 0.5)), along with the true class labels. It then generates a table containing various important performance measures as shown below.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(indata, truelabels){</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span>  model <span class="sc">%&gt;%</span> <span class="fu">predict</span>(<span class="fu">as.matrix</span>(indata[,featurenames]))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(res<span class="sc">&gt;</span><span class="fl">0.5</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">factor</span>(res, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  caret<span class="sc">::</span><span class="fu">confusionMatrix</span>(res, <span class="fu">factor</span>(truelabels, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>)))</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>trainAccuracy <span class="ot">&lt;-</span> <span class="fu">f1</span>(traindata, traindata<span class="sc">$</span>class)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>validationAccuracy <span class="ot">&lt;-</span> <span class="fu">f1</span>(valdata, valdata<span class="sc">$</span>class)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>testAccuracy <span class="ot">&lt;-</span><span class="fu">f1</span>(testdata, testdata<span class="sc">$</span>class)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>performance <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">t</span>(<span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(<span class="fu">t</span>(trainAccuracy<span class="sc">$</span>byClass), </span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>                                           <span class="fu">t</span>(validationAccuracy<span class="sc">$</span>byClass), </span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>                                           <span class="fu">t</span>(testAccuracy<span class="sc">$</span>byClass)))),<span class="dv">3</span>)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(performance) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Traning"</span>, <span class="st">"Validation"</span>, <span class="st">"Test"</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>performance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The DNN model has an accuracy of 0.8323 on test data, which is again better than the 0.8072 of training data, with a sensitivity of 0.5638 and specificity of 0.9491. In other words, the features used for training are likely to distinguish 55.96% of real regulatory interactions and 94.91% of non-regulatory pairs in the unlabelled data.</p>
+<ol start="7" type="1">
+<li>Biologists may prefer to use a higher probability cutoff to avoid false positive results, even if it means predicting fewer regulatory interactions. The ROC curve is a perfect instrument which shows how the classifier’s performance changes at different threshold settings for guidance. In the following code, roc.plot function from verification package is used to plot ROC curve</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">'DeepLearning_Figure4.pdf'</span>,</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">pointsize =</span> <span class="dv">12</span>, <span class="at">useDingbats =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>verification<span class="sc">::</span><span class="fu">roc.plot</span>(testdata<span class="sc">$</span>class, predprob, </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">ylab =</span> <span class="st">"True Positive Rate"</span>, </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">xlab =</span> <span class="st">"False Positive Rate"</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="fl">0.5596</span>, <span class="at">col =</span> <span class="st">"red2"</span>, <span class="at">lty =</span> <span class="dv">3</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.0509</span>, <span class="at">col =</span> <span class="st">"steelblue1"</span>, <span class="at">lty =</span> <span class="dv">3</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fig-figure4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="DeepLearning_Figure4.png" style="height:100.0%" data-fig.pos="b" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: <strong>The Receiver Operating Characteristic (ROC) curve for the deep learning model’s performance on the test data</strong>. The ROC curve shows that the model’s discriminatory power and performance is very good at the standard probability value cutoff of 0.5, at which the proportion of actual negative cases incorrectly classified as positive i.e.&nbsp;false positive rate by the model are very low, and over 55% actual positive cases correctly classified as positive by the model, indicating that the model may perform well in practical applications.</figcaption><p></p>
+</figure>
+</div>
+<p>The commands provided above generate <a href="#fig-figure4">Figure&nbsp;4</a>, which illustrates the trade-off between the true positive rate (TPR or sensitivity) and the false positive rate (FPR or 1-specificity) at various probability cutoffs. This plot assists in determining the optimal probability cutoff value to achieve the best results. The 0.5 probability cutoff, which we used to estimate accuracy, is indicated on the plot. It shows that at this cutoff, only 5.09% of the predicted regulatory pairs are expected to be incorrect, while 55.96% of the predicted regulatory pairs will be correct.</p>
+<ol start="8" type="1">
+<li>In summary, all of the aforementioned results indicate that our model shows promising potential in practical applications. The following code shows that how to save the model for future use, and we also save performance table, expression and gold standard data which we all need to reproduce all the results or to make new better deep learning model.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save_model_hdf5</span>(model, <span class="st">"EcoliRegModel.h5"</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(exp, performance, gold, history, <span class="at">file =</span> <span class="st">"EcoliRegModel.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The save_model_hdf5() function saves the model in the Hierarchical Data Format version 5 (HDF5) file format. HDF5 is a file format designed to store and organize large amounts of numerical data. It is a binary file format that can store the model architecture, weights, optimizer state, and any other information related to the model.</p>
+<ol start="10" type="1">
+<li>To prepare for the next section, it is assumed that all the commands mentioned above have been saved in a file named “Untitled.R” or with a similarly informative name. If necessary, restart RStudio to ensure a smooth transition. Restarting may not be essential but it can potentially expedite the subsequent analysis by clearing data dump from memory, particularly the prediction of the global gene regulatory network (GRN). Alternatively, you can proceed to the next section after executing the following commands.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gc</span>()</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(history, testdata, traindata, valdata, predprob)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="predicting-genome-wide-regulatory-interactions" class="level2">
+<h2 class="anchored" data-anchor-id="predicting-genome-wide-regulatory-interactions">Predicting genome-wide regulatory interactions</h2>
+<ol type="1">
+<li>In this section, we will demonstrate how to evaluate the pairwise combinations of transcription factors (TFs) and genes in <em>Escherichia coli</em> using our model. We will assess the probability of these pairs being potential regulatory pairs. It’s important to note that the total number of TF-gene pairs for <em>Escherichia coli</em> exceeds a million and a half, and in higher organisms, the number is even greater. Consequently, most computers may struggle to handle the feature data for all these pairs, potentially causing crashes. Therefore, the following code is specifically provided for users who do not possess high-end computational resources. For those with ample computational resources, I recommend referring to the code provided in <strong>Note 13</strong>. As these codes can be used across different sessions of RStudio, they assume that the computer or RStudio has been restarted and the same directory has been set (can be verified using the getwd() function).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1979</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">load_model_hdf5</span>(<span class="st">"EcoliRegModel.h5"</span>)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co"># import expression data file</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">read.table</span>(<span class="st">"net3_expression_data.tsv"</span>, <span class="at">header =</span> T))</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co"># import original gene names mapping </span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>genenames <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_gene_ids.tsv"</span>, <span class="at">header =</span> F)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> genenames<span class="sc">$</span>V2; <span class="fu">names</span>(genes) <span class="ot">&lt;-</span> genenames<span class="sc">$</span>V1</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="co"># import list of all transcription factors of Escherichia coli</span></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="co"># tfs &lt;- names(genes)[genes %in% c("gadX", "flhC", "flhD","dnaA")] # trail run</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>tfs <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_transcription_factors.tsv"</span>, <span class="at">header =</span> F)<span class="sc">$</span>V1</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(tfs)<span class="sc">*</span><span class="fu">nrow</span>(exp)</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> tfs){</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>  tfdata <span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">tf =</span> i, <span class="at">gene =</span> <span class="fu">rownames</span>(exp), </span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tfname =</span> genes[i],</span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>                      <span class="at">genename =</span> genes[<span class="fu">rownames</span>(exp)])</span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>  tfdata <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(tfdata[tfdata<span class="sc">$</span>tf <span class="sc">!=</span> tfdata<span class="sc">$</span>gene,])</span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a>  inpreddata <span class="ot">&lt;-</span> <span class="fu">cbind</span>(exp[tfdata<span class="sc">$</span>tf,], exp[tfdata<span class="sc">$</span>gene,])</span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a>  inpreddata <span class="ot">&lt;-</span> <span class="fu">cbind</span>(inpreddata, </span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sapply</span>(<span class="fu">seq.int</span>(<span class="fu">dim</span>(tfdata)[<span class="dv">1</span>]), </span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a>                             <span class="cf">function</span>(i) </span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">cor</span>(exp[tfdata<span class="sc">$</span>tf[i],], </span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a>                                   exp[tfdata<span class="sc">$</span>gene[i],])))</span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a>  tfdata<span class="sc">$</span>probability <span class="ot">&lt;-</span> (model <span class="sc">%&gt;%</span> <span class="fu">predict</span>(inpreddata))[,<span class="dv">1</span>]</span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">rbind</span>(predictions, tfdata[tfdata<span class="sc">$</span>probability<span class="sc">&gt;</span><span class="fl">0.5</span>,])</span>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions[<span class="fu">rev</span>(<span class="fu">order</span>(predictions<span class="sc">$</span>probability)),]</span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a>predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Our model predicted only 80,225 as regulatory out of 1,506,674 TF-gene pairs. There are number of sophisticated ways to evaluate the predicted GRN <span class="citation" data-cites="Muley2022">[@Muley2022]</span>. Here, however, we will quickly select few TF-gene pairs with high probability of being regulatory, and will study them. Escherichi coli has many acid inducible systems which protect cells against acid stress to pH 2 or below. Of them, the glutamate depending system is the most effect and relies on two glutamate decarboxylases (GadA and GadB) combined with a putative glutamate:gamma-aminobutyric acid antiporter (GadC). According to our predictions, it appears to be regluated by OsmE, which is osmolarity inducible factor, however, there is no information exists that it regulates glutamate-dependant acid resistance system. though functionally it would make sense. The GadX is a known regulator of the acid resistance system. Also, master transcription factors associated with flagella biosynthesis and chemotaxis were among the highly ranked TF-gene pairs. So, lets check target genes of GadX, FlhC, and FlhD transcription factors.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>predictions[predictions<span class="sc">$</span>tfname<span class="sc">==</span><span class="st">"gadX"</span>,]</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>predictions[predictions<span class="sc">$</span>tfname<span class="sc">==</span><span class="st">"flhC"</span>,]</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>predictions[predictions<span class="sc">$</span>tfname<span class="sc">==</span><span class="st">"flhD"</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Our results suggests that GadX may regulate 16 genes at the probability cutoff of 0.5 or above, and of 16, five genes i.e.&nbsp;gadA, gadE gadB, gadC and gadW belong to glutamate dependant acid protection system, confirming the accuracy of our prediction system. Likewise, FlhC and FlhD regulates a large number of genes involved in flagellar assembly and chemotaxis reassuring our prediction system. The overlap of their target genes is 652, which is highly expected. One of the problem of deep learning algorithm is that they can memorize the training dataset and many of the predictions could be part of training or validation dataset. Therefore, lets remove all predictions that were part of the training, and again cross-check the results using following command. As you can see, there are still many predictions which were novel, and make perfect sense at functional level.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>predictions[<span class="sc">!</span><span class="fu">paste0</span>(predictions<span class="sc">$</span>tf,predictions<span class="sc">$</span>gene) <span class="sc">%in%</span>  </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>              <span class="fu">paste0</span>(inputdata<span class="sc">$</span>tf[inputdata<span class="sc">$</span>class<span class="sc">==</span><span class="dv">1</span>], </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                     inputdata<span class="sc">$</span>gene[inputdata<span class="sc">$</span>class<span class="sc">==</span><span class="dv">1</span>]),] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>To export results from prediction object to a tabular, csv or excel file, use following code. The third command requires writexl R package which should be installed using install.packages function. Likewise, you can also export the performance table.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(predictions, <span class="at">file =</span> <span class="st">"grnPredictionsEcoli.txt"</span>, </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">col.names =</span> T, <span class="at">row.names =</span> F, <span class="at">quote =</span> F, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(predictions, <span class="at">file =</span> <span class="st">"grnPredictionsEcoli.csv"</span>, <span class="at">row.names =</span> F)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(<span class="fu">list</span>(<span class="at">Table1 =</span> predictions), </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">path =</span> <span class="st">"grnPredictionsEcoli.xlsx"</span>, <span class="at">col_names =</span> T, )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tuning-deep-learning-for-improved-performance" class="level2">
+<h2 class="anchored" data-anchor-id="tuning-deep-learning-for-improved-performance">Tuning Deep Learning for Improved Performance</h2>
+<ol type="1">
+<li><p>Developing an accurate DNN requires considering crucial aspects and parameters. Deep learning deals with high-dimensional spaces and vast data in a complex representations, making it challenging to find the optimal model configuration. Classification accuracy depends on problem complexity, data quality, and training accuracy. Fine-tuning hyperparameters that affect training process through practice and experimentation is necessary. Various approaches can enhance model performance.</p></li>
+<li><p>By experimenting with different activation functions, optimization algorithms, and loss functions, you can fine-tune your deep learning model to achieve better performance and more accurate predictions.</p></li>
+<li><p>By changing the activation function, you can influence how the model learns and represents complex patterns. Experimenting with different activation functions like sigmoid, ReLU, or tanh can help improve the model’s performance in capturing non-linear relationships and making accurate predictions.</p></li>
+<li><p>The choice of the optimization algorithm affects how the model learns and converges to an optimal solution. Trying different optimization algorithms such as Adam, RMSprop, or stochastic gradient descent (SGD) can impact the speed of convergence and the quality of the final model. See <strong>Note 8</strong> for details and functions in Keras.</p></li>
+<li><p>The loss function measures the model’s performance during training and guides the learning process. Switching the loss function, such as using binary cross-entropy instead of mean squared error, can improve the model’s ability to handle classification tasks and optimize for the desired output.</p></li>
+<li><p>The design of the DNN involves carefully considering the number of layers and units, striking a balance between capturing complex relationships and avoiding overfitting for optimal configuration. Layers transform input data into meaningful representations, extracting relevant features. Deeper models with more layers learn intricate data representations, capture complex relationships, and discover abstract patterns. Most problems can be handled with one to three hidden layers, depending on linear and non-linear relationships in the features. The number of units within each layer impacts the model’s capacity. Setting the number of units based on the total input feature shape, gradually decreasing, enables capturing finer details in the data. Adding more layers or units can enhance learning and generalization, but overfitting to training data becomes a risk. Finding the right balance involves iterative refinement and experimentation for optimal configuration that achieves desired performance without overfitting. See <strong>Note 7</strong> also.</p></li>
+<li><p>Dropout is a regularization technique commonly used in deep learning models to prevent overfitting <span class="citation" data-cites="dropout JMLRv15srivastava14a">[@dropout; @JMLRv15srivastava14a]</span>. It involves randomly dropping a certain percentage of neurons or units in a layer during the training process. This dropout of neurons helps the network learn more robust and generalizable representations by reducing the reliance on specific input patterns. By randomly removing neurons, layer_dropout encourages the model to learn from different subsets of neurons, making it less sensitive to individual neurons and reducing the risk of overfitting. The dropout rate, which represents the proportion of neurons to be dropped, is an important hyperparameter that can be tuned to achieve optimal performance and prevent overfitting.</p></li>
+<li><p>The learning rate is a crucial parameter that determines the size of the steps taken by the model during training, influencing both the speed of convergence and the overall performance. If the learning rate is set too high, it can cause divergence, leading to a deterioration in the model’s performance. On the other hand, a very low learning rate can result in slow convergence, prolonging the training process. It is common to start with default learning rates, which typically yield satisfactory results, and then fine-tune them as needed within the range of 0 to 1. The learning rate can be adjusted using the optimizer object, such as optimizer_adam(learning_rate = 0.001) in the compile function.</p></li>
+<li><p>During each epoch, the model goes through one complete iteration of the training dataset, updating its parameters (weights and biases) based on observed patterns and the optimization algorithm. Performing multiple epochs is essential for the model to improve its predictions and overall performance. Choosing the appropriate number of epochs is a critical hyperparameter selection, ensuring a balance between learning meaningful patterns and preventing overfitting.</p></li>
+<li><p>In deep learning, training is commonly performed using mini-batches, which involve dividing the entire training dataset into smaller subsets. The batch size refers to the number of training examples processed together before the model updates its internal parameters (weights and biases) based on computed gradients. Larger batch sizes can lead to faster training as more samples are processed in parallel, but they also require more memory. Conversely, smaller batch sizes allow for more frequent model updates and may potentially improve generalization. Choosing an optimal batch size depends on factors such as computational resources, dataset size, and model complexity. It often involves striking a balance between training speed and memory usage. For example, if the training data consists of 10 examples and a batch size of 5 is used, one epoch would require two passes of the training examples (10/5). The weights are adjusted batch size times per epoch. Experimenting with different batch sizes is recommended to find the optimal balance for a specific deep learning task. See <strong>Note 11</strong> for more details.</p></li>
+<li><p>Batch normalization has been shown to reduce the need for a large number of training steps and, in some cases, the use of dropout, resulting in stable and faster convergence, particularly with higher learning rates <span class="citation" data-cites="pmlrv37ioffe15">[@pmlrv37ioffe15]</span>. However, it has also been observed that using batch normalization in conjunction with dropout can sometimes lead to a decrease in performance. It is worth noting that our model, when included batch normalization for training, achieves 100% accuracy on the training set. Nevertheless, it is essential to interpret such results with caution and not solely rely on exact accuracy as an indicator of model performance. Achieving perfect accuracy may be indicative of overfitting, where the model memorizes the training data without truly understanding the underlying patterns. Therefore, it is crucial to evaluate the model’s ability to generalize to unseen examples by assessing its performance on separate validation or test data. Additionally, considering other evaluation metrics and techniques, such as cross-validation or precision and recall analysis, can provide a more comprehensive understanding of the model’s capabilities. Adopting this mindset will enable the development of reliable and robust machine learning models. It can be implemented in code using layer_batch_normalization() function, right after each hidden layer.</p></li>
+<li><p>Imbalanced training data, where positive and negative examples are unevenly represented, can introduce bias in the learning process. To mitigate this issue, various techniques such as stratification through over- or down-sampling and assigning different weights to classes have been proposed and extensively discussed in the literature. For coding examples related to handling imbalanced data, please refer to <strong>Note 5</strong>.</p></li>
+<li><p>Data augmentation is a technique commonly used in deep learning to expand the training dataset artificially. It involves applying various transformations, such as rotation, scaling, flipping, cropping, or adding noise, to the existing data. By diversifying the training data, data augmentation helps prevent overfitting and enhances the model’s ability to generalize to new, unseen examples. Please refer to <strong>Note 5</strong> also.</p></li>
+<li><p>When evaluating model performance, it is important to consider both data-driven and field-specific preferences. For imbalanced training data, precision and recall metrics provide more meaningful insights than overall accuracy. It is crucial to use performance metrics wisely to guide model training, ensuring that the model is not biased towards the majority class. For coding examples related to handling performance metrics, please refer to <strong>Note 9</strong>.</p></li>
+<li><p>Callbacks are functions that offer customization options for the training process of a deep learning model. They allow for monitoring the model’s progress during training and performing specific actions based on certain conditions. Examples of actions that can be taken using callbacks include saving model weights, adjusting the learning rate, early stopping, and logging metrics. By leveraging callbacks, deep learning models can be tailored to achieve improved performance, efficiency, and customization. For coding examples related to callbacks, please refer to <strong>Note 14</strong>.</p></li>
+<li><p>The R ecosystem provides extensive support and packages that can be utilized with the Keras R API for finding optimal hyperparameters in deep learning model development. One such package is kerasTuner, which is specifically designed for hyperparameter tuning with Keras models. It offers a user-friendly interface for defining a search space of hyperparameters and performing hyperparameter optimization using techniques like random search, hyperband, or Bayesian optimization. The seamless integration of kerasTuner with the Keras R API enables efficient identification of the best hyperparameters for deep learning models.</p></li>
+<li><p>I recommend users to explore prototype examples of deep learning available at https://tensorflow.rstudio.com/examples/. These examples serve as valuable resources for understanding and implementing deep learning techniques.</p></li>
+</ol>
+</section>
+</section>
+<section id="notes" class="level1">
+<h1>Notes</h1>
+<ol type="1">
+<li><p>Randomization is often involved in data analysis or machine learning tasks, such as shuffling datasets or initializing weights in neural networks. Setting the seed ensures that the same set of random numbers is generated each time the code is run. This is particularly useful when you need to reproduce and debug results or share code with others, ensuring consistent outcomes. The seed should be declared at the beginning of your script or function with any non-negative integer value, to ensure consistent results throughout your code.</p></li>
+<li><p>DNA microarray, RNA-Seq, and single-cell RNA-Seq data are accessible for several species and almost all model organisms through several public repositories. I recommend users to explore the NCBI Gene Expression Omnibus (GEO) <span class="citation" data-cites="geo">[@geo]</span>, EBI ArrayExpress <span class="citation" data-cites="arrayexpress">[@arrayexpress]</span>, PanglaoDB <span class="citation" data-cites="panglaodb">[@panglaodb]</span>, and recount<span class="citation" data-cites="recount">[@recount]</span> databases which offer processed gene expression and transcriptomic data that have undergone quality control, normalization, and sometimes additional analysis. For time series, cells, and tissues data, the FANTOM5 consortium <span class="citation" data-cites="fantom5">[@fantom5]</span> and The Genotype-Tissue Expression Project (GTEx) <span class="citation" data-cites="gtex">[@gtex]</span> databases provide valuable resources. Additionally, for next-generation sequencing raw data, the NCBI Sequence Read Archive (SRA) is a valuable repository <span class="citation" data-cites="sra">[@sra]</span>.</p></li>
+<li><p>Normalization of gene expression, RNA-seq, and scRNA-seq data is a statistical process that adjusts the expression values to remove systematic biases and variability, allowing for meaningful comparisons and accurate analysis of gene expression levels across samples or cells <span class="citation" data-cites="rnaseqnorm arraynorm scRNAseqanalysis">[@rnaseqnorm; @arraynorm; @scRNAseqanalysis]</span>. R/Bioconductor has several excellent packages to perform normalization seamlessly, which users should explore on their own.</p></li>
+<li><p>Researchers assemble GRN gold standard usually from experimentally derived regulatory interactions reported in literature and databases <span class="citation" data-cites="GarciaAlonso01082019">[@GarciaAlonso01082019]</span>. For instance, I have assembled human transcriptional regulatory network from 14 resources which can be used for benchmarking predictions in humans <span class="citation" data-cites="Muley2022">[@Muley2022]</span>, while TFLink database provide such information for few more model organisms <span class="citation" data-cites="tflink">[@tflink]</span>. JASPAR database is worth to explore to create a GRN based on information available in other species <span class="citation" data-cites="jaspar">[@jaspar]</span>.</p></li>
+<li><p>Imbalanced data is a common challenge in biology, making training deep learning models tricky <span class="citation" data-cites="golddeeplearning">[@golddeeplearning]</span>. R packages such as caret, ROSE, and smote <span class="citation" data-cites="caret rose smote">[@caret; @rose; @smote]</span> are popular resources for addressing imbalanced data. While the smotefamily package utilizes the SMOTE algorithm to generate synthetic samples of the minority class. Another approach is to down-size the majority class examples to make them compatible with minority class. I have used this approach for our problem. Also, I often prefer the class weight approach. In the provided code snippet, the “class_weight” parameter is used during model training for binary classification. By calculating class weights based on the class distribution in the training data, and passing them as the “class_weight” argument in the fit function, you can assign higher weights to the minority class and lower weights to the majority class. This enables the model to effectively handle class imbalance during optimization, prioritizing the minority class samples for better learning outcomes.</p></li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="6" type="1">
+<li><p>The purpose of set_random_seed() is similar to that of set.seed(), as mentioned in <strong>Note 1</strong>. The key distinction is that set_random_seed() specifically sets a seed for TensorFlow operations, ensuring reproducibility of the training process. However, in practice users should confirmed robustness of the obtained results with many seed number. Its rare but sometimes set_random_seed function does not work, and throw error about version of TensorFlow, in that case, it should work after installing tensorflow again using “install_tensorflow()” command.</p></li>
+<li><p>The number of layers and neurons (units) in a neural network can be adjusted to enhance its learning capacity <span class="citation" data-cites="layersneurons">[@layersneurons]</span>. However, there is no definitive rule on how many layers and neurons a network should have for a given dataset. If the data is linearly separable, multiple hidden layers may not be necessary. It is generally recommended to keep the number of hidden layers as minimal as possible. The number of neurons in a layer can be determined based on the shape of your training data. Typically, the number of neurons in a layer is equal to the number of features (columns) in your data. Some network configurations add an additional node for a bias term. It is crucial to maintain a low number of nodes to ensure the network’s ability to generalize well. Having an excessive number of nodes may cause the network to perfectly recall the training set but perform poorly on new, unseen samples. The following code shows how to include more layer but there are numbe of different ways one can add layers and decide on number of neurons. Usually in each successive layers, the number of neurons are decreased.</p></li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="8" type="1">
+<li><p>Optimization functions in Keras R library are algorithms that optimize the weights and biases of a neural network during the training process. These functions help in finding the optimal set of parameters that minimize the loss function and improve the model’s performance. Keras R API provides several commonly used optimization functions such as optimizer_adam(), optimizer_sgd() for Stochastic Gradient Descent and optimizer_rmsprop() for RMSprop. Learning rate is an important hyperparameter that defines the speed of learning and can be set with learning_rate parameter. For example, optimizer_adam(learning_rate = 0.00001).</p></li>
+<li><p>Accuracy can be misleading when dealing with imbalanced datasets as it does not account for class imbalance. Recall and precision metrics are often preferred over accuracy in most scenarios, especially when the cost of false positives and false negatives differs significantly. Recall measures the proportion of true positive cases correctly identified, while precision measures the proportion of correctly identified positive cases. These metrics provide a more comprehensive understanding of the model’s performance, especially when the focus is on correctly identifying specific classes or minimizing false positives/negatives. These metrics could be set in with the complie() function as shown below. Remove comment (#) character to include the metric for training.</p></li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="10" type="1">
+<li><p>To set the number of epochs for training, start with a small value like 10 or 20 to evaluate initial performance and identify any issues. Since the optimal number of epochs varies based on the dataset and problem, it’s crucial to experiment and fine-tune this parameter for optimal results. Monitor the training and validation loss during training; ideally, the loss should decrease. However, if the training loss continues to decrease while the validation loss increases, it suggests overfitting. To prevent overfitting, implement early stopping (see callbacks function), which allows you to halt training if the validation loss stagnates or deteriorates after a certain number of epochs. Lastly, consider the computational resources and time constraints available, as training deep learning models can be computationally demanding. Striking a balance between model performance and practical limitations is key.</p></li>
+<li><p>The batch size in deep learning determines the number of training examples processed in each iteration. It plays a crucial role in efficient model training. Choosing an appropriate batch size is important, as it impacts convergence speed and computational efficiency. Smaller batch sizes, such as 32 or 64, enable faster updates of model parameters but may introduce more noise and slower convergence. On the other hand, larger batch sizes enhance stability and convergence but require more memory and computational resources. It is recommended to experiment with different batch sizes based on the available resources, considering the trade-off between convergence speed and computational efficiency.</p></li>
+<li><p>The code uses validation data (optional) to assess the model’s performance during training. Alternatively, use the validation_split parameter to specify the percentage of training data for validation. For example, in the fit function, you can set validation_split = 0.15 parameter to use 15% of training data for validation. These parameters are optional and can be adjusted to suit the model and data requirements.</p></li>
+<li><p>An alternative code for prediction of GRN on high-end computational resources.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1979</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">load_model_hdf5</span>(<span class="st">"EcoliRegModel.h5"</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># import expression data file</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">read.table</span>(<span class="st">"net3_expression_data.tsv"</span>, <span class="at">header =</span> T))</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># import original gene names mapping </span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>genenames <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_gene_ids.tsv"</span>, <span class="at">header =</span> F)</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> genenames<span class="sc">$</span>V2; <span class="fu">names</span>(genes) <span class="ot">&lt;-</span> genenames<span class="sc">$</span>V1</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co"># import list of all transcription factors of Escherichia coli</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>tfs <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_transcription_factors.tsv"</span>, <span class="at">header =</span> F)<span class="sc">$</span>V1</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co"># create all possible pairs between tanscription factors and genes</span></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(tfs,  <span class="fu">rownames</span>(exp), <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(all_pairs[predictions<span class="sc">$</span>Var1 <span class="sc">!=</span> predictions<span class="sc">$</span>Var2,])</span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a><span class="co"># add original gene names</span></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>tfname <span class="ot">&lt;-</span> genes[predictions<span class="sc">$</span>Var1]</span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>genename <span class="ot">&lt;-</span> genes[predictions<span class="sc">$</span>Var2]</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a><span class="co"># create feature table</span></span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>inpreddata <span class="ot">&lt;-</span> <span class="fu">cbind</span>(exp[predictions<span class="sc">$</span>Var1,], exp[predictions<span class="sc">$</span>Var2,])</span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>inpreddata<span class="sc">$</span>pcc  <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">seq.int</span>(<span class="fu">dim</span>(predictions)[<span class="dv">1</span>]), </span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>                          <span class="cf">function</span>(i) <span class="fu">cor</span>(exp[predictions<span class="sc">$</span>Var1[i],], </span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>                                          exp[predictions<span class="sc">$</span>Var2[i],]))<span class="er">)</span></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a><span class="co"># predict regulatory pairs</span></span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>probability <span class="ot">&lt;-</span> (model <span class="sc">%&gt;%</span> <span class="fu">predict</span>(inpreddata))[,<span class="dv">1</span>]</span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions[predictions<span class="sc">$</span>probability<span class="sc">&gt;</span><span class="fl">0.5</span>,]</span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions[<span class="fu">rev</span>(<span class="fu">order</span>(predictions<span class="sc">$</span>probability)),]</span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>predictions </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="14" type="1">
+<li>Callback functions are handy to control the training as per our desires. In the following code, I have provided examples of small functions that we will use to control the training process dynamically.</li>
+</ol>
+<p>EarlyStopping Callback: This callback monitors the validation loss and stops the training if the validation loss does not improve after a certain number of epochs (defined by the “patience” parameter).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>early_stopping <span class="ot">&lt;-</span> <span class="fu">callback_early_stopping</span>(<span class="at">monitor =</span> <span class="st">"val_loss"</span>, <span class="at">patience =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>ModelCheckpoint Callback: This callback saves the model weights to a file (“best_model.h5”) whenever the validation accuracy improves. By setting “save_best_only” to True, it only saves the best model based on the monitored metric..</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>model_checkpoint <span class="ot">&lt;-</span> <span class="fu">callback_model_checkpoint</span>(<span class="at">filepath =</span> <span class="st">"best_model.h5"</span>, </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">monitor =</span> <span class="st">"val_accuracy"</span>, </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">save_best_only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>ReduceLROnPlateau Callback: This callback reduces the learning rate when the validation loss plateaus. The learning rate is multiplied by the “factor” parameter, and “patience” determines the number of epochs to wait before reducing the learning rate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>reduce_lr <span class="ot">&lt;-</span> <span class="fu">callback_reduce_lr_on_plateau</span>(<span class="at">monitor =</span> <span class="st">"val_loss"</span>, </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">factor =</span> <span class="fl">0.1</span>, <span class="at">patience =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>TensorBoard: This callback enables logging for TensorBoard, which is a visualization tool for monitoring the training process. It creates logs that can be visualized using TensorBoard.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>tensorboard <span class="ot">&lt;-</span> <span class="fu">callback_tensorboard</span>(<span class="at">log_dir =</span> <span class="st">"logs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once callback functions are defined they can be incorporated during training as shown below for early_stopping and reduce_lr callback functions, but you can have as many functions as you want.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(<span class="fu">as.matrix</span>(traindata[,featurenames]), traindata<span class="sc">$</span>class,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">epochs=</span><span class="dv">40</span>, <span class="at">batch_size =</span> <span class="dv">50</span>, <span class="at">validation_split=</span><span class="fl">0.2</span>,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">callbacks =</span> <span class="fu">list</span>(early_stopping, reduce_lr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{yogeshmuley2023,
+  author = {Vijaykumar Yogesh Muley},
+  title = {Deep {Learning} for {Predicting} {Gene} {Regulatory}
+    {Networks:} {A} {Step-by-Step} {Protocol} in {R}},
+  journal = {Methods in Molecular Biology},
+  volume = {2719},
+  date = {2023-08-01},
+  url = {https://doi.org/10.1007/978-1-0716-3461-5_15},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-yogeshmuley2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Vijaykumar Yogesh Muley. 2023. <span>“Deep Learning for Predicting Gene
+Regulatory Networks: A Step-by-Step Protocol in R.”</span> <em>Methods
+in Molecular Biology</em> 2719 (August). <a href="https://doi.org/10.1007/978-1-0716-3461-5_15">https://doi.org/10.1007/978-1-0716-3461-5_15</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/^(?:http:|https:)\/\/www\.quarto\.org\/custom/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">© 2023 Vijaykumar Muley. All rights reserved.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -1,6 +1,14 @@
 [
   {
     "listing": "/resources.html",
-    "items": []
+    "items": [
+      "/posts/mimbgrn/index.html"
+    ]
+  },
+  {
+    "listing": "/protocols.html",
+    "items": [
+      "/posts/mimbgrn/index.html"
+    ]
   }
 ]
