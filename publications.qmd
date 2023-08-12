@@ -142,9 +142,6 @@ Kamble KD, More A, **Muley VY**. (2012): *Effect of incubation on DNase producti
 
 ## In process/Preprints (Upcoming)
 
-**Muley VY\***. (2023): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **Proof submitted, in production**
-
-**Muley VY\***. (2023): *Prediction and Analysis of Transcription Factor Binding Sites: Practical examples using R programming*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **Proof submitted, in production**
 
 Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O\*. (2023): *Microbial colonization dynamics of the posnatal digestive tract of calves*, **Under Revision**
 
@@ -160,6 +157,10 @@ Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kam
 
 ## In preparation
 
+**Muley VY\***. (2023): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **Proof submitted, in production**
+
+**Muley VY\***. (2023): *Prediction and Analysis of Transcription Factor Binding Sites: Practical examples using R programming*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **Proof submitted, in production**
+  
 **Muley VY\***. (2023): *Transcriptional Regulation of EOMES Gene Promoter*, **Submitted**
 
 ```

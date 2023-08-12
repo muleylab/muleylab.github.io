@@ -18,15 +18,11 @@ draft: false
 
 ## Computational and software requirements
 
-1.  Install tensorflow R package
 
 ```{r, eval=FALSE}
 install.packages("tensorflow")
 ```
 
-2.  TensorFlow uses Python programming language. Therefore, R should be configured to use Python
-
-3. If Python is already installed on computer then use following commands to configure R to use Python installation. 
 
 ```{r, eval=FALSE}
 library(reticulate)
@@ -35,9 +31,6 @@ virtualenv_create("r-reticulate", python = path_to_python)
 
 ```
 
-Here, we just provide a path to python executable (in this case, it is Python version 3). On macOS or Unix/Linux systems python"s default location is /usr/local/bin/ folder. However, users should confirm the correct path on computers. 
-
-3. If Python is not installed on computer then use following commands to install Python and then configure R. 
 
 ```{r, eval=FALSE}
 
@@ -47,18 +40,12 @@ virtualenv_create("r-reticulate", python = path_to_python)
 
 ```
 
-
-10. Next, use the install_tensorflow() function from the tensorflow package to install TensorFlow.
 
 ```{r, eval=FALSE}
 library(tensorflow)
 install_tensorflow(envname = "r-reticulate")
 ```
 
-11. Use the install_keras() function
-    from the keras package to install TensorFlow along with
-    some commonly used packages such as "scipy" and
-    "tensorflow-datasets" as shown below.
 
 ```{r, eval=FALSE}
 install.packages("keras")
@@ -66,43 +53,19 @@ library(keras)
 install_keras(envname = "r-reticulate")
 ```
 
-12. To confirm that the installation was successful, run the
-    following command, which should return
-    *tf.Tensor(b"Hello Tensorflow!", shape=(),
-    dtype=string)*. If not then try "install_tensorflow()" command again. 
 
 ```{r, eval=FALSE}
 library(tensorflow)
 tf$constant("Hello Tensorflow!")
 ```
 
-13. Install following packages to facilitate data handling
-    and analysis.
-
 ```{r, eval=FALSE}
 install.packages(c("readr", "tibble", "caret", "verification"))
 ```
 
-## Data requirements
-
-1. Download Supplementary Data 1 from the DREAM5 network inference challenge publication (https://doi.org/10.1038/nmeth.2016) and unzip it in your current working directory. Go to nealy created "DREAM5_network_inference_challenge" directory. 
-
-2. The required data for Escherichia coli is present in the "Network3" folder and its sub-folders. Copy four files listed below from these sub-folders into your current working directory to proceed with the analysis..
-
-3. *net3_expression_data.tsv*: This file contains the expression profile data.
-
-4. *net3_transcription_factors.tsv*: This file contains the list of transcription factors.
-
-5. *DREAM5_NetworkInference_GoldStandard_Network3.tsv*: This file contains the gold standard data, which includes both regulatory (positive examples) and non-regulatory (negative examples) TF-gene pairs.
-
-6. *net3_gene_ids.tsv*: This file serves as a mapping between the anonymous gene codes used in other files and the original gene names.
-
 
 # Methods
 
-## Load R libraries
-
-1. 
 
 ```{r, eval=FALSE}
 library(magrittr)
@@ -110,17 +73,10 @@ library(keras)
 library(tensorflow)
 ```
 
-2.  Set a random odd number as a seed in the set.seed 
-    function to reproduce the results of this workflow. 
-
 ```{r, eval=FALSE}
 set.seed(1979)
 ```
 
-## Data preparation and exploration
-
-1.  Import the gene expression data and store in a exp
-    object and do a routine check up as shown below. 
 
 ```{r, eval=FALSE}
 exp <- read.table("net3_expression_data.tsv", header = T)
@@ -129,7 +85,6 @@ dim(exp)
 exp[1:5,1:5]
 ```
 
-2.  Plot distribution of expression values to check trends in the data.
 
 ```{r, eval=FALSE}
 # plot
@@ -146,8 +101,6 @@ dev.off()
 ```
 
 
-3.  Load the gold standard data.
-
 ```{r, eval=FALSE}
 gold <- readr::read_table("DREAM5_NetworkInference_GoldStandard_Network3.tsv",
                           col_names = F)
@@ -155,15 +108,7 @@ gold
 
 ```
 
-In the gold object, the first two columns respectively list
-the TFs and genes, while the third column
-contains binary labels. A value of 1 in the label column
-indicates that experimental evidence exists for the
-regulation of the gene in column 2 by the transcription
-factor in column 1, while a value of 0 indicates that there
-is no known regulatory interaction between them.
 
-3.  Make expression and gold standard data compatible.
 
 ```{r, eval=FALSE}
 gold <- gold[gold$X1 %in% rownames(exp) & gold$X2 %in% rownames(exp), ]
@@ -171,8 +116,6 @@ table(gold$X3)
 
 ```
 
-4.  The gold standard data is imbalanced, with 2066
-    regulatory pairs and 150,214 non-regulatory pairs. Lets down-sample majority class examples randomly so that they are two times more than that of regulatory pairs.
 
 ```{r, eval=FALSE}
 keep_indices <- c(which(gold$X3==1), 
@@ -182,9 +125,6 @@ table(gold$X3)
 
 ```
 
-5. In the next step, we create a feature table containing raw expression data for TF-gene pair, and we will manually create a feature which represent pearson correlation coefficients between expression profiles of transcription factors and genes. This correlation measure is a conventional approach for engineering features from raw data. The resulting correlation coefficients are added as a new column named "pcc" within the data.frame. Subsequently, labels are appended as the last column of the data.frame. The first two columns of the data.frame represent the names of the TF and gene, respectively. The remaining columns contain the expression values for the TF and gene, followed by the calculated PCC values between their expression values, and finally the gold standard label. To facilitate further analysis, the column names that correspond to the expression values and PCC are stored in the "featurenames" object, as they will serve as features for subsequent processing.
-
-The code snippet below demonstrates these steps:
 
 ```{r, eval=FALSE}
 
@@ -201,7 +141,6 @@ featurenames <- colnames(inputdata) %>% setdiff("class")  %>%
 
 ```
 
-6. Lets plot feature data points for regulatory and non-regulatory pairs to see if there are any visible trend which can distinguish them based on our data.
 
 ```{r, eval=FALSE}
 h1 <- hist(as.matrix(inputdata[inputdata$class=="1",featurenames]), 
@@ -221,7 +160,6 @@ dev.off()
 
 ```
 
-7.  The following code implements division of gold standard data into training, validation and test datasets in 80:10:10 proportions. The proportions are subjective. 
 
 ```{r, eval=FALSE}
 
@@ -237,31 +175,7 @@ table(testdata$class)
 
 ```
 
-## Defining deep learning model architecture
 
-1.  Lets create a sequential deep neural network (DNN) using the
-    keras_model_sequential() function from the Keras
-    library. We then add two dense layers using the
-    layer_dense() function. The input layer is defined with
-    the input_shape parameter, which needs to be equal to
-    the total number of features in the input data or represents the shape of the features. Next, the
-    single hidden layer contains 806 neurons and applies the
-    "relu" activation function to introduce non-linearity in
-    the layer"s output. The second layer_dense()
-    function adds another fully connected layer with a
-    single output unit. This output layer computes a
-    weighted sum of the inputs from the previous layer feeds
-    and applies the sigmoid activation function to produce a
-    probability value between 0 and 1,
-    indicating the likelihood that the input corresponds to
-    the positive class (regulatory pairs, in this case) based on input features. 
-
-2.  The code below sets a random seed for tensorflow using set_random_seed function. Then, creates a sequential deep neural network (DNN) using the keras_model_sequential() function from the Keras library. The DNN model has a simple architecture with
-    input layer which feeds feature matrix and labels to fully connected layers hidden layer with "relu"
-    activation, and a another fully connected output layer with "sigmoid"
-    activation to produces a single probability value for
-    each training example of being regulatory pair. The summary function shows an overview of the model"s
-    architecture. 
     
 ```{r, eval=FALSE}
 set_random_seed(1979)
@@ -276,22 +190,7 @@ summary(model)
 ```
 
 
-## Defining Model Compilation Parameters
 
-1.  To configure the learning process, the model"s
-    compilation parameters are specified using the following
-    code. The compile() function configures the model. The optimizer_adam() function is a widely used
-    optimization algorithm that computes adaptive learning
-    rates for each parameter based on the moment estimates
-    of the gradient and past gradients and helps neural
-    network to converge faster. The loss function measures the difference between
-    predicted and actual values. The "binary_crossentropy"
-    loss function is commonly used for binary classification
-    tasks. IThe "accuracy" metric is used to
-    calculate the percentage of correctly predicted labels
-    by the model. Accuracy metric is fine for prototyping
-    DNN, but use more reliable metrics for practical
-    application.
 ```{r, eval=FALSE}
 
 model %>% compile(optimizer = optimizer_adam(),
@@ -300,11 +199,6 @@ model %>% compile(optimizer = optimizer_adam(),
 
 ```
 
-## Training deep learning model
-
-1.  The following code chunk fits the DNN model to the
-    training data and validates its performance using a
-    validation dataset by using the fit() function:
 
 ```{r, eval=FALSE}
 history <- model %>% fit(as.matrix(traindata[,featurenames]), 
@@ -316,9 +210,7 @@ history <- model %>% fit(as.matrix(traindata[,featurenames]),
 ```
 
 
-## Estimating the accuracy of deep learning model
 
-1.  Use evaluate function to compute accuracy and loss function over all epochs as shown below. The code plot(history)  generates a plot of the training and validation loss and  accuracy over the course of the training process. This  visualization can help identify trends or patterns in  the performance of the model.
 
 ```{r, eval=FALSE}
 print(history)
@@ -329,7 +221,6 @@ plot(history)
 
 ```
 
-2.  You can customize plots using following code. For instance,
 
 ```{r, eval=FALSE}
 
@@ -357,9 +248,6 @@ dev.off()
 
 ```
 
-## Predicting labels for unlabelled pairs of transcription factors and genes. 
-
-1.  The code provided below utilizes our model to predict the probabilities of outcomes for the test dataset, which is unlabelled and completely unknown to the model. This prediction is achieved by using the predict() function, and the resulting probabilities are stored in the variable predprob for further utilization.
 
 ```{r, eval=FALSE}
 
@@ -367,7 +255,6 @@ predprob <- model %>% predict(as.matrix(testdata[,featurenames]))
 
 ```
 
-6.  To evaluate the performance of the DNN model on the test data and compare it with the training and validation data, the confusionMatrix() function from the caret package can be used. This function takes the predicted class probabilities in a binary format, specifically using a threshold of 0.5 or above (i.e., as.numeric(predprob > 0.5)), along with the true class labels. It then generates a table containing various important performance measures as shown below. 
 
 ```{r, eval=FALSE}
 
@@ -391,13 +278,7 @@ performance
 
 ```
 
-7.  Biologists may prefer to use a higher probability cutoff
-    to avoid false positive results, even if it means
-    predicting fewer regulatory interactions. The ROC curve
-    is a perfect instrument which shows how the classifier"s
-    performance changes at different threshold settings for
-    guidance. In the following code, roc.plot function from
-    verification package is used to plot ROC curve
+
 
 ```{r, eval=FALSE}
 
@@ -415,18 +296,14 @@ dev.off()
 ```
 
 
-8. The following code shows that how to save the model for future use, and we also save performance table, expression and gold standard data which we all need to reproduce all the results or to make new better deep learning model. 
+
+
 
 ```{r, eval=FALSE}
 save_model_hdf5(model, "EcoliRegModel.h5")
 save(exp, performance, gold, history, file = "EcoliRegModel.RData")
 ```
  
-The save_model_hdf5() function saves the model in the Hierarchical Data Format version 5 (HDF5) file format. HDF5 is a file format designed to store and organize large amounts of numerical data. It is a binary file format that can store the model architecture, weights, optimizer state, and any other information related to the model.
- 
-## Predicting genome-wide regulatory interactions
-
-1. In this section, we will demonstrate how to evaluate the pairwise combinations of transcription factors (TFs) and genes in *Escherichia coli* using our model. We will assess the probability of these pairs being potential regulatory pairs. It"s important to note that the total number of TF-gene pairs for *Escherichia coli* exceeds a million and a half, and in higher organisms, the number is even greater. Consequently, most computers may struggle to handle the feature data for all these pairs, potentially causing crashes. Therefore, the following code is specifically provided for users who do not possess high-end computational resources. For those with ample computational resources, I recommend referring to the code provided in **Note 13**. As these codes can be used across different sessions of RStudio, they assume that the computer or RStudio has been restarted and the same directory has been set (can be verified using the getwd() function). 
 
 
 ```{r, eval=FALSE}
@@ -482,7 +359,8 @@ predictions
 ```
 
 
-4. Our model predicted only 80,225 as regulatory out of 1,506,674 TF-gene pairs. There are number of sophisticated ways to evaluate the predicted GRN. Here, however, we will quickly select few TF-gene pairs with high probability of being regulatory, and will study them. Escherichi coli has many acid inducible systems which protect cells  against acid stress to pH 2 or below. Of them, the glutamate depending system is the most effect and relies on two glutamate decarboxylases (GadA and GadB) combined with a putative glutamate:gamma-aminobutyric acid antiporter (GadC). According to our predictions, it appears to be regluated by OsmE, which is osmolarity inducible factor, however, there is no information exists that it regulates glutamate-dependant acid resistance system. though functionally it would make sense. The GadX is a known regulator of the acid resistance system. Also, master transcription factors associated with flagella biosynthesis and chemotaxis were among the highly ranked TF-gene pairs. So, lets check target genes of GadX, FlhC, and FlhD transcription factors.  
+
+
 
 ```{r, eval=FALSE}
 predictions[predictions$tfname=="gadX",]
@@ -490,7 +368,7 @@ predictions[predictions$tfname=="flhC",]
 predictions[predictions$tfname=="flhD",]
 ```
 
-Our results suggests that GadX may regulate 16 genes at the probability cutoff of 0.5 or above, and of 16, five genes i.e. gadA, gadE gadB, gadC and gadW belong to glutamate dependant acid protection system, confirming the accuracy of our prediction system. Likewise, FlhC and FlhD regulates a large number of genes involved in flagellar assembly and chemotaxis reassuring our prediction system. The overlap of their target genes is 652, which is highly expected. One of the problem of deep learning algorithm is that they can memorize the training dataset and many of the predictions could be part of training or validation dataset. Therefore, lets remove all predictions that were part of the training, and again cross-check the results using following command. As you can see, there are still many predictions which were novel, and make perfect sense at functional level.  
+
 
 ```{r, eval=FALSE}
 predictions[!paste0(predictions$tf,predictions$gene) %in%  
@@ -499,7 +377,7 @@ predictions[!paste0(predictions$tf,predictions$gene) %in%
 ```
 
 
-4. To export results from prediction object to a tabular, csv or excel file, use following code. The third command requires writexl R package which should be installed using install.packages function. Likewise, you can also export the performance table. 
+
 
 ```{r, eval=FALSE}
 write.table(predictions, file = "grnPredictionsEcoli.txt", 
@@ -513,23 +391,6 @@ writexl::write_xlsx(list(Table1 = predictions),
 
 ## Handiling imbalanced gold standard data 
 
-5.  Imbalanced data is a common challenge in biology, making
-    training deep learning models tricky
-    [@golddeeplearning]. R packages such as caret, ROSE, and
-    smote [@caret; @rose; @smote] are popular resources for
-    addressing imbalanced data. While the smotefamily package
-    utilizes the SMOTE algorithm to generate synthetic
-    samples of the minority class. Another approach is to down-size the majority class examples to make them compatible with minority class. I have used this approach for our problem. Also, I often prefer the class
-    weight approach. In the provided code snippet, the
-    "class_weight" parameter is used during model training
-    for binary classification. By calculating class weights
-    based on the class distribution in the training data,
-    and passing them as the "class_weight" argument in the
-    fit function, you can assign higher weights to the
-    minority class and lower weights to the majority class.
-    This enables the model to effectively handle class
-    imbalance during optimization, prioritizing the minority
-    class samples for better learning outcomes. 
 
 ```{r, eval=FALSE, echo=FALSE}
 
@@ -544,25 +405,7 @@ history <- model %>% fit(as.matrix(traindata[,featurenames]), traindata$class,
 
 ## Increasing generalization and depth of DNN
 
-7.  The number of layers and neurons (units) in a neural
-    network can be adjusted to enhance its learning capacity
-    [@layersneurons]. However, there is no definitive rule
-    on how many layers and neurons a network should have for
-    a given dataset. If the data is linearly separable,
-    multiple hidden layers may not be necessary. It is
-    generally recommended to keep the number of hidden
-    layers as minimal as possible. The number of neurons in
-    a layer can be determined
-    based on the shape of your training data. Typically, the
-    number of neurons in a layer is equal to the number of
-    features (columns) in your data. Some network
-    configurations add an additional node for a bias term.
-    It is crucial to maintain a low number of nodes to
-    ensure the network"s ability to generalize well. Having
-    an excessive number of nodes may cause the network to
-    perfectly recall the training set but perform poorly on
-    new, unseen samples. The following code shows how to include more layer but there are numbe of different ways one can add layers and decide on number of neurons. Usually in each successive layers, the number of neurons are decreased.
-    
+
 ```{r, eval=FALSE, echo=FALSE}
 
 model <- keras_model_sequential(input_shape = c(length(featurenames))) %>%
@@ -582,22 +425,6 @@ model <- keras_model_sequential(input_shape = c(length(featurenames))) %>%
 
 ## Performance measures
 
-
-9.  Accuracy can be misleading when dealing with imbalanced
-    datasets as it does not account for class imbalance.
-    Recall and precision metrics are often preferred over
-    accuracy in most scenarios, especially when the cost of false
-    positives and false negatives differs significantly.
-    Recall measures the proportion of true positive cases
-    correctly identified, while precision measures the
-    proportion of correctly identified positive cases. These
-    metrics provide a more comprehensive understanding of
-    the model"s performance, especially when the focus is on
-    correctly identifying specific classes or minimizing
-    false positives/negatives. These metrics could be set in
-    with the complie() function as shown below. Remove
-    comment (#) character to include the metric for
-    training.
 
 ```{r, eval=FALSE, echo=FALSE}
 
@@ -667,10 +494,6 @@ predictions
 
 ## Controlling DNN model training by Callback functions
 
-EarlyStopping Callback: This callback monitors the
-validation loss and stops the training if the validation
-loss does not improve after a certain number of epochs
-(defined by the "patience" parameter).
 
 ```{r, eval=FALSE}
 
@@ -679,10 +502,6 @@ early_stopping <- callback_early_stopping(monitor = "val_loss", patience = 3)
 
 ```
 
-ModelCheckpoint Callback: This callback saves the model
-weights to a file ("best_model.h5") whenever the validation
-accuracy improves. By setting "save_best_only" to True, it
-only saves the best model based on the monitored metric..
 
 ```{r, eval=FALSE}
 
@@ -693,11 +512,6 @@ model_checkpoint <- callback_model_checkpoint(filepath = "best_model.h5",
 
 ```
 
-ReduceLROnPlateau Callback: This callback reduces the
-learning rate when the validation loss plateaus. The
-learning rate is multiplied by the "factor" parameter, and
-"patience" determines the number of epochs to wait before
-reducing the learning rate.
 
 ```{r, eval=FALSE}
 
@@ -707,10 +521,6 @@ reduce_lr <- callback_reduce_lr_on_plateau(monitor = "val_loss",
 
 ```
 
-TensorBoard: This callback enables logging for TensorBoard,
-which is a visualization tool for monitoring the training
-process. It creates logs that can be visualized using
-TensorBoard.
 
 ```{r, eval=FALSE}
 
@@ -719,7 +529,7 @@ tensorboard <- callback_tensorboard(log_dir = "logs")
 
 ```
 
-Once callback functions are defined they can be incorporated during training as shown below for early_stopping and reduce_lr callback functions, but you can have as many functions as you want.
+
 
 ```{r, eval=FALSE}
 
