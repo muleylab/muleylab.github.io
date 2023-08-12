@@ -215,17 +215,8 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#computational-and-software-requirements" id="toc-computational-and-software-requirements" class="nav-link active" data-scroll-target="#computational-and-software-requirements">Computational and software requirements</a></li>
-  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
-  <li><a href="#load-r-libraries" id="toc-load-r-libraries" class="nav-link" data-scroll-target="#load-r-libraries">Load R libraries</a></li>
-  <li><a href="#data-preparation-and-exploration" id="toc-data-preparation-and-exploration" class="nav-link" data-scroll-target="#data-preparation-and-exploration">Data preparation and exploration</a></li>
-  <li><a href="#defining-deep-learning-model-architecture" id="toc-defining-deep-learning-model-architecture" class="nav-link" data-scroll-target="#defining-deep-learning-model-architecture">Defining deep learning model architecture</a></li>
-  <li><a href="#defining-model-compilation-parameters" id="toc-defining-model-compilation-parameters" class="nav-link" data-scroll-target="#defining-model-compilation-parameters">Defining Model Compilation Parameters</a></li>
-  <li><a href="#training-deep-learning-model" id="toc-training-deep-learning-model" class="nav-link" data-scroll-target="#training-deep-learning-model">Training deep learning model</a></li>
-  <li><a href="#estimating-the-accuracy-of-deep-learning-model" id="toc-estimating-the-accuracy-of-deep-learning-model" class="nav-link" data-scroll-target="#estimating-the-accuracy-of-deep-learning-model">Estimating the accuracy of deep learning model</a></li>
-  <li><a href="#predicting-labels-for-unlabelled-pairs-of-transcription-factors-and-genes." id="toc-predicting-labels-for-unlabelled-pairs-of-transcription-factors-and-genes." class="nav-link" data-scroll-target="#predicting-labels-for-unlabelled-pairs-of-transcription-factors-and-genes.">Predicting labels for unlabelled pairs of transcription factors and genes.</a></li>
-  <li><a href="#predicting-genome-wide-regulatory-interactions" id="toc-predicting-genome-wide-regulatory-interactions" class="nav-link" data-scroll-target="#predicting-genome-wide-regulatory-interactions">Predicting genome-wide regulatory interactions</a></li>
   <li><a href="#handiling-imbalanced-gold-standard-data" id="toc-handiling-imbalanced-gold-standard-data" class="nav-link" data-scroll-target="#handiling-imbalanced-gold-standard-data">Handiling imbalanced gold standard data</a></li>
   <li><a href="#increasing-generalization-and-depth-of-dnn" id="toc-increasing-generalization-and-depth-of-dnn" class="nav-link" data-scroll-target="#increasing-generalization-and-depth-of-dnn">Increasing generalization and depth of DNN</a></li>
   <li><a href="#performance-measures" id="toc-performance-measures" class="nav-link" data-scroll-target="#performance-measures">Performance measures</a></li>
@@ -243,103 +234,52 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 
 <section id="computational-and-software-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="computational-and-software-requirements">Computational and software requirements</h2>
-<ol type="1">
-<li>Install tensorflow R package</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tensorflow"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
-<li><p>TensorFlow uses Python programming language. Therefore, R should be configured to use Python</p></li>
-<li><p>If Python is already installed on computer then use following commands to configure R to use Python installation.</p></li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>path_to_python <span class="ot">&lt;-</span> <span class="st">"/usr/local/bin/python3"</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">virtualenv_create</span>(<span class="st">"r-reticulate"</span>, <span class="at">python =</span> path_to_python)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Here, we just provide a path to python executable (in this case, it is Python version 3). On macOS or Unix/Linux systems python”s default location is /usr/local/bin/ folder. However, users should confirm the correct path on computers.</p>
-<ol start="3" type="1">
-<li>If Python is not installed on computer then use following commands to install Python and then configure R.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>path_to_python <span class="ot">&lt;-</span> <span class="st">"/usr/local/bin/python3"</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">virtualenv_create</span>(<span class="st">"r-reticulate"</span>, <span class="at">python =</span> path_to_python)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="10" type="1">
-<li>Next, use the install_tensorflow() function from the tensorflow package to install TensorFlow.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_tensorflow</span>(<span class="at">envname =</span> <span class="st">"r-reticulate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="11" type="1">
-<li>Use the install_keras() function from the keras package to install TensorFlow along with some commonly used packages such as “scipy” and “tensorflow-datasets” as shown below.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"keras"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install_keras</span>(<span class="at">envname =</span> <span class="st">"r-reticulate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="12" type="1">
-<li>To confirm that the installation was successful, run the following command, which should return <em>tf.Tensor(b”Hello Tensorflow!“, shape=(), dtype=string)</em>. If not then try “install_tensorflow()” command again.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tf<span class="sc">$</span><span class="fu">constant</span>(<span class="st">"Hello Tensorflow!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="13" type="1">
-<li>Install following packages to facilitate data handling and analysis.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"readr"</span>, <span class="st">"tibble"</span>, <span class="st">"caret"</span>, <span class="st">"verification"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="data-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-requirements">Data requirements</h2>
-<ol type="1">
-<li><p>Download Supplementary Data 1 from the DREAM5 network inference challenge publication (https://doi.org/10.1038/nmeth.2016) and unzip it in your current working directory. Go to nealy created “DREAM5_network_inference_challenge” directory.</p></li>
-<li><p>The required data for Escherichia coli is present in the “Network3” folder and its sub-folders. Copy four files listed below from these sub-folders into your current working directory to proceed with the analysis..</p></li>
-<li><p><em>net3_expression_data.tsv</em>: This file contains the expression profile data.</p></li>
-<li><p><em>net3_transcription_factors.tsv</em>: This file contains the list of transcription factors.</p></li>
-<li><p><em>DREAM5_NetworkInference_GoldStandard_Network3.tsv</em>: This file contains the gold standard data, which includes both regulatory (positive examples) and non-regulatory (negative examples) TF-gene pairs.</p></li>
-<li><p><em>net3_gene_ids.tsv</em>: This file serves as a mapping between the anonymous gene codes used in other files and the original gene names.</p></li>
-</ol>
-</section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
-<section id="load-r-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="load-r-libraries">Load R libraries</h2>
-<ol type="1">
-<li></li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
-<li>Set a random odd number as a seed in the set.seed function to reproduce the results of this workflow.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1979</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="data-preparation-and-exploration" class="level2">
-<h2 class="anchored" data-anchor-id="data-preparation-and-exploration">Data preparation and exploration</h2>
-<ol type="1">
-<li>Import the gene expression data and store in a exp object and do a routine check up as shown below.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_expression_data.tsv"</span>, <span class="at">header =</span> T)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">t</span>(exp)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(exp)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>exp[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
-<li>Plot distribution of expression values to check trends in the data.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(exp, <span class="dv">100</span>, <span class="at">col =</span> <span class="st">"darkgrey"</span>, <span class="at">border =</span> <span class="st">"white"</span>, </span>
@@ -352,35 +292,21 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Expression intensity"</span>, <span class="at">main =</span> <span class="st">"Gene expression"</span>)</span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="3" type="1">
-<li>Load the gold standard data.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gold <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_table</span>(<span class="st">"DREAM5_NetworkInference_GoldStandard_Network3.tsv"</span>,</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">col_names =</span> F)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>gold</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In the gold object, the first two columns respectively list the TFs and genes, while the third column contains binary labels. A value of 1 in the label column indicates that experimental evidence exists for the regulation of the gene in column 2 by the transcription factor in column 1, while a value of 0 indicates that there is no known regulatory interaction between them.</p>
-<ol start="3" type="1">
-<li>Make expression and gold standard data compatible.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>gold <span class="ot">&lt;-</span> gold[gold<span class="sc">$</span>X1 <span class="sc">%in%</span> <span class="fu">rownames</span>(exp) <span class="sc">&amp;</span> gold<span class="sc">$</span>X2 <span class="sc">%in%</span> <span class="fu">rownames</span>(exp), ]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gold<span class="sc">$</span>X3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="4" type="1">
-<li>The gold standard data is imbalanced, with 2066 regulatory pairs and 150,214 non-regulatory pairs. Lets down-sample majority class examples randomly so that they are two times more than that of regulatory pairs.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>keep_indices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">which</span>(gold<span class="sc">$</span>X3<span class="sc">==</span><span class="dv">1</span>), </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">sample</span>(<span class="fu">which</span>(gold<span class="sc">$</span>X3<span class="sc">==</span><span class="dv">0</span>), <span class="at">size =</span> <span class="fu">sum</span>(gold<span class="sc">$</span>X3)<span class="sc">*</span><span class="dv">2</span>))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>gold <span class="ot">&lt;-</span> gold[keep_indices,]</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gold<span class="sc">$</span>X3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="5" type="1">
-<li>In the next step, we create a feature table containing raw expression data for TF-gene pair, and we will manually create a feature which represent pearson correlation coefficients between expression profiles of transcription factors and genes. This correlation measure is a conventional approach for engineering features from raw data. The resulting correlation coefficients are added as a new column named “pcc” within the data.frame. Subsequently, labels are appended as the last column of the data.frame. The first two columns of the data.frame represent the names of the TF and gene, respectively. The remaining columns contain the expression values for the TF and gene, followed by the calculated PCC values between their expression values, and finally the gold standard label. To facilitate further analysis, the column names that correspond to the expression values and PCC are stored in the “featurenames” object, as they will serve as features for subsequent processing.</li>
-</ol>
-<p>The code snippet below demonstrates these steps:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>inputdata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">tf =</span> gold<span class="sc">$</span>X1, <span class="at">gene =</span> gold<span class="sc">$</span>X2, </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                        exp[gold<span class="sc">$</span>X1,], exp[gold<span class="sc">$</span>X2,])</span>
@@ -393,9 +319,6 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>featurenames <span class="ot">&lt;-</span> <span class="fu">colnames</span>(inputdata) <span class="sc">%&gt;%</span> <span class="fu">setdiff</span>(<span class="st">"class"</span>)  <span class="sc">%&gt;%</span> </span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setdiff</span>(<span class="st">"tf"</span>) <span class="sc">%&gt;%</span> <span class="fu">setdiff</span>(<span class="st">"gene"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="6" type="1">
-<li>Lets plot feature data points for regulatory and non-regulatory pairs to see if there are any visible trend which can distinguish them based on our data.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>h1 <span class="ot">&lt;-</span> <span class="fu">hist</span>(<span class="fu">as.matrix</span>(inputdata[inputdata<span class="sc">$</span>class<span class="sc">==</span><span class="st">"1"</span>,featurenames]), </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">breaks =</span> <span class="dv">100</span>, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
@@ -411,9 +334,6 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">freq =</span> <span class="cn">FALSE</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="7" type="1">
-<li>The following code implements division of gold standard data into training, validation and test datasets in 80:10:10 proportions. The proportions are subjective.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>indices <span class="ot">&lt;-</span> <span class="fu">nrow</span>(inputdata) <span class="sc">%&gt;%</span> <span class="fu">sample.int</span>(., <span class="fu">ceiling</span>( . <span class="sc">*</span> <span class="fl">0.8</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>traindata <span class="ot">&lt;-</span> inputdata[indices, ]</span>
@@ -425,13 +345,6 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(valdata<span class="sc">$</span>class)</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(testdata<span class="sc">$</span>class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="defining-deep-learning-model-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="defining-deep-learning-model-architecture">Defining deep learning model architecture</h2>
-<ol type="1">
-<li><p>Lets create a sequential deep neural network (DNN) using the keras_model_sequential() function from the Keras library. We then add two dense layers using the layer_dense() function. The input layer is defined with the input_shape parameter, which needs to be equal to the total number of features in the input data or represents the shape of the features. Next, the single hidden layer contains 806 neurons and applies the “relu” activation function to introduce non-linearity in the layer”s output. The second layer_dense() function adds another fully connected layer with a single output unit. This output layer computes a weighted sum of the inputs from the previous layer feeds and applies the sigmoid activation function to produce a probability value between 0 and 1, indicating the likelihood that the input corresponds to the positive class (regulatory pairs, in this case) based on input features.</p></li>
-<li><p>The code below sets a random seed for tensorflow using set_random_seed function. Then, creates a sequential deep neural network (DNN) using the keras_model_sequential() function from the Keras library. The DNN model has a simple architecture with input layer which feeds feature matrix and labels to fully connected layers hidden layer with “relu” activation, and a another fully connected output layer with “sigmoid” activation to produces a single probability value for each training example of being regulatory pair. The summary function shows an overview of the model”s architecture.</p></li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set_random_seed</span>(<span class="dv">1979</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -442,23 +355,11 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="defining-model-compilation-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="defining-model-compilation-parameters">Defining Model Compilation Parameters</h2>
-<ol type="1">
-<li>To configure the learning process, the model”s compilation parameters are specified using the following code. The compile() function configures the model. The optimizer_adam() function is a widely used optimization algorithm that computes adaptive learning rates for each parameter based on the moment estimates of the gradient and past gradients and helps neural network to converge faster. The loss function measures the difference between predicted and actual values. The “binary_crossentropy” loss function is commonly used for binary classification tasks. IThe “accuracy” metric is used to calculate the percentage of correctly predicted labels by the model. Accuracy metric is fine for prototyping DNN, but use more reliable metrics for practical application.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span> <span class="fu">compile</span>(<span class="at">optimizer =</span> <span class="fu">optimizer_adam</span>(),</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a> <span class="at">loss =</span> <span class="st">"binary_crossentropy"</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a> <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">"accuracy"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="training-deep-learning-model" class="level2">
-<h2 class="anchored" data-anchor-id="training-deep-learning-model">Training deep learning model</h2>
-<ol type="1">
-<li>The following code chunk fits the DNN model to the training data and validates its performance using a validation dataset by using the fit() function:</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(<span class="fu">as.matrix</span>(traindata[,featurenames]), </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                         traindata<span class="sc">$</span>class,</span>
@@ -466,21 +367,12 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">validation_data =</span> <span class="fu">list</span>(<span class="fu">as.matrix</span>(valdata[,featurenames]), </span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                                                valdata<span class="sc">$</span>class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="estimating-the-accuracy-of-deep-learning-model" class="level2">
-<h2 class="anchored" data-anchor-id="estimating-the-accuracy-of-deep-learning-model">Estimating the accuracy of deep learning model</h2>
-<ol type="1">
-<li>Use evaluate function to compute accuracy and loss function over all epochs as shown below. The code plot(history) generates a plot of the training and validation loss and accuracy over the course of the training process. This visualization can help identify trends or patterns in the performance of the model.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(history)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluate</span>(model, <span class="at">x =</span> <span class="fu">as.matrix</span>(traindata[,featurenames]), <span class="at">y =</span> traindata<span class="sc">$</span>class)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">evaluate</span>(model, <span class="at">x =</span> <span class="fu">as.matrix</span>(valdata[,featurenames]), <span class="at">y =</span> valdata<span class="sc">$</span>class)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(history)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
-<li>You can customize plots using following code. For instance,</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">"DeepLearning_Figure3.pdf"</span>,</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">pointsize =</span> <span class="dv">10</span>, <span class="at">useDingbats =</span> <span class="cn">FALSE</span>)</span>
@@ -503,18 +395,9 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">"grey"</span>, <span class="at">lty =</span> <span class="dv">3</span>)</span>
 <span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="predicting-labels-for-unlabelled-pairs-of-transcription-factors-and-genes." class="level2">
-<h2 class="anchored" data-anchor-id="predicting-labels-for-unlabelled-pairs-of-transcription-factors-and-genes.">Predicting labels for unlabelled pairs of transcription factors and genes.</h2>
-<ol type="1">
-<li>The code provided below utilizes our model to predict the probabilities of outcomes for the test dataset, which is unlabelled and completely unknown to the model. This prediction is achieved by using the predict() function, and the resulting probabilities are stored in the variable predprob for further utilization.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>predprob <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">predict</span>(<span class="fu">as.matrix</span>(testdata[,featurenames]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="6" type="1">
-<li>To evaluate the performance of the DNN model on the test data and compare it with the training and validation data, the confusionMatrix() function from the caret package can be used. This function takes the predicted class probabilities in a binary format, specifically using a threshold of 0.5 or above (i.e., as.numeric(predprob &gt; 0.5)), along with the true class labels. It then generates a table containing various important performance measures as shown below.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(indata, truelabels){</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span>  model <span class="sc">%&gt;%</span> <span class="fu">predict</span>(<span class="fu">as.matrix</span>(indata[,featurenames]))</span>
@@ -534,9 +417,6 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>performance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="7" type="1">
-<li>Biologists may prefer to use a higher probability cutoff to avoid false positive results, even if it means predicting fewer regulatory interactions. The ROC curve is a perfect instrument which shows how the classifier”s performance changes at different threshold settings for guidance. In the following code, roc.plot function from verification package is used to plot ROC curve</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">"DeepLearning_Figure4.pdf"</span>,</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">pointsize =</span> <span class="dv">12</span>, <span class="at">useDingbats =</span> <span class="cn">FALSE</span>)</span>
@@ -549,20 +429,10 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="8" type="1">
-<li>The following code shows that how to save the model for future use, and we also save performance table, expression and gold standard data which we all need to reproduce all the results or to make new better deep learning model.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save_model_hdf5</span>(model, <span class="st">"EcoliRegModel.h5"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(exp, performance, gold, history, <span class="at">file =</span> <span class="st">"EcoliRegModel.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The save_model_hdf5() function saves the model in the Hierarchical Data Format version 5 (HDF5) file format. HDF5 is a file format designed to store and organize large amounts of numerical data. It is a binary file format that can store the model architecture, weights, optimizer state, and any other information related to the model.</p>
-</section>
-<section id="predicting-genome-wide-regulatory-interactions" class="level2">
-<h2 class="anchored" data-anchor-id="predicting-genome-wide-regulatory-interactions">Predicting genome-wide regulatory interactions</h2>
-<ol type="1">
-<li>In this section, we will demonstrate how to evaluate the pairwise combinations of transcription factors (TFs) and genes in <em>Escherichia coli</em> using our model. We will assess the probability of these pairs being potential regulatory pairs. It”s important to note that the total number of TF-gene pairs for <em>Escherichia coli</em> exceeds a million and a half, and in higher organisms, the number is even greater. Consequently, most computers may struggle to handle the feature data for all these pairs, potentially causing crashes. Therefore, the following code is specifically provided for users who do not possess high-end computational resources. For those with ample computational resources, I recommend referring to the code provided in <strong>Note 13</strong>. As these codes can be used across different sessions of RStudio, they assume that the computer or RStudio has been restarted and the same directory has been set (can be verified using the getwd() function).</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
@@ -612,23 +482,16 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions[<span class="fu">rev</span>(<span class="fu">order</span>(predictions<span class="sc">$</span>probability)),]</span>
 <span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a>predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="4" type="1">
-<li>Our model predicted only 80,225 as regulatory out of 1,506,674 TF-gene pairs. There are number of sophisticated ways to evaluate the predicted GRN. Here, however, we will quickly select few TF-gene pairs with high probability of being regulatory, and will study them. Escherichi coli has many acid inducible systems which protect cells against acid stress to pH 2 or below. Of them, the glutamate depending system is the most effect and relies on two glutamate decarboxylases (GadA and GadB) combined with a putative glutamate:gamma-aminobutyric acid antiporter (GadC). According to our predictions, it appears to be regluated by OsmE, which is osmolarity inducible factor, however, there is no information exists that it regulates glutamate-dependant acid resistance system. though functionally it would make sense. The GadX is a known regulator of the acid resistance system. Also, master transcription factors associated with flagella biosynthesis and chemotaxis were among the highly ranked TF-gene pairs. So, lets check target genes of GadX, FlhC, and FlhD transcription factors.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>predictions[predictions<span class="sc">$</span>tfname<span class="sc">==</span><span class="st">"gadX"</span>,]</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>predictions[predictions<span class="sc">$</span>tfname<span class="sc">==</span><span class="st">"flhC"</span>,]</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>predictions[predictions<span class="sc">$</span>tfname<span class="sc">==</span><span class="st">"flhD"</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Our results suggests that GadX may regulate 16 genes at the probability cutoff of 0.5 or above, and of 16, five genes i.e.&nbsp;gadA, gadE gadB, gadC and gadW belong to glutamate dependant acid protection system, confirming the accuracy of our prediction system. Likewise, FlhC and FlhD regulates a large number of genes involved in flagellar assembly and chemotaxis reassuring our prediction system. The overlap of their target genes is 652, which is highly expected. One of the problem of deep learning algorithm is that they can memorize the training dataset and many of the predictions could be part of training or validation dataset. Therefore, lets remove all predictions that were part of the training, and again cross-check the results using following command. As you can see, there are still many predictions which were novel, and make perfect sense at functional level.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>predictions[<span class="sc">!</span><span class="fu">paste0</span>(predictions<span class="sc">$</span>tf,predictions<span class="sc">$</span>gene) <span class="sc">%in%</span>  </span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>              <span class="fu">paste0</span>(inputdata<span class="sc">$</span>tf[inputdata<span class="sc">$</span>class<span class="sc">==</span><span class="dv">1</span>], </span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                     inputdata<span class="sc">$</span>gene[inputdata<span class="sc">$</span>class<span class="sc">==</span><span class="dv">1</span>]),] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="4" type="1">
-<li>To export results from prediction object to a tabular, csv or excel file, use following code. The third command requires writexl R package which should be installed using install.packages function. Likewise, you can also export the performance table.</li>
-</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(predictions, <span class="at">file =</span> <span class="st">"grnPredictionsEcoli.txt"</span>, </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">col.names =</span> T, <span class="at">row.names =</span> F, <span class="at">quote =</span> F, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
@@ -636,30 +499,20 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(<span class="fu">list</span>(<span class="at">Table1 =</span> predictions), </span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">path =</span> <span class="st">"grnPredictionsEcoli.xlsx"</span>, <span class="at">col_names =</span> T, )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
 <section id="handiling-imbalanced-gold-standard-data" class="level2">
 <h2 class="anchored" data-anchor-id="handiling-imbalanced-gold-standard-data">Handiling imbalanced gold standard data</h2>
-<ol start="5" type="1">
-<li>Imbalanced data is a common challenge in biology, making training deep learning models tricky <span class="citation" data-cites="golddeeplearning">[@golddeeplearning]</span>. R packages such as caret, ROSE, and smote <span class="citation" data-cites="caret rose smote">[@caret; @rose; @smote]</span> are popular resources for addressing imbalanced data. While the smotefamily package utilizes the SMOTE algorithm to generate synthetic samples of the minority class. Another approach is to down-size the majority class examples to make them compatible with minority class. I have used this approach for our problem. Also, I often prefer the class weight approach. In the provided code snippet, the “class_weight” parameter is used during model training for binary classification. By calculating class weights based on the class distribution in the training data, and passing them as the “class_weight” argument in the fit function, you can assign higher weights to the minority class and lower weights to the majority class. This enables the model to effectively handle class imbalance during optimization, prioritizing the minority class samples for better learning outcomes.</li>
-</ol>
 <div class="cell">
 
 </div>
 </section>
 <section id="increasing-generalization-and-depth-of-dnn" class="level2">
 <h2 class="anchored" data-anchor-id="increasing-generalization-and-depth-of-dnn">Increasing generalization and depth of DNN</h2>
-<ol start="7" type="1">
-<li>The number of layers and neurons (units) in a neural network can be adjusted to enhance its learning capacity <span class="citation" data-cites="layersneurons">[@layersneurons]</span>. However, there is no definitive rule on how many layers and neurons a network should have for a given dataset. If the data is linearly separable, multiple hidden layers may not be necessary. It is generally recommended to keep the number of hidden layers as minimal as possible. The number of neurons in a layer can be determined based on the shape of your training data. Typically, the number of neurons in a layer is equal to the number of features (columns) in your data. Some network configurations add an additional node for a bias term. It is crucial to maintain a low number of nodes to ensure the network”s ability to generalize well. Having an excessive number of nodes may cause the network to perfectly recall the training set but perform poorly on new, unseen samples. The following code shows how to include more layer but there are numbe of different ways one can add layers and decide on number of neurons. Usually in each successive layers, the number of neurons are decreased.</li>
-</ol>
 <div class="cell">
 
 </div>
 </section>
 <section id="performance-measures" class="level2">
 <h2 class="anchored" data-anchor-id="performance-measures">Performance measures</h2>
-<ol start="9" type="1">
-<li>Accuracy can be misleading when dealing with imbalanced datasets as it does not account for class imbalance. Recall and precision metrics are often preferred over accuracy in most scenarios, especially when the cost of false positives and false negatives differs significantly. Recall measures the proportion of true positive cases correctly identified, while precision measures the proportion of correctly identified positive cases. These metrics provide a more comprehensive understanding of the model”s performance, especially when the focus is on correctly identifying specific classes or minimizing false positives/negatives. These metrics could be set in with the complie() function as shown below. Remove comment (#) character to include the metric for training.</li>
-</ol>
 <div class="cell">
 
 </div>
@@ -711,26 +564,21 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 </section>
 <section id="controlling-dnn-model-training-by-callback-functions" class="level2">
 <h2 class="anchored" data-anchor-id="controlling-dnn-model-training-by-callback-functions">Controlling DNN model training by Callback functions</h2>
-<p>EarlyStopping Callback: This callback monitors the validation loss and stops the training if the validation loss does not improve after a certain number of epochs (defined by the “patience” parameter).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>early_stopping <span class="ot">&lt;-</span> <span class="fu">callback_early_stopping</span>(<span class="at">monitor =</span> <span class="st">"val_loss"</span>, <span class="at">patience =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>ModelCheckpoint Callback: This callback saves the model weights to a file (“best_model.h5”) whenever the validation accuracy improves. By setting “save_best_only” to True, it only saves the best model based on the monitored metric..</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>model_checkpoint <span class="ot">&lt;-</span> <span class="fu">callback_model_checkpoint</span>(<span class="at">filepath =</span> <span class="st">"best_model.h5"</span>, </span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">monitor =</span> <span class="st">"val_accuracy"</span>, </span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">save_best_only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>ReduceLROnPlateau Callback: This callback reduces the learning rate when the validation loss plateaus. The learning rate is multiplied by the “factor” parameter, and “patience” determines the number of epochs to wait before reducing the learning rate.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>reduce_lr <span class="ot">&lt;-</span> <span class="fu">callback_reduce_lr_on_plateau</span>(<span class="at">monitor =</span> <span class="st">"val_loss"</span>, </span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">factor =</span> <span class="fl">0.1</span>, <span class="at">patience =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>TensorBoard: This callback enables logging for TensorBoard, which is a visualization tool for monitoring the training process. It creates logs that can be visualized using TensorBoard.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>tensorboard <span class="ot">&lt;-</span> <span class="fu">callback_tensorboard</span>(<span class="at">log_dir =</span> <span class="st">"logs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Once callback functions are defined they can be incorporated during training as shown below for early_stopping and reduce_lr callback functions, but you can have as many functions as you want.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(<span class="fu">as.matrix</span>(traindata[,featurenames]), traindata<span class="sc">$</span>class,</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">epochs=</span><span class="dv">40</span>, <span class="at">batch_size =</span> <span class="dv">50</span>, <span class="at">validation_split=</span><span class="fl">0.2</span>,</span>
