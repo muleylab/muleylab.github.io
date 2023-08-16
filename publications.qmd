@@ -6,7 +6,9 @@ title: "Publications"
 
 ## 2023
 
-**Muley VY\***. (2023): *Centrality Analysis of Protein-Protein Interaction Networks Using R*, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:445-456 
+Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O\*. (2023): *Microbial colonization dynamics of the posnatal digestive tract of calves*, Animal Science Journal, **Accepted**
+
+**Muley VY\***. (2023): *Centrality Analysis of Protein-Protein Interaction Networks Using R*, In: Mukhtar, S. (eds) Protein-Protein Interactions*, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:445-456 
 
 <a href="https://pubmed.ncbi.nlm.nih.gov/37450165" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a>
 <a href="https://doi.org/10.1007/978-1-0716-3327-4_34" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
@@ -142,9 +144,6 @@ Kamble KD, More A, **Muley VY**. (2012): *Effect of incubation on DNase producti
 
 ## In process/Preprints (Upcoming)
 
-
-Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O\*. (2023): *Microbial colonization dynamics of the posnatal digestive tract of calves*, **Under Revision**
-
 Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kamble K\*. (2023): *Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study*, **Submitted**
 
 **Muley VY\***, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): *Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway*, **In preparation**, A part of this work is available as a preprint at BioRxiv
@@ -156,6 +155,10 @@ Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kam
 ```{r, eval=FALSE, echo=FALSE}
 
 ## In preparation
+
+**Muley VY\***. (2023): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, **Proof available on request**
+
+**Muley VY\***. (2023): *Prediction and Analysis of Transcription Factor Binding Sites: Practical examples using R programming*, **Proof available on request**
 
 **Muley VY\***. (2023): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **Proof submitted, in production**
 
