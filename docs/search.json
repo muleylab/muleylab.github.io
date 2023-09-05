@@ -1,5 +1,152 @@
 [
   {
+    "objectID": "protocols.html",
+    "href": "protocols.html",
+    "title": "Protocols",
+    "section": "",
+    "text": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R\n\n\nTranscriptional regulatory network predictions\n\n\n\n\n\n\nVijaykumar Yogesh Muley\n\n\n10 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "cvVijay.html",
+    "href": "cvVijay.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Apr 2018 – Nov 2022 | Assistant Professor |\nInstitute of Neurobiology, National Autonomous University of Mexico (UNAM), Queretaro, Mexico\nSep 2017 – Apr 2018 | Post-doctoral Researcher |\nAPC Microbiome, University College Cork, National University of Ireland, Cork, Ireland\nFeb 2016 – Apr 2017 | Assistant Professor |\nCentre for Computational Sciences, Central University of Punjab, Bathinda, India\nOct 2013 – Dec 2015 | Post-doctoral Researcher |\nLeibniz Institute for Natural Product Research and Infection Biology - Hans-Knöll-Institut, Jena, Germany\nApr 2012 – Aug 2013 | Post-doctoral Researcher |\nCentre for Excellence in Epigenetics, Indian Institute of Science, Education and Research, Pune, India"
+  },
+  {
+    "objectID": "cvVijay.html#academic-experience",
+    "href": "cvVijay.html#academic-experience",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Apr 2018 – Nov 2022 | Assistant Professor |\nInstitute of Neurobiology, National Autonomous University of Mexico (UNAM), Queretaro, Mexico\nSep 2017 – Apr 2018 | Post-doctoral Researcher |\nAPC Microbiome, University College Cork, National University of Ireland, Cork, Ireland\nFeb 2016 – Apr 2017 | Assistant Professor |\nCentre for Computational Sciences, Central University of Punjab, Bathinda, India\nOct 2013 – Dec 2015 | Post-doctoral Researcher |\nLeibniz Institute for Natural Product Research and Infection Biology - Hans-Knöll-Institut, Jena, Germany\nApr 2012 – Aug 2013 | Post-doctoral Researcher |\nCentre for Excellence in Epigenetics, Indian Institute of Science, Education and Research, Pune, India"
+  },
+  {
+    "objectID": "cvVijay.html#education",
+    "href": "cvVijay.html#education",
+    "title": "Curriculum vitae",
+    "section": "Education",
+    "text": "Education\n2005-2012 | Ph.D. Bioinformatics | Centre for DNA Fingerprinting and Diagnostics, India\n2003-2005 | M.Sc. Bioinformatics | Savitribai Phule Pune University, India\n2000-2002 | M.Sc. Biotechnology | Dr. Babasaheb Ambedkar Marathwada University, India\n1997-2000 | Bachelor of Science | Dr. Babasaheb Ambedkar Marathwada University, India"
+  },
+  {
+    "objectID": "cvVijay.html#honours-awards-and-fellowships",
+    "href": "cvVijay.html#honours-awards-and-fellowships",
+    "title": "Curriculum vitae",
+    "section": "Honours, awards and fellowships",
+    "text": "Honours, awards and fellowships\nJan 2020 - Nov 2022 | Sistema Nacional de Investigadores Nivel I (National System of Investigators) |\nHonorary distinction and fellowship from National Council for Science and Technology (CONACyT), Government of Mexico\nSep 2010 | Travel fellowship to Belgium | International Society for Computational Biology\nApr 2010 | Travel fellowship to Germany, | European Science Foundation\nApr 2010 | Best poster presentation | 4th ESF conference on Functional Genomics and Diseases, Germany\nSep 2005 - Sep 2010 | Junior Research Fellowship | Department of Biotechnology, Government of India\nDec 2005 - Dec 2010 | Junior Research Fellowship | University Grant Commission, Government of India, Not availed\nJun 2004 - Lifetime | National Eligibility Test for Lectureship | University Grant Commission, Government of India"
+  },
+  {
+    "objectID": "cvVijay.html#research-grants-and-projects",
+    "href": "cvVijay.html#research-grants-and-projects",
+    "title": "Curriculum vitae",
+    "section": "Research grants and projects",
+    "text": "Research grants and projects\n1 Jan 2020 – 31 Dec 2021 | Principal Investigator |\nIdentification of brain-specific cell death genetic modules and their relevance in neurodegeneration\nFunded by General Directorate for Academic Personnel Affairs, National Autonomous University of México, Mexico\n1 Jan 2011 – 31 Dec 2013 | Co-investigator | Genetic diversity and first generation linkage map of Clarias batrachus | Funded by Department of Biotechnology, Government of India, India"
+  },
+  {
+    "objectID": "cvVijay.html#software-and-database-developed",
+    "href": "cvVijay.html#software-and-database-developed",
+    "title": "Curriculum vitae",
+    "section": "Software and database developed",
+    "text": "Software and database developed\nNeurodegenerative Disease Gene Expression database (NDGEx) : A database of differential expression results in 25 neurodegenerative diseases from 155 independent microarray datasets\nCell Death and Survival gene database (CDSG) : A database of 8,380 predicted genes from 175 species linked with literature on cell death and survival\nEscherichia coli functional protein-protein interactions (EcoFunPPI) : A database of functional protein-protein interactions in Escherichia coli K12 predicted using a combination of 9 machine learning methods\npub2path : R package to reconstruct biological pathway or process of your interest without a prior knowledge of gene functions from PubMed literature. Access will be given on request since its in final stage of development. For example, above- mentioned CDSG database created using pub2path."
+  },
+  {
+    "objectID": "cvVijay.html#invited-talks",
+    "href": "cvVijay.html#invited-talks",
+    "title": "Curriculum vitae",
+    "section": "Invited talks",
+    "text": "Invited talks\n2 Jan 2023 | Probing TMPRSS2 and ACE2 SARS-CoV-2 cell entry receptors to reveal COVID-19 pathogenesis and potential drug targets at the International Conference on Drug Development and Drug Discovery, Swami Ramanand Teerth Marathwada University, Nanded, India\n16 Apr 2021 | Cross-species transcriptomic analysis of SARS-CoV-2 cell entry receptors reveal potential targets at the Institute of Neurobiology, National Autonomous University of Mexico, Queretaro, Mexico\n16 Jun 2018 | Differential Expression Analysis using R at the III interactional Summer School in Bioinformatics, Institute of Mathematics, National Autonomous University of Mexico, Queretaro, Mexico"
+  },
+  {
+    "objectID": "cvVijay.html#publications",
+    "href": "cvVijay.html#publications",
+    "title": "Curriculum vitae",
+    "section": "Publications",
+    "text": "Publications"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Laboratory for Genomics Research!",
+    "section": "",
+    "text": "Our research is dedicated to delving into the multifaceted realm of gene functionality, with a specific focus on infectious, autoimmune, neurodegenerative, and neuropsychiatric diseases and disorders. Utilizing cutting-edge methodologies, we conduct in-depth analyses of extensive data to identify essential genetic modules that play pivotal roles in the genesis and progression of these conditions."
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Laboratory for Genomics Research!",
+    "section": "",
+    "text": "Our research is dedicated to delving into the multifaceted realm of gene functionality, with a specific focus on infectious, autoimmune, neurodegenerative, and neuropsychiatric diseases and disorders. Utilizing cutting-edge methodologies, we conduct in-depth analyses of extensive data to identify essential genetic modules that play pivotal roles in the genesis and progression of these conditions."
+  },
+  {
+    "objectID": "team.html",
+    "href": "team.html",
+    "title": "Members",
+    "section": "",
+    "text": "About me\n muleylab at gmail dot com"
+  },
+  {
+    "objectID": "team.html#vijaykumar-yogesh-muley",
+    "href": "team.html#vijaykumar-yogesh-muley",
+    "title": "Members",
+    "section": "",
+    "text": "About me\n muleylab at gmail dot com"
+  },
+  {
+    "objectID": "posts/mimbgrn/index.html",
+    "href": "posts/mimbgrn/index.html",
+    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
+    "section": "",
+    "text": "install.packages(\"tensorflow\")\n\n\nlibrary(reticulate)\npath_to_python &lt;- \"/usr/local/bin/python3\" \nvirtualenv_create(\"r-reticulate\", python = path_to_python)\n\n\nlibrary(reticulate)\npath_to_python &lt;- \"/usr/local/bin/python3\" \nvirtualenv_create(\"r-reticulate\", python = path_to_python)\n\n\nlibrary(tensorflow)\ninstall_tensorflow(envname = \"r-reticulate\")\n\n\ninstall.packages(\"keras\")\nlibrary(keras)\ninstall_keras(envname = \"r-reticulate\")\n\n\nlibrary(tensorflow)\ntf$constant(\"Hello Tensorflow!\")\n\n\ninstall.packages(c(\"readr\", \"tibble\", \"caret\", \"verification\"))"
+  },
+  {
+    "objectID": "posts/mimbgrn/index.html#computational-and-software-requirements",
+    "href": "posts/mimbgrn/index.html#computational-and-software-requirements",
+    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
+    "section": "",
+    "text": "install.packages(\"tensorflow\")\n\n\nlibrary(reticulate)\npath_to_python &lt;- \"/usr/local/bin/python3\" \nvirtualenv_create(\"r-reticulate\", python = path_to_python)\n\n\nlibrary(reticulate)\npath_to_python &lt;- \"/usr/local/bin/python3\" \nvirtualenv_create(\"r-reticulate\", python = path_to_python)\n\n\nlibrary(tensorflow)\ninstall_tensorflow(envname = \"r-reticulate\")\n\n\ninstall.packages(\"keras\")\nlibrary(keras)\ninstall_keras(envname = \"r-reticulate\")\n\n\nlibrary(tensorflow)\ntf$constant(\"Hello Tensorflow!\")\n\n\ninstall.packages(c(\"readr\", \"tibble\", \"caret\", \"verification\"))"
+  },
+  {
+    "objectID": "posts/mimbgrn/index.html#handiling-imbalanced-gold-standard-data",
+    "href": "posts/mimbgrn/index.html#handiling-imbalanced-gold-standard-data",
+    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
+    "section": "Handiling imbalanced gold standard data",
+    "text": "Handiling imbalanced gold standard data"
+  },
+  {
+    "objectID": "posts/mimbgrn/index.html#increasing-generalization-and-depth-of-dnn",
+    "href": "posts/mimbgrn/index.html#increasing-generalization-and-depth-of-dnn",
+    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
+    "section": "Increasing generalization and depth of DNN",
+    "text": "Increasing generalization and depth of DNN"
+  },
+  {
+    "objectID": "posts/mimbgrn/index.html#performance-measures",
+    "href": "posts/mimbgrn/index.html#performance-measures",
+    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
+    "section": "Performance measures",
+    "text": "Performance measures"
+  },
+  {
+    "objectID": "posts/mimbgrn/index.html#an-alternative-code-for-prediction-of-grn-on-high-end-computational-resources.",
+    "href": "posts/mimbgrn/index.html#an-alternative-code-for-prediction-of-grn-on-high-end-computational-resources.",
+    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
+    "section": "An alternative code for prediction of GRN on high-end computational resources.",
+    "text": "An alternative code for prediction of GRN on high-end computational resources.\n\nlibrary(magrittr)\nlibrary(keras)\nlibrary(tensorflow)\n\nset.seed(1979)\n\n\nmodel &lt;- load_model_hdf5(\"EcoliRegModel.h5\")\n\n# import expression data file\nexp &lt;- t(read.table(\"net3_expression_data.tsv\", header = T))\n\n# import original gene names mapping \ngenenames &lt;- read.table(\"net3_gene_ids.tsv\", header = F)\ngenes &lt;- genenames$V2; names(genes) &lt;- genenames$V1\n\n# import list of all transcription factors of Escherichia coli\ntfs &lt;- read.table(\"net3_transcription_factors.tsv\", header = F)$V1\n\n# create all possible pairs between tanscription factors and genes\n\npredictions &lt;- expand.grid(tfs,  rownames(exp), stringsAsFactors = FALSE)\npredictions &lt;- tibble::as_tibble(all_pairs[predictions$Var1 != predictions$Var2,])\n\n# add original gene names\n\npredictions$tfname &lt;- genes[predictions$Var1]\npredictions$genename &lt;- genes[predictions$Var2]\n\n# create feature table\ninpreddata &lt;- cbind(exp[predictions$Var1,], exp[predictions$Var2,])\ninpreddata$pcc  &lt;- sapply(seq.int(dim(predictions)[1]), \n                          function(i) cor(exp[predictions$Var1[i],], \n                                          exp[predictions$Var2[i],])))\n\n# predict regulatory pairs\npredictions$probability &lt;- (model %&gt;% predict(inpreddata))[,1]\npredictions &lt;- predictions[predictions$probability&gt;0.5,]\npredictions &lt;- predictions[rev(order(predictions$probability)),]\npredictions"
+  },
+  {
+    "objectID": "posts/mimbgrn/index.html#controlling-dnn-model-training-by-callback-functions",
+    "href": "posts/mimbgrn/index.html#controlling-dnn-model-training-by-callback-functions",
+    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
+    "section": "Controlling DNN model training by Callback functions",
+    "text": "Controlling DNN model training by Callback functions\n\nearly_stopping &lt;- callback_early_stopping(monitor = \"val_loss\", patience = 3)\n\n\nmodel_checkpoint &lt;- callback_model_checkpoint(filepath = \"best_model.h5\", \n                                              monitor = \"val_accuracy\", \n                                              save_best_only = TRUE)\n\n\nreduce_lr &lt;- callback_reduce_lr_on_plateau(monitor = \"val_loss\", \n                                           factor = 0.1, patience = 2)\n\n\ntensorboard &lt;- callback_tensorboard(log_dir = \"logs\")\n\n\nhistory &lt;- model %&gt;% fit(as.matrix(traindata[,featurenames]), traindata$class,\n                           epochs=40, batch_size = 50, validation_split=0.2,\n                           callbacks = list(early_stopping, reduce_lr))"
+  },
+  {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
@@ -42,60 +189,11 @@
     "text": "Systems biology of diseases\nDespite significant progress in the field of biology, the lack of early diagnostic markers or effective treatments for numerous debilitating diseases and infections remains a significant challenge for society. These include neuropsychiatric, neurodegenerative, autoimmune, as well as viral infections such as genital herpes, hepatitis, mononucleosis, papillomavirus infection, AIDS, and COVID-19.\n\n\n\n\n \n\n\nFigure 5: Impaired protein-protein interactions encoded by genes in a red color subnetwork during cerebrum development may lead to neuropsychirtic disorders (left panel). PPI network of autism spectrucm disorder associated proteins identified by integrative analysis of transcriptomic and protein-protein interaction data (right panel)\n\n\nTo address this challenge, we have developed methods for large-scale or meta-analysis of gene expression data, as well as next-generation tissue and single-cell RNA-Seq data, using systems biology of disease approach. This approach aims to understand the underlying mechanisms of diseases using computational methods and data from multiple sources, and to identify the complex interactions between genes, proteins, and other biomolecules that contribute to disease development and progression. By taking a systems-level approach, we are able to identify new insights and connections that might not have been apparent from traditional reductionist methods, leading to a better understanding of the underlying causes of diseases and new strategies for diagnosis, treatment, and prevention."
   },
   {
-    "objectID": "posts/mimbgrn/index.html",
-    "href": "posts/mimbgrn/index.html",
-    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
-    "section": "",
-    "text": "install.packages(\"tensorflow\")\n\n\nlibrary(reticulate)\npath_to_python <- \"/usr/local/bin/python3\" \nvirtualenv_create(\"r-reticulate\", python = path_to_python)\n\n\nlibrary(reticulate)\npath_to_python <- \"/usr/local/bin/python3\" \nvirtualenv_create(\"r-reticulate\", python = path_to_python)\n\n\nlibrary(tensorflow)\ninstall_tensorflow(envname = \"r-reticulate\")\n\n\ninstall.packages(\"keras\")\nlibrary(keras)\ninstall_keras(envname = \"r-reticulate\")\n\n\nlibrary(tensorflow)\ntf$constant(\"Hello Tensorflow!\")\n\n\ninstall.packages(c(\"readr\", \"tibble\", \"caret\", \"verification\"))"
-  },
-  {
-    "objectID": "posts/mimbgrn/index.html#handiling-imbalanced-gold-standard-data",
-    "href": "posts/mimbgrn/index.html#handiling-imbalanced-gold-standard-data",
-    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
-    "section": "Handiling imbalanced gold standard data",
-    "text": "Handiling imbalanced gold standard data"
-  },
-  {
-    "objectID": "posts/mimbgrn/index.html#increasing-generalization-and-depth-of-dnn",
-    "href": "posts/mimbgrn/index.html#increasing-generalization-and-depth-of-dnn",
-    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
-    "section": "Increasing generalization and depth of DNN",
-    "text": "Increasing generalization and depth of DNN"
-  },
-  {
-    "objectID": "posts/mimbgrn/index.html#performance-measures",
-    "href": "posts/mimbgrn/index.html#performance-measures",
-    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
-    "section": "Performance measures",
-    "text": "Performance measures"
-  },
-  {
-    "objectID": "posts/mimbgrn/index.html#an-alternative-code-for-prediction-of-grn-on-high-end-computational-resources.",
-    "href": "posts/mimbgrn/index.html#an-alternative-code-for-prediction-of-grn-on-high-end-computational-resources.",
-    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
-    "section": "An alternative code for prediction of GRN on high-end computational resources.",
-    "text": "An alternative code for prediction of GRN on high-end computational resources.\n\nlibrary(magrittr)\nlibrary(keras)\nlibrary(tensorflow)\n\nset.seed(1979)\n\n\nmodel <- load_model_hdf5(\"EcoliRegModel.h5\")\n\n# import expression data file\nexp <- t(read.table(\"net3_expression_data.tsv\", header = T))\n\n# import original gene names mapping \ngenenames <- read.table(\"net3_gene_ids.tsv\", header = F)\ngenes <- genenames$V2; names(genes) <- genenames$V1\n\n# import list of all transcription factors of Escherichia coli\ntfs <- read.table(\"net3_transcription_factors.tsv\", header = F)$V1\n\n# create all possible pairs between tanscription factors and genes\n\npredictions <- expand.grid(tfs,  rownames(exp), stringsAsFactors = FALSE)\npredictions <- tibble::as_tibble(all_pairs[predictions$Var1 != predictions$Var2,])\n\n# add original gene names\n\npredictions$tfname <- genes[predictions$Var1]\npredictions$genename <- genes[predictions$Var2]\n\n# create feature table\ninpreddata <- cbind(exp[predictions$Var1,], exp[predictions$Var2,])\ninpreddata$pcc  <- sapply(seq.int(dim(predictions)[1]), \n                          function(i) cor(exp[predictions$Var1[i],], \n                                          exp[predictions$Var2[i],])))\n\n# predict regulatory pairs\npredictions$probability <- (model %>% predict(inpreddata))[,1]\npredictions <- predictions[predictions$probability>0.5,]\npredictions <- predictions[rev(order(predictions$probability)),]\npredictions"
-  },
-  {
-    "objectID": "posts/mimbgrn/index.html#controlling-dnn-model-training-by-callback-functions",
-    "href": "posts/mimbgrn/index.html#controlling-dnn-model-training-by-callback-functions",
-    "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
-    "section": "Controlling DNN model training by Callback functions",
-    "text": "Controlling DNN model training by Callback functions\n\nearly_stopping <- callback_early_stopping(monitor = \"val_loss\", patience = 3)\n\n\nmodel_checkpoint <- callback_model_checkpoint(filepath = \"best_model.h5\", \n                                              monitor = \"val_accuracy\", \n                                              save_best_only = TRUE)\n\n\nreduce_lr <- callback_reduce_lr_on_plateau(monitor = \"val_loss\", \n                                           factor = 0.1, patience = 2)\n\n\ntensorboard <- callback_tensorboard(log_dir = \"logs\")\n\n\nhistory <- model %>% fit(as.matrix(traindata[,featurenames]), traindata$class,\n                           epochs=40, batch_size = 50, validation_split=0.2,\n                           callbacks = list(early_stopping, reduce_lr))"
-  },
-  {
     "objectID": "positions.html",
     "href": "positions.html",
     "title": "Join us",
     "section": "",
     "text": "Research Opportunities in Bioinformatics, Computational biology, Data science, and AI\nJoin our cutting-edge research lab that uses bioinformatics, computational biology, and machine learning to investigate long-standing questions in medicine, agriculture, and life sciences with the goal of benefiting humankind. Our team of experienced scientists offers opportunities for Ph.D. students, masters thesis students, bachelors thesis students, interns, and paid research trainees.\n\n\nOpportunities include\n\nConducting cutting-edge research using AI and bioinformatics techniques\nProfessional growth and career development in a dynamic and supportive research environment\nOpportunity to work abroad under the supervision of an experienced researcher\nHands-on experience in laboratory techniques and research methods\nPublish findings in peer-reviewed journals and present at conferences\n\n\n\nTo Apply:\nPlease send your CV or express your interest through at vijay dot muley at gmail dot com\nJoin us in making a difference in the fields of medicine, agriculture, and life sciences."
-  },
-  {
-    "objectID": "team.html",
-    "href": "team.html",
-    "title": "Members",
-    "section": "",
-    "text": "About me\n muleylab at gmail dot com"
   },
   {
     "objectID": "bsVijay.html",
@@ -105,18 +203,11 @@
     "text": "I received my B.Sc. degree in Chemistry, Zoology, and Fishery Science in 2000 and my M.Sc. in Biotechnology in 2002 from Dr. Babasaheb Ambedkar Marathwada University in Aurangabad, India. In 2005, I completed my second M.Sc. degree in Bioinformatics at the University of Pune in Pune, India. In 2012, I obtained my Ph.D. degree in Bioinformatics from the Computational and Functional Genomics Laboratory at the Centre for Fingerprinting and DNA Diagnostics (CDFD) in Hyderabad, India, under the supervision of Dr. Akash Ranjan.\nIn April 2012, I joined the Indian Institute of Science Education and Research (IISER) in Pune, India as a postdoctoral scientist in Dr. Sanjeev Galande’s laboratory, where I worked on animal evolution, embryonic development, and epigenetic regulation. In October 2013, I moved to Jena, Germany as a staff scientist and worked on mathematical modeling of gene expression and regulation in breast cancers at the Leibniz Institute for Natural Product Research and Infection Biology, in the Network Modelling group headed by Professor Rainer Koenig. In February 2016, I was appointed as an assistant professor on a permanent basis at the Central University of Punjab in Bathinda, India in the Centre for Computational Sciences. However, I resigned from the position after a while and decided to work as a full-time researcher at University College Cork, National University of Ireland in Cork City, Ireland from September 2017. There, I worked on IFN-gamma and TNF-alpha signaling pathways involved in immune responses with Dr. Ken Nally. In April 2018, I was invited to join the Institute of Neurobiology at the National Autonomous University of Mexico (UNAM) in Queretaro, Mexico, as an assistant professor and senior scientist in the neural laboratory of neural development. At UNAM, I worked on various research projects in the field of neurobiology and studied the molecular basis of embryonic brain development, neuropsychiatric disorders, neurodegenerative and infectious diseases at the systems level. The National Council for Science and Technology (CONACYT), Government of Mexico, awarded me with a lifetime honorary distinction called Sistema Nacional de Investigadores nivel 1 (System of National Investigator level 1) and fellowship for three subsequent years.\nI have published several research papers, book chapters, and a book in prestigious journals from Nature, Oxford, Elsevier, Springer, BioMedCentral, PLoS, and Frontiers publication houses. Currently, I have contracts to write and edit two books. I am also an editorial board member of Frontiers and Dove Medical Press journals and review research manuscripts for over 30 journals. I have received several national and international fellowships by competition, including UGC-NET, DBT-JRF, and UGC-JRF from the Indian government, travel fellowships from the European Science Foundation, and the International Society for Computational Biologists."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Laboratory for Genomics Research!",
-    "section": "",
-    "text": "Our research is dedicated to delving into the multifaceted realm of gene functionality, with a specific focus on infectious, autoimmune, neurodegenerative, and neuropsychiatric diseases and disorders. Utilizing cutting-edge methodologies, we conduct in-depth analyses of extensive data to identify essential genetic modules that play pivotal roles in the genesis and progression of these conditions."
-  },
-  {
     "objectID": "publications.html#section",
     "href": "publications.html#section",
     "title": "Publications",
     "section": "2023",
-    "text": "2023\nRobles-Rodríguez C, Muley VY, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O*. (2023): Microbial colonization dynamics of the posnatal digestive tract of calves, Animal Science Journal, Accepted\nMuley VY*. (2023): Centrality Analysis of Protein-Protein Interaction Networks Using R, In: Mukhtar, S. (eds) Protein-Protein Interactions*, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:445-456\nPubMed Journal\nMuley VY*. (2023): Search, Retrieve, Visualize and Analyze Protein-Protein Interactions From Multiple Databases: A Guide to Experimental Biologists, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:429-443\nPubMed Journal"
+    "text": "2023\nRobles-Rodríguez C, Muley VY, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O*. (2023): Microbial colonization dynamics of the posnatal digestive tract of calves, Animal Science Journal. 2023 Sept 5;94(1):e13872\nJournal\nMuley VY*. (2023): Centrality Analysis of Protein-Protein Interaction Networks Using R, In: Mukhtar, S. (eds) Protein-Protein Interactions*, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:445-456\nPubMed Journal\nMuley VY*. (2023): Search, Retrieve, Visualize and Analyze Protein-Protein Interactions From Multiple Databases: A Guide to Experimental Biologists, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:429-443\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-1",
@@ -193,14 +284,7 @@
     "href": "publications.html#in-processpreprints-upcoming",
     "title": "Publications",
     "section": "In process/Preprints (Upcoming)",
-    "text": "In process/Preprints (Upcoming)\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2023): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Submitted\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "In process/Preprints (Upcoming)\nMuley VY*. (2023): Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, In production, Proof available on request\nMuley VY*. (2023): Prediction and Analysis of Transcription Factor Binding Sites: Practical examples using R programming, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, In production, Proof available on request\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2023): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Submitted\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
   },
   {
     "objectID": "aboutVijay.html",
@@ -208,55 +292,6 @@
     "title": "Laboratory for Genomics Research!",
     "section": "",
     "text": "I specialize in the cutting-edge field of computational biology, utilizing my expertise in bioinformatics and data science to uncover the mysteries of molecular biology, microbiology, neurobiology, immunology, evolution, and developmental biology. With a wealth of experience working in government and public universities in India, Germany, Ireland, and Mexico, I have a deep understanding of the advanced computational methods required to study the intricate inner workings of living organisms, cells, subcellular structures, genes, proteins, and their interactions.\nI received my B.Sc. degree in Chemistry, Zoology, and Fishery Science in 2000 and my M.Sc. in Biotechnology in 2002 from Dr. Babasaheb Ambedkar Marathwada University in Aurangabad, India. In 2005, I completed my second M.Sc. degree in Bioinformatics at the University of Pune in Pune, India. In 2012, I obtained my Ph.D. degree in Bioinformatics from the Computational and Functional Genomics Laboratory at the Centre for Fingerprinting and DNA Diagnostics (CDFD) in Hyderabad, India, under the supervision of Dr. Akash Ranjan.\nIn April 2012, I joined the Indian Institute of Science Education and Research (IISER) in Pune, India as a postdoctoral scientist in Dr. Sanjeev Galande’s laboratory, where I worked on animal evolution, embryonic development, and epigenetic regulation. In October 2013, I moved to Jena, Germany as a staff scientist and worked on mathematical modeling of gene expression and regulation in breast cancers at the Leibniz Institute for Natural Product Research and Infection Biology, in the Network Modelling group headed by Professor Rainer Koenig. In February 2016, I was appointed as an assistant professor on a permanent basis at the Central University of Punjab in Bathinda, India in the Centre for Computational Sciences. However, I resigned from the position after a while and decided to work as a full-time researcher at University College Cork, National University of Ireland in Cork City, Ireland from September 2017. There, I worked on IFN-gamma and TNF-alpha signaling pathways involved in immune responses with Dr. Ken Nally. In April 2018, I was invited to join the Institute of Neurobiology at the National Autonomous University of Mexico (UNAM) in Queretaro, Mexico, as an assistant professor and senior scientist in the neural laboratory of neural development. At UNAM, I worked on various research projects in the field of neurobiology and studied the molecular basis of embryonic brain development, neuropsychiatric disorders, neurodegenerative and infectious diseases at the systems level. The National Council for Science and Technology (CONACYT), Government of Mexico, awarded me with a lifetime honorary distinction called Sistema Nacional de Investigadores nivel 1 (System of National Investigator level 1) and fellowship for three subsequent years.\nIf you share my passion for using science and data to improve productivity and living standards, I would love to hear from you. Whether you are interested in research, internships, collaboration, or consultancy, please don’t hesitate to contact me via the social media links provided. I am always open to discussing new opportunities and exciting projects."
-  },
-  {
-    "objectID": "cvVijay.html",
-    "href": "cvVijay.html",
-    "title": "Curriculum vitae",
-    "section": "",
-    "text": "Apr 2018 – Nov 2022 | Assistant Professor |\nInstitute of Neurobiology, National Autonomous University of Mexico (UNAM), Queretaro, Mexico\nSep 2017 – Apr 2018 | Post-doctoral Researcher |\nAPC Microbiome, University College Cork, National University of Ireland, Cork, Ireland\nFeb 2016 – Apr 2017 | Assistant Professor |\nCentre for Computational Sciences, Central University of Punjab, Bathinda, India\nOct 2013 – Dec 2015 | Post-doctoral Researcher |\nLeibniz Institute for Natural Product Research and Infection Biology - Hans-Knöll-Institut, Jena, Germany\nApr 2012 – Aug 2013 | Post-doctoral Researcher |\nCentre for Excellence in Epigenetics, Indian Institute of Science, Education and Research, Pune, India"
-  },
-  {
-    "objectID": "cvVijay.html#education",
-    "href": "cvVijay.html#education",
-    "title": "Curriculum vitae",
-    "section": "Education",
-    "text": "Education\n2005-2012 | Ph.D. Bioinformatics | Centre for DNA Fingerprinting and Diagnostics, India\n2003-2005 | M.Sc. Bioinformatics | Savitribai Phule Pune University, India\n2000-2002 | M.Sc. Biotechnology | Dr. Babasaheb Ambedkar Marathwada University, India\n1997-2000 | Bachelor of Science | Dr. Babasaheb Ambedkar Marathwada University, India"
-  },
-  {
-    "objectID": "cvVijay.html#honours-awards-and-fellowships",
-    "href": "cvVijay.html#honours-awards-and-fellowships",
-    "title": "Curriculum vitae",
-    "section": "Honours, awards and fellowships",
-    "text": "Honours, awards and fellowships\nJan 2020 - Nov 2022 | Sistema Nacional de Investigadores Nivel I (National System of Investigators) |\nHonorary distinction and fellowship from National Council for Science and Technology (CONACyT), Government of Mexico\nSep 2010 | Travel fellowship to Belgium | International Society for Computational Biology\nApr 2010 | Travel fellowship to Germany, | European Science Foundation\nApr 2010 | Best poster presentation | 4th ESF conference on Functional Genomics and Diseases, Germany\nSep 2005 - Sep 2010 | Junior Research Fellowship | Department of Biotechnology, Government of India\nDec 2005 - Dec 2010 | Junior Research Fellowship | University Grant Commission, Government of India, Not availed\nJun 2004 - Lifetime | National Eligibility Test for Lectureship | University Grant Commission, Government of India"
-  },
-  {
-    "objectID": "cvVijay.html#research-grants-and-projects",
-    "href": "cvVijay.html#research-grants-and-projects",
-    "title": "Curriculum vitae",
-    "section": "Research grants and projects",
-    "text": "Research grants and projects\n1 Jan 2020 – 31 Dec 2021 | Principal Investigator |\nIdentification of brain-specific cell death genetic modules and their relevance in neurodegeneration\nFunded by General Directorate for Academic Personnel Affairs, National Autonomous University of México, Mexico\n1 Jan 2011 – 31 Dec 2013 | Co-investigator | Genetic diversity and first generation linkage map of Clarias batrachus | Funded by Department of Biotechnology, Government of India, India"
-  },
-  {
-    "objectID": "cvVijay.html#software-and-database-developed",
-    "href": "cvVijay.html#software-and-database-developed",
-    "title": "Curriculum vitae",
-    "section": "Software and database developed",
-    "text": "Software and database developed\nNeurodegenerative Disease Gene Expression database (NDGEx) : A database of differential expression results in 25 neurodegenerative diseases from 155 independent microarray datasets\nCell Death and Survival gene database (CDSG) : A database of 8,380 predicted genes from 175 species linked with literature on cell death and survival\nEscherichia coli functional protein-protein interactions (EcoFunPPI) : A database of functional protein-protein interactions in Escherichia coli K12 predicted using a combination of 9 machine learning methods\npub2path : R package to reconstruct biological pathway or process of your interest without a prior knowledge of gene functions from PubMed literature. Access will be given on request since its in final stage of development. For example, above- mentioned CDSG database created using pub2path."
-  },
-  {
-    "objectID": "cvVijay.html#invited-talks",
-    "href": "cvVijay.html#invited-talks",
-    "title": "Curriculum vitae",
-    "section": "Invited talks",
-    "text": "Invited talks\n2 Jan 2023 | Probing TMPRSS2 and ACE2 SARS-CoV-2 cell entry receptors to reveal COVID-19 pathogenesis and potential drug targets at the International Conference on Drug Development and Drug Discovery, Swami Ramanand Teerth Marathwada University, Nanded, India\n16 Apr 2021 | Cross-species transcriptomic analysis of SARS-CoV-2 cell entry receptors reveal potential targets at the Institute of Neurobiology, National Autonomous University of Mexico, Queretaro, Mexico\n16 Jun 2018 | Differential Expression Analysis using R at the III interactional Summer School in Bioinformatics, Institute of Mathematics, National Autonomous University of Mexico, Queretaro, Mexico"
-  },
-  {
-    "objectID": "cvVijay.html#publications",
-    "href": "cvVijay.html#publications",
-    "title": "Curriculum vitae",
-    "section": "Publications",
-    "text": "Publications"
   },
   {
     "objectID": "resources.html",
@@ -292,12 +327,5 @@
     "title": "Resources",
     "section": "Escherichia coli functional protein-protein interactions (EcoFunPPI)",
     "text": "Escherichia coli functional protein-protein interactions (EcoFunPPI)\nEcofunPPI ia a database of functional protein-protein interactions in Escherichia coli K12 predicted using a combination of 9 machine learning methods. It is highly reliable database than several existing published database on PPI and could provide a experimentally testable hypothesis on proteins of interest."
-  },
-  {
-    "objectID": "protocols.html",
-    "href": "protocols.html",
-    "title": "Protocols",
-    "section": "",
-    "text": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R\n\n\nTranscriptional regulatory network predictions\n\n\n\n\n\n\nVijaykumar Yogesh Muley\n\n\n9 min\n\n\n\n\n\n\nNo matching items"
   }
 ]

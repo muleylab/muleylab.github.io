@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -55,7 +55,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B5FVC80FWJ"></script>
@@ -83,33 +84,35 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
     <span class="navbar-title">Laboratory for Genomics Research!</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./research.html">
+    <a class="nav-link" href="./research.html" rel="" target="">
  <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.html">
+    <a class="nav-link" href="./team.html" rel="" target="">
  <span class="menu-text">Members</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./publications.html" aria-current="page">
+    <a class="nav-link active" href="./publications.html" rel="" target="" aria-current="page">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./protocols.html">
+    <a class="nav-link" href="./protocols.html" rel="" target="">
  <span class="menu-text">Protocols</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -164,7 +167,8 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 </section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section">2023</h2>
-<p>Robles-Rodríguez C, <strong>Muley VY</strong>, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O*. (2023): <em>Microbial colonization dynamics of the posnatal digestive tract of calves</em>, Animal Science Journal, <strong>Accepted</strong></p>
+<p>Robles-Rodríguez C, <strong>Muley VY</strong>, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O*. (2023): <em>Microbial colonization dynamics of the posnatal digestive tract of calves</em>, Animal Science Journal. 2023 Sept 5;94(1):e13872</p>
+<p><a href="https://doi.org/10.1111/asj.13872" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a></p>
 <p><strong>Muley VY*</strong>. (2023): <em>Centrality Analysis of Protein-Protein Interaction Networks Using R</em>, In: Mukhtar, S. (eds) Protein-Protein Interactions*, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:445-456</p>
 <p><a href="https://pubmed.ncbi.nlm.nih.gov/37450165" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a> <a href="https://doi.org/10.1007/978-1-0716-3327-4_34" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a></p>
 <p><strong>Muley VY*</strong>. (2023): <em>Search, Retrieve, Visualize and Analyze Protein-Protein Interactions From Multiple Databases: A Guide to Experimental Biologists</em>, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:429-443</p>
@@ -248,12 +252,11 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 </section>
 <section id="in-processpreprints-upcoming" class="level2">
 <h2 class="anchored" data-anchor-id="in-processpreprints-upcoming">In process/Preprints (Upcoming)</h2>
+<p><strong>Muley VY*</strong>. (2023): <em>Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R</em>, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, <strong>In production</strong>, <em>Proof available on request</em></p>
+<p><strong>Muley VY*</strong>. (2023): <em>Prediction and Analysis of Transcription Factor Binding Sites: Practical examples using R programming</em>, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, <strong>In production</strong>, <em>Proof available on request</em></p>
 <p>Rakshit S, More A, Gaikwad S, Gade A, Seniya C, <strong>Muley VY</strong>, Mukherjee A*, Kamble K*. (2023): <em>Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study</em>, <strong>Submitted</strong></p>
 <p><strong>Muley VY*</strong>, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): <em>Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway</em>, <strong>In preparation</strong>, A part of this work is available as a preprint at BioRxiv</p>
 <p><a href="https://doi.org/10.1101/2021.04.26.441280" target="_blank" class="btn btn-outline-default btn-sm" role="button">Preprint</a></p>
-<div class="cell">
-
-</div>
 
 
 </section>
@@ -286,9 +289,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -353,6 +370,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -391,12 +494,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp(/^(?:http:|https:)\/\/www\.quarto\.org\/custom/);
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/www\.quarto\.org\/custom");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -411,7 +514,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">© 2023 Vijaykumar Muley. All rights reserved.</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">© 2023 Vijaykumar Muley. All rights reserved.</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 
