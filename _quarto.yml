@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Laboratory for Genomics Research!"
+  title: "Laboratory of Systems and Biomedical Genomics"
   page-footer: "© 2023 Vijaykumar Muley. All rights reserved."
   google-analytics:
     tracking-id: "G-B5FVC80FWJ"

@@ -153,6 +153,8 @@ Kamble KD, More A, **Muley VY**. (2012): *Effect of incubation on DNase producti
 
 Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kamble K\*. (2023): *Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study*, **Submitted**
 
+Singh MS, Pyati A,  Rubi RD, Subramanian R, **Muley VY**, Ahmed A, Yellaboina S\*. (2023): *Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis*, **In preparation**
+
 **Muley VY\***, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): *Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway*, **In preparation**, A part of this work is available as a preprint at BioRxiv
 
 <a href="https://doi.org/10.1101/2021.04.26.441280" target="_blank" class="btn btn-outline-default btn-sm" role="button">Preprint</a>
