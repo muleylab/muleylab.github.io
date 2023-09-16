@@ -6,10 +6,6 @@ title: "Publications"
 
 ## 2023
 
-Singh MS, Pyati A,  Rubi RD, Subramanian R, **Muley VY**, Ahmed A, Yellaboina S\*. (2023): *Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis*, **Under Review in iScience**
-
-<a href="https://dx.doi.org/10.2139/ssrn.4569729" target="_blank" class="btn btn-outline-default btn-sm" role="button">Preprint</a>
-
 Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O\*. (2023): *Microbial colonization dynamics of the posnatal digestive tract of calves*, Animal Science Journal. 2023 Sept 5;94(1):e13872
 
 <a href="https://doi.org/10.1111/asj.13872" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
@@ -154,6 +150,10 @@ Kamble KD, More A, **Muley VY**. (2012): *Effect of incubation on DNase producti
 **Muley VY\***. (2023): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **In production**, *Proof available on request*
 
 **Muley VY\***. (2023): *Prediction and Analysis of Transcription Factor Binding Sites: Practical examples using R programming*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **In production**, *Proof available on request*
+
+Singh MS, Pyati A,  Rubi RD, Subramanian R, **Muley VY**, Ahmed A, Yellaboina S\*. (2023): *Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis*, **Under Review in iScience**
+
+<a href="https://dx.doi.org/10.2139/ssrn.4569729" target="_blank" class="btn btn-outline-default btn-sm" role="button">Preprint</a>
 
 Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kamble K\*. (2023): *Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study*, **Submitted**
 
