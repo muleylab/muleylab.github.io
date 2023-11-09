@@ -475,98 +475,134 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 </div>
 <section id="handiling-imbalanced-gold-standard-data" class="level2">
 <h2 class="anchored" data-anchor-id="handiling-imbalanced-gold-standard-data">Handiling imbalanced gold standard data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>weights <span class="ot">&lt;-</span> <span class="fu">as.list</span>((<span class="dv">1</span><span class="sc">/</span><span class="fu">table</span>(traindata<span class="sc">$</span>class)))</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(<span class="fu">as.matrix</span>(traindata[,featurenames]), traindata<span class="sc">$</span>class, </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">epochs =</span> <span class="dv">10</span>, <span class="at">batch_size =</span> <span class="dv">16</span>, </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">validation_data =</span> <span class="fu">list</span>(<span class="fu">as.matrix</span>(valdata[,featurenames]), valdata<span class="sc">$</span>class),</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">class_weight =</span> weights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="increasing-generalization-and-depth-of-dnn" class="level2">
 <h2 class="anchored" data-anchor-id="increasing-generalization-and-depth-of-dnn">Increasing generalization and depth of DNN</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">keras_model_sequential</span>(<span class="at">input_shape =</span> <span class="fu">c</span>(<span class="fu">length</span>(featurenames))) <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">806</span>, <span class="at">activation =</span> <span class="st">"relu"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_batch_normalization</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">806</span>, <span class="at">activation =</span> <span class="st">"relu"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dropout</span>(<span class="fl">0.5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">512</span>, <span class="at">activation =</span> <span class="st">"relu"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dropout</span>(<span class="fl">0.2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">56</span>, <span class="at">activation =</span> <span class="st">"relu"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_batch_normalization</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dropout</span>(<span class="fl">0.1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layer_dense</span>(<span class="at">units =</span> <span class="dv">1</span>, <span class="at">activation =</span> <span class="st">"sigmoid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="performance-measures" class="level2">
 <h2 class="anchored" data-anchor-id="performance-measures">Performance measures</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>metrics <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"fn"</span> <span class="ot">=</span> <span class="fu">metric_false_negatives</span>(),</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"fp"</span> <span class="ot">=</span> <span class="fu">metric_false_positives</span>(),</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tn"</span> <span class="ot">=</span> <span class="fu">metric_true_negatives</span>(),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tp"</span> <span class="ot">=</span> <span class="fu">metric_true_positives</span>(),</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"accuracy"</span> <span class="ot">=</span> <span class="fu">metric_accuracy</span>(),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"precision"</span> <span class="ot">=</span> <span class="fu">metric_precision</span>(),</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"recall"</span> <span class="ot">=</span> <span class="fu">metric_recall</span>(),</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"auc"</span> <span class="ot">=</span> <span class="fu">metric_auc</span>())</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>model <span class="sc">%&gt;%</span> <span class="fu">compile</span>(<span class="at">optimizer =</span> <span class="fu">optimizer_adam</span>(),</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">loss =</span> <span class="st">"binary_crossentropy"</span>,</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">metrics =</span> metrics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="an-alternative-code-for-prediction-of-grn-on-high-end-computational-resources." class="level2">
 <h2 class="anchored" data-anchor-id="an-alternative-code-for-prediction-of-grn-on-high-end-computational-resources.">An alternative code for prediction of GRN on high-end computational resources.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1979</span>)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">load_model_hdf5</span>(<span class="st">"EcoliRegModel.h5"</span>)</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># import expression data file</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">read.table</span>(<span class="st">"net3_expression_data.tsv"</span>, <span class="at">header =</span> T))</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># import original gene names mapping </span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>genenames <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_gene_ids.tsv"</span>, <span class="at">header =</span> F)</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> genenames<span class="sc">$</span>V2; <span class="fu">names</span>(genes) <span class="ot">&lt;-</span> genenames<span class="sc">$</span>V1</span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co"># import list of all transcription factors of Escherichia coli</span></span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>tfs <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_transcription_factors.tsv"</span>, <span class="at">header =</span> F)<span class="sc">$</span>V1</span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co"># create all possible pairs between tanscription factors and genes</span></span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(tfs,  <span class="fu">rownames</span>(exp), <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(all_pairs[predictions<span class="sc">$</span>Var1 <span class="sc">!=</span> predictions<span class="sc">$</span>Var2,])</span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a><span class="co"># add original gene names</span></span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>tfname <span class="ot">&lt;-</span> genes[predictions<span class="sc">$</span>Var1]</span>
-<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>genename <span class="ot">&lt;-</span> genes[predictions<span class="sc">$</span>Var2]</span>
-<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a><span class="co"># create feature table</span></span>
-<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>inpreddata <span class="ot">&lt;-</span> <span class="fu">cbind</span>(exp[predictions<span class="sc">$</span>Var1,], exp[predictions<span class="sc">$</span>Var2,])</span>
-<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>inpreddata<span class="sc">$</span>pcc  <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">seq.int</span>(<span class="fu">dim</span>(predictions)[<span class="dv">1</span>]), </span>
-<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>                          <span class="cf">function</span>(i) <span class="fu">cor</span>(exp[predictions<span class="sc">$</span>Var1[i],], </span>
-<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>                                          exp[predictions<span class="sc">$</span>Var2[i],]))<span class="er">)</span></span>
-<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a><span class="co"># predict regulatory pairs</span></span>
-<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>probability <span class="ot">&lt;-</span> (model <span class="sc">%&gt;%</span> <span class="fu">predict</span>(inpreddata))[,<span class="dv">1</span>]</span>
-<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions[predictions<span class="sc">$</span>probability<span class="sc">&gt;</span><span class="fl">0.5</span>,]</span>
-<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions[<span class="fu">rev</span>(<span class="fu">order</span>(predictions<span class="sc">$</span>probability)),]</span>
-<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>predictions </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(keras)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tensorflow)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1979</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">load_model_hdf5</span>(<span class="st">"EcoliRegModel.h5"</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co"># import expression data file</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>exp <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">read.table</span>(<span class="st">"net3_expression_data.tsv"</span>, <span class="at">header =</span> T))</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="co"># import original gene names mapping </span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>genenames <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_gene_ids.tsv"</span>, <span class="at">header =</span> F)</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>genes <span class="ot">&lt;-</span> genenames<span class="sc">$</span>V2; <span class="fu">names</span>(genes) <span class="ot">&lt;-</span> genenames<span class="sc">$</span>V1</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="co"># import list of all transcription factors of Escherichia coli</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>tfs <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"net3_transcription_factors.tsv"</span>, <span class="at">header =</span> F)<span class="sc">$</span>V1</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="co"># create all possible pairs between tanscription factors and genes</span></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(tfs,  <span class="fu">rownames</span>(exp), <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(all_pairs[predictions<span class="sc">$</span>Var1 <span class="sc">!=</span> predictions<span class="sc">$</span>Var2,])</span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a><span class="co"># add original gene names</span></span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>tfname <span class="ot">&lt;-</span> genes[predictions<span class="sc">$</span>Var1]</span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>genename <span class="ot">&lt;-</span> genes[predictions<span class="sc">$</span>Var2]</span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a><span class="co"># create feature table</span></span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a>inpreddata <span class="ot">&lt;-</span> <span class="fu">cbind</span>(exp[predictions<span class="sc">$</span>Var1,], exp[predictions<span class="sc">$</span>Var2,])</span>
+<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a>inpreddata<span class="sc">$</span>pcc  <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">seq.int</span>(<span class="fu">dim</span>(predictions)[<span class="dv">1</span>]), </span>
+<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>                          <span class="cf">function</span>(i) <span class="fu">cor</span>(exp[predictions<span class="sc">$</span>Var1[i],], </span>
+<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a>                                          exp[predictions<span class="sc">$</span>Var2[i],]))<span class="er">)</span></span>
+<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a><span class="co"># predict regulatory pairs</span></span>
+<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a>predictions<span class="sc">$</span>probability <span class="ot">&lt;-</span> (model <span class="sc">%&gt;%</span> <span class="fu">predict</span>(inpreddata))[,<span class="dv">1</span>]</span>
+<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions[predictions<span class="sc">$</span>probability<span class="sc">&gt;</span><span class="fl">0.5</span>,]</span>
+<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> predictions[<span class="fu">rev</span>(<span class="fu">order</span>(predictions<span class="sc">$</span>probability)),]</span>
+<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a>predictions </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="controlling-dnn-model-training-by-callback-functions" class="level2">
 <h2 class="anchored" data-anchor-id="controlling-dnn-model-training-by-callback-functions">Controlling DNN model training by Callback functions</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>early_stopping <span class="ot">&lt;-</span> <span class="fu">callback_early_stopping</span>(<span class="at">monitor =</span> <span class="st">"val_loss"</span>, <span class="at">patience =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>early_stopping <span class="ot">&lt;-</span> <span class="fu">callback_early_stopping</span>(<span class="at">monitor =</span> <span class="st">"val_loss"</span>, <span class="at">patience =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>model_checkpoint <span class="ot">&lt;-</span> <span class="fu">callback_model_checkpoint</span>(<span class="at">filepath =</span> <span class="st">"best_model.h5"</span>, </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">monitor =</span> <span class="st">"val_accuracy"</span>, </span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">save_best_only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>model_checkpoint <span class="ot">&lt;-</span> <span class="fu">callback_model_checkpoint</span>(<span class="at">filepath =</span> <span class="st">"best_model.h5"</span>, </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">monitor =</span> <span class="st">"val_accuracy"</span>, </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">save_best_only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>reduce_lr <span class="ot">&lt;-</span> <span class="fu">callback_reduce_lr_on_plateau</span>(<span class="at">monitor =</span> <span class="st">"val_loss"</span>, </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">factor =</span> <span class="fl">0.1</span>, <span class="at">patience =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>reduce_lr <span class="ot">&lt;-</span> <span class="fu">callback_reduce_lr_on_plateau</span>(<span class="at">monitor =</span> <span class="st">"val_loss"</span>, </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">factor =</span> <span class="fl">0.1</span>, <span class="at">patience =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>tensorboard <span class="ot">&lt;-</span> <span class="fu">callback_tensorboard</span>(<span class="at">log_dir =</span> <span class="st">"logs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>tensorboard <span class="ot">&lt;-</span> <span class="fu">callback_tensorboard</span>(<span class="at">log_dir =</span> <span class="st">"logs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(<span class="fu">as.matrix</span>(traindata[,featurenames]), traindata<span class="sc">$</span>class,</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">epochs=</span><span class="dv">40</span>, <span class="at">batch_size =</span> <span class="dv">50</span>, <span class="at">validation_split=</span><span class="fl">0.2</span>,</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">callbacks =</span> <span class="fu">list</span>(early_stopping, reduce_lr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>history <span class="ot">&lt;-</span> model <span class="sc">%&gt;%</span> <span class="fu">fit</span>(<span class="fu">as.matrix</span>(traindata[,featurenames]), traindata<span class="sc">$</span>class,</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">epochs=</span><span class="dv">40</span>, <span class="at">batch_size =</span> <span class="dv">50</span>, <span class="at">validation_split=</span><span class="fl">0.2</span>,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">callbacks =</span> <span class="fu">list</span>(early_stopping, reduce_lr))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{yogesh muley2023,
-  author = {Yogesh Muley, Vijaykumar},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{muley2023,
+  author = {Muley, VY},
   title = {Deep {Learning} for {Predicting} {Gene} {Regulatory}
     {Networks:} {A} {Step-by-Step} {Protocol} in {R}},
   journal = {Methods in Molecular Biology},
   volume = {2719},
-  date = {2023-08},
+  date = {2023-10},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-yogesh muley2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Yogesh Muley, Vijaykumar. 2023. <span>“Deep Learning for Predicting Gene
-Regulatory Networks: A Step-by-Step Protocol in R.”</span> <em>Methods
-in Molecular Biology</em> 2719 (August).
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-muley2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Muley, VY. 2023. <span>“Deep Learning for Predicting Gene Regulatory
+Networks: A Step-by-Step Protocol in R.”</span> <em>Methods in Molecular
+Biology</em> 2719 (October).
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

@@ -116,21 +116,21 @@
     "href": "posts/mimbgrn/index.html#handiling-imbalanced-gold-standard-data",
     "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
     "section": "Handiling imbalanced gold standard data",
-    "text": "Handiling imbalanced gold standard data"
+    "text": "Handiling imbalanced gold standard data\n\nweights &lt;- as.list((1/table(traindata$class)))\n\nhistory &lt;- model %&gt;% fit(as.matrix(traindata[,featurenames]), traindata$class, \n                         epochs = 10, batch_size = 16, \n                         validation_data = list(as.matrix(valdata[,featurenames]), valdata$class),\n                         class_weight = weights)"
   },
   {
     "objectID": "posts/mimbgrn/index.html#increasing-generalization-and-depth-of-dnn",
     "href": "posts/mimbgrn/index.html#increasing-generalization-and-depth-of-dnn",
     "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
     "section": "Increasing generalization and depth of DNN",
-    "text": "Increasing generalization and depth of DNN"
+    "text": "Increasing generalization and depth of DNN\n\nmodel &lt;- keras_model_sequential(input_shape = c(length(featurenames))) %&gt;%\n  layer_dense(units = 806, activation = \"relu\") %&gt;%\n  layer_batch_normalization() %&gt;%\n  layer_dense(units = 806, activation = \"relu\") %&gt;%\n  layer_dropout(0.5) %&gt;%\n  layer_dense(units = 512, activation = \"relu\") %&gt;%\n  layer_dropout(0.2) %&gt;%\n  layer_dense(units = 56, activation = \"relu\") %&gt;%\n  layer_batch_normalization() %&gt;%\n  layer_dropout(0.1) %&gt;%\n  layer_dense(units = 1, activation = \"sigmoid\")"
   },
   {
     "objectID": "posts/mimbgrn/index.html#performance-measures",
     "href": "posts/mimbgrn/index.html#performance-measures",
     "title": "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R",
     "section": "Performance measures",
-    "text": "Performance measures"
+    "text": "Performance measures\n\nmetrics &lt;- list(\n  \"fn\" = metric_false_negatives(),\n  \"fp\" = metric_false_positives(),\n  \"tn\" = metric_true_negatives(),\n  \"tp\" = metric_true_positives(),\n  \"accuracy\" = metric_accuracy(),\n  \"precision\" = metric_precision(),\n  \"recall\" = metric_recall(),\n  \"auc\" = metric_auc())\n\nmodel %&gt;% compile(optimizer = optimizer_adam(),\n                  loss = \"binary_crossentropy\",\n                  metrics = metrics)"
   },
   {
     "objectID": "posts/mimbgrn/index.html#an-alternative-code-for-prediction-of-grn-on-high-end-computational-resources.",
@@ -207,7 +207,7 @@
     "href": "publications.html#section",
     "title": "Publications",
     "section": "2023",
-    "text": "2023\nRobles-Rodríguez C, Muley VY, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O*. (2023): Microbial colonization dynamics of the postnatal digestive tract of Bos indicus calves, Animal Science Journal. 2023 Sept 5;94(1):e13872\nPubMed Journal\nMuley VY*. (2023): Centrality Analysis of Protein-Protein Interaction Networks Using R, In: Mukhtar, S. (eds) Protein-Protein Interactions*, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:445-456\nPubMed Journal\nMuley VY*. (2023): Search, Retrieve, Visualize and Analyze Protein-Protein Interactions From Multiple Databases: A Guide to Experimental Biologists, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:429-443\nPubMed Journal"
+    "text": "2023\nMuley VY. (2023): Prediction and Analysis of Transcription Factor Binding Sites: Practical Examples and Case Studies Using R Programming, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2023 Oct 7;2719:199–225\nPubMed Journal\nMuley VY. (2023): Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2023 Oct 7;2719:265–294\nPubMed Journal\nRobles-Rodríguez C, Muley VY, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O*. (2023): Microbial colonization dynamics of the postnatal digestive tract of Bos indicus calves, Animal Science Journal. 2023 Sept 5;94(1):e13872\nPubMed Journal\nMuley VY*. (2023): Centrality Analysis of Protein-Protein Interaction Networks Using R, In: Mukhtar, S. (eds) Protein-Protein Interactions*, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:445-456\nPubMed Journal\nMuley VY*. (2023): Search, Retrieve, Visualize and Analyze Protein-Protein Interactions From Multiple Databases: A Guide to Experimental Biologists, In: Mukhtar, S. (eds) Protein-Protein Interactions, Methods in Molecular Biology. 2023 Jul 15;2690:429-443\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-1",
@@ -284,7 +284,7 @@
     "href": "publications.html#in-processpreprints-upcoming",
     "title": "Publications",
     "section": "In process/Preprints (Upcoming)",
-    "text": "In process/Preprints (Upcoming)\nMuley VY*. (2023): Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, In production, Proof available on request\nMuley VY*. (2023): Prediction and Analysis of Transcription Factor Binding Sites: Practical examples using R programming, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, In production, Proof available on request\nSingh MS, Pyati A, Rubi RD, Subramanian R, Muley VY, Ahmed A, Yellaboina S*. (2023): Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis, Under Review in iScience\nPreprint\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2023): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Submitted\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
+    "text": "In process/Preprints (Upcoming)\nSingh MS, Pyati A, Rubi RD, Subramanian R, Muley VY, Ahmed A, Yellaboina S*. (2023): Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis, Under Revision\nPreprint\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2023): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Under Revision\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
   },
   {
     "objectID": "aboutVijay.html",

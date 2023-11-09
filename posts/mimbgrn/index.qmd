@@ -1,15 +1,16 @@
 ---
-title: "Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R"
+title: 'Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R'
 subtitle: Transcriptional regulatory network predictions
 author:
   - name: Vijaykumar Yogesh Muley
 categories: [Deep learning, GRN] # self-defined categories
 citation:
+  author: VY Muley
   type: article-journal
   container-title: Methods in Molecular Biology
   volume: 2719
 #  issue: 2
-  issued: 2023-08
+  issued: 2023-10
 #  issn: 1539-9087
 #  url: https://doi.org/10.1007/978-1-0716-3461-5_15 
 #image: preview_image.jpg
@@ -392,7 +393,7 @@ writexl::write_xlsx(list(Table1 = predictions),
 ## Handiling imbalanced gold standard data 
 
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 
 weights <- as.list((1/table(traindata$class)))
 
@@ -406,7 +407,7 @@ history <- model %>% fit(as.matrix(traindata[,featurenames]), traindata$class,
 ## Increasing generalization and depth of DNN
 
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 
 model <- keras_model_sequential(input_shape = c(length(featurenames))) %>%
   layer_dense(units = 806, activation = "relu") %>%
@@ -426,7 +427,7 @@ model <- keras_model_sequential(input_shape = c(length(featurenames))) %>%
 ## Performance measures
 
 
-```{r, eval=FALSE, echo=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 
 metrics <- list(
   "fn" = metric_false_negatives(),

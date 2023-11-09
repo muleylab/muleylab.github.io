@@ -6,6 +6,16 @@ title: "Publications"
 
 ## 2023
 
+**Muley VY**. (2023): *Prediction and Analysis of Transcription Factor Binding Sites: Practical Examples and Case Studies Using R Programming*, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2023 Oct 7;2719:199–225
+
+<a href="https://pubmed.ncbi.nlm.nih.gov/37803120" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a>
+<a href="https://doi.org/10.1007/978-1-0716-3461-5_12" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
+
+**Muley VY**. (2023): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2023 Oct 7;2719:265–294
+
+<a href="https://pubmed.ncbi.nlm.nih.gov/37803123" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a>
+<a href="https://doi.org/10.1007/978-1-0716-3461-5_15" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
+
 Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O\*. (2023): *Microbial colonization dynamics of the postnatal digestive tract of Bos indicus calves*, Animal Science Journal. 2023 Sept 5;94(1):e13872
 
 <a href="https://pubmed.ncbi.nlm.nih.gov/37666790" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a>
@@ -100,7 +110,7 @@ VenkatRao V, Kumar SK, Sridevi P, **Muley VY**, Chaitanya RK. (2017): *Cloning, 
 
 Haldar KK, **Muley VY**, Datar S, Patra A. (2017): *Structural and electronic investigation of metal-semiconductor hybrid tetrapod hetero-structures*, Gold Bulletin, 2017 Mar 9;50:105--110
 
-<a href="https://doi.org/10.1007/978-3-319-47829-6_1227-2" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
+<a href="https://doi.org/10.1007/s13404-017-0198-8" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
 
 ## 2016
 
@@ -148,15 +158,12 @@ Kamble KD, More A, **Muley VY**. (2012): *Effect of incubation on DNase producti
 
 ## In process/Preprints (Upcoming)
 
-**Muley VY\***. (2023): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **In production**, *Proof available on request*
 
-**Muley VY\***. (2023): *Prediction and Analysis of Transcription Factor Binding Sites: Practical examples using R programming*, In: Sudip Mandal (Eds): Reverse Engineering of Regulatory Networks, Methods in Molecular Biology. Vol 2719, **In production**, *Proof available on request*
-
-Singh MS, Pyati A,  Rubi RD, Subramanian R, **Muley VY**, Ahmed A, Yellaboina S\*. (2023): *Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis*, **Under Review in iScience**
+Singh MS, Pyati A,  Rubi RD, Subramanian R, **Muley VY**, Ahmed A, Yellaboina S\*. (2023): *Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis*, **Under Revision**
 
 <a href="https://dx.doi.org/10.2139/ssrn.4569729" target="_blank" class="btn btn-outline-default btn-sm" role="button">Preprint</a>
 
-Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kamble K\*. (2023): *Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study*, **Submitted**
+Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kamble K\*. (2023): *Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study*, **Under Revision**
 
 **Muley VY\***, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): *Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway*, **In preparation**, A part of this work is available as a preprint at BioRxiv
 

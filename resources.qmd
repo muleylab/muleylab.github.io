@@ -11,6 +11,25 @@ listing:
 **Page under construction**
 
 
+## Plot tables customization
+
+https://rstudio-conf-2022.github.io/get-started-quarto/materials/07-plots-tables.html#/plots-graphics-and-tables
+
+
+## CHIP-Seq analysis
+
+https://www.bioconductor.org/help/course-materials/2017/BioC2017/Day2/Workshops/ChIP-seq/doc/workflow.html
+https://rockefelleruniversity.github.io/RU_ChIPseq/
+
+
+
+## scRNA-Seq
+
+Cell cycle analysis
+
+https://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/seurat_workflow.html
+
+
 ## Publications to Pathway mapping (pub2path)
 
 [pub2path](https://github.com/vijaykumarmuley/pub2path/blob/main/README.md) is a R package to reconstruct biological pathway or process of your interest without a prior knowledge of gene functions from PubMed literature. Access will be given on request since pub2path manuscript is under preparation. CDSG database (see below) was created using pub2path results.
