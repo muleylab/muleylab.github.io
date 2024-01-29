@@ -6,23 +6,30 @@ title: "Publications"
 
 ## 2024
 
-Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kamble K\*. (2023): *Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study*, Heliyon, **Accepted**
-
-## 2023
-
 Singh MS, Pyati A,  Rubi RD, Subramanian R, **Muley VY**, Ahmed A, Yellaboina S\*. (2023): *Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis*, iScience, **Accepted**
 
 <a href="https://dx.doi.org/10.2139/ssrn.4569729" target="_blank" class="btn btn-outline-default btn-sm" role="button">Preprint</a>
 
-**Muley VY**. (2023): *Prediction and Analysis of Transcription Factor Binding Sites: Practical Examples and Case Studies Using R Programming*, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2023 Oct 7;2719:199–225
+Rakshit S, More A, Gaikwad S, Gade A, Seniya C, **Muley VY**, Mukherjee A\*, Kamble K\*. (2023): *Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study*, Heliyon, 2024 Jan 12;10(2):e24350
+
+<a href="https://doi.org/10.1016/j.heliyon.2024.e24350" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
+
+**Muley VY**. (2024): *Prediction and Analysis of Transcription Factor Binding Sites: Practical Examples and Case Studies Using R Programming*, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:199–225
 
 <a href="https://pubmed.ncbi.nlm.nih.gov/37803120" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a>
 <a href="https://doi.org/10.1007/978-1-0716-3461-5_12" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
 
-**Muley VY**. (2023): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2023 Oct 7;2719:265–294
+**Muley VY**. (2024): *Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R*, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:265–294
 
 <a href="https://pubmed.ncbi.nlm.nih.gov/37803123" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a>
 <a href="https://doi.org/10.1007/978-1-0716-3461-5_15" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
+
+## 2023
+
+**Muley VY**. (2023): *Editorial: Gene expression: epigenetic and transcriptional regulation in neurodegenerative diseases and ageing*, Front Neurosci. 2023 Dec 12;17:1342890.
+
+<a href="https://pubmed.ncbi.nlm.nih.gov/38161795" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a>
+<a href="https://doi.org/10.3389/fnins.2023.1342890" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
 
 Robles-Rodríguez C, **Muley VY**, González-Dávalos LM, Shimada A, Varela-Echavarría A, Mora O\*. (2023): *Microbial colonization dynamics of the postnatal digestive tract of Bos indicus calves*, Animal Science Journal. 2023 Sept 5;94(1):e13872
 
