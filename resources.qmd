@@ -10,6 +10,37 @@ listing:
 
 **Page under construction**
 
+## Data analysis
+
+[Havard: Statistics and R](https://pll.harvard.edu/course/statistics-and-r?delta=0)
+
+[HarvardX: Data Science: Wrangling](https://www.edx.org/learn/data-science/harvard-university-data-science-wrangling)
+
+[Advanced Statistics for Data Science Specialization](https://www.coursera.org/specializations/advanced-statistics-data-science)
+
+## Study design
+
+[NUS: Quantitative and Qualitative Research for Beginners](https://www.edx.org/learn/research/the-national-university-of-singapore-quantitative-and-qualitative-research-for-beginners)
+
+[Imperial College London Study Designs in Epidemiology](https://www.coursera.org/learn/study-designs-epidemiology)
+
+[Introduction to Systematic Review and Meta-Analysis](https://www.coursera.org/learn/study-designs-epidemiology)
+
+## Science writing
+
+[Havard The Art of Persuasive Writing and Public Speaking](https://pll.harvard.edu/course/rhetoric-art-persuasive-writing-and-public-speaking)
+
+[Writing in the Sciences](https://www.coursera.org/learn/sciwrite)
+
+[Writing in English at University](https://www.coursera.org/learn/writing-english-university)
+
+
+[]()
+[]()
+[]()
+[]()
+[]()
+[]()
 
 ## Plot tables customization
 

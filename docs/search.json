@@ -207,7 +207,7 @@
     "href": "publications.html#section",
     "title": "Publications",
     "section": "2024",
-    "text": "2024\nSingh MS, Pyati A, Rubi RD, Subramanian R, Muley VY, Ahmed A, Yellaboina S*. (2023): Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis, iScience, Accepted\nPreprint\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2023): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Heliyon, 2024 Jan 12;10(2):e24350\nJournal\nMuley VY. (2024): Prediction and Analysis of Transcription Factor Binding Sites: Practical Examples and Case Studies Using R Programming, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:199–225\nPubMed Journal\nMuley VY. (2024): Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:265–294\nPubMed Journal"
+    "text": "2024\nSingh MS, Pyati A, Rubi RD, Subramanian R, Muley VY, Ahmed A, Yellaboina S*. (2024): Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis, iScience,\nJournal\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2024): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Heliyon, 2024 Jan 12;10(2):e24350\nJournal\nMuley VY. (2024): Prediction and Analysis of Transcription Factor Binding Sites: Practical Examples and Case Studies Using R Programming, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:199–225\nPubMed Journal\nMuley VY. (2024): Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:265–294\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-1",
@@ -341,5 +341,47 @@
     "title": "Publications",
     "section": "In process/Preprints",
     "text": "In process/Preprints\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
+  },
+  {
+    "objectID": "resources.html#data-analysis",
+    "href": "resources.html#data-analysis",
+    "title": "Resources",
+    "section": "Data analysis",
+    "text": "Data analysis\nHavard: Statistics and R\nHarvardX: Data Science: Wrangling\nAdvanced Statistics for Data Science Specialization"
+  },
+  {
+    "objectID": "resources.html#study-design",
+    "href": "resources.html#study-design",
+    "title": "Resources",
+    "section": "Study design",
+    "text": "Study design\nNUS: Quantitative and Qualitative Research for Beginners\nImperial College London Study Designs in Epidemiology\nIntroduction to Systematic Review and Meta-Analysis"
+  },
+  {
+    "objectID": "resources.html#science-writing",
+    "href": "resources.html#science-writing",
+    "title": "Resources",
+    "section": "Science writing",
+    "text": "Science writing\nHavard The Art of Persuasive Writing and Public Speaking\nWriting in the Sciences\nWriting in English at University"
+  },
+  {
+    "objectID": "resources.html#plot-tables-customization",
+    "href": "resources.html#plot-tables-customization",
+    "title": "Resources",
+    "section": "Plot tables customization",
+    "text": "Plot tables customization\nhttps://rstudio-conf-2022.github.io/get-started-quarto/materials/07-plots-tables.html#/plots-graphics-and-tables"
+  },
+  {
+    "objectID": "resources.html#chip-seq-analysis",
+    "href": "resources.html#chip-seq-analysis",
+    "title": "Resources",
+    "section": "CHIP-Seq analysis",
+    "text": "CHIP-Seq analysis\nhttps://www.bioconductor.org/help/course-materials/2017/BioC2017/Day2/Workshops/ChIP-seq/doc/workflow.html https://rockefelleruniversity.github.io/RU_ChIPseq/"
+  },
+  {
+    "objectID": "resources.html#scrna-seq",
+    "href": "resources.html#scrna-seq",
+    "title": "Resources",
+    "section": "scRNA-Seq",
+    "text": "scRNA-Seq\nCell cycle analysis\nhttps://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/seurat_workflow.html"
   }
 ]
