@@ -207,7 +207,7 @@
     "href": "publications.html#section",
     "title": "Publications",
     "section": "2024",
-    "text": "2024\nSingh MS, Pyati A, Rubi RD, Subramanian R, Muley VY, Ahmed A, Yellaboina S*. (2024): Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis, iScience,\nJournal\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2024): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Heliyon, 2024 Jan 12;10(2):e24350\nJournal\nMuley VY. (2024): Prediction and Analysis of Transcription Factor Binding Sites: Practical Examples and Case Studies Using R Programming, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:199–225\nPubMed Journal\nMuley VY. (2024): Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:265–294\nPubMed Journal"
+    "text": "2024\nSingh MS, Pyati A, Rubi RD, Subramanian R, Muley VY, Ahmed A, Yellaboina S*. (2024): Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis, iScience, 2024 Mar 15;27(3):109087\nPubMed Journal\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2024): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Heliyon, 2024 Jan 12;10(2):e24350\nPubMed Journal\nMuley VY. (2024): Prediction and Analysis of Transcription Factor Binding Sites: Practical Examples and Case Studies Using R Programming, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:199–225\nPubMed Journal\nMuley VY. (2024): Deep Learning for Predicting Gene Regulatory Networks: A Step-by-Step Protocol in R, In: Mandal, S. (eds) Reverse Engineering of Regulatory Networks. Methods in Molecular Biology, 2024;2719:265–294\nPubMed Journal"
   },
   {
     "objectID": "publications.html#section-1",
@@ -280,11 +280,18 @@
     "text": "2013\nMuley VY, Ranjan A. (2013): Evaluation of physical and functional protein-protein interaction prediction methods for detecting biological pathways, PLOS One, 2013 Jan 17;8(1):e54325\nPubMed Journal"
   },
   {
-    "objectID": "publications.html#in-processpreprints-upcoming",
-    "href": "publications.html#in-processpreprints-upcoming",
+    "objectID": "publications.html#section-11",
+    "href": "publications.html#section-11",
     "title": "Publications",
-    "section": "In process/Preprints (Upcoming)",
-    "text": "In process/Preprints (Upcoming)\nRakshit S, More A, Gaikwad S, Gade A, Seniya C, Muley VY, Mukherjee A*, Kamble K*. (2023): Role of Diosgenin in suppression of HIV-1 replication: An in vitro preclinical study, Heliyon, Accepted\nSingh MS, Pyati A, Rubi RD, Subramanian R, Muley VY, Ahmed A, Yellaboina S*. (2023): Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis, iScience, Accepted\nPreprint\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
+    "section": "2012",
+    "text": "2012\nMuley VY, Acharya V. (2012): Genome-wide prediction and analysis of protein-protein functional linkages in bacteria, SpringerBriefs in Systems Biology, 2012 Jul 28:Volume 2, Springer Nature (ISBN 978-1-4614-4705-4), Book\nWebLink\nMuley VY, Ranjan A. (2012): Effect of reference genome selection on the performance of computational methods for genome-wide protein-protein interaction prediction, PLOS One, 2012 Jul 26;7(7):e42057\nPubMed Journal\nKamble KD, Bidwe PR, Muley VY, Kamble LH, Bhadange DG, Musaddiq M. (2012): Characterization of L-asparaginase producing bacteria from water, farm and saline soil, Bioscience discovery, 2012 Jan 1;3 (1), 116-119\nJournal\nKamble KD, More A, Muley VY. (2012): Effect of incubation on DNase production by a moderate thermophilic bacterium screened from arid land, Journal of Pure and Applied Microbiology, 2012 Mar 31;6(1):265-269\nJournal"
+  },
+  {
+    "objectID": "publications.html#in-processpreprints",
+    "href": "publications.html#in-processpreprints",
+    "title": "Publications",
+    "section": "In process/Preprints",
+    "text": "In process/Preprints\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
   },
   {
     "objectID": "aboutVijay.html",
@@ -299,48 +306,6 @@
     "title": "Resources",
     "section": "",
     "text": "Page under construction"
-  },
-  {
-    "objectID": "resources.html#publications-to-pathway-mapping-pub2path",
-    "href": "resources.html#publications-to-pathway-mapping-pub2path",
-    "title": "Resources",
-    "section": "Publications to Pathway mapping (pub2path)",
-    "text": "Publications to Pathway mapping (pub2path)\npub2path is a R package to reconstruct biological pathway or process of your interest without a prior knowledge of gene functions from PubMed literature. Access will be given on request since pub2path manuscript is under preparation. CDSG database (see below) was created using pub2path results."
-  },
-  {
-    "objectID": "resources.html#neurodegenerative-disease-gene-expression-database-ndgex",
-    "href": "resources.html#neurodegenerative-disease-gene-expression-database-ndgex",
-    "title": "Resources",
-    "section": "Neurodegenerative Disease Gene Expression database (NDGEx)",
-    "text": "Neurodegenerative Disease Gene Expression database (NDGEx)\nNDGEx is a database of differential expression results in 25 neurodegenerative diseases from 155 independent microarray datasets."
-  },
-  {
-    "objectID": "resources.html#cell-death-and-survival-gene-database-cdsg",
-    "href": "resources.html#cell-death-and-survival-gene-database-cdsg",
-    "title": "Resources",
-    "section": "Cell Death and Survival gene database (CDSG)",
-    "text": "Cell Death and Survival gene database (CDSG)\nCDSG ia a database of 8,380 predicted genes from 175 species linked with literature pub2path algorithm (unpublished) on cell death and survival."
-  },
-  {
-    "objectID": "resources.html#escherichia-coli-functional-protein-protein-interactions-ecofunppi",
-    "href": "resources.html#escherichia-coli-functional-protein-protein-interactions-ecofunppi",
-    "title": "Resources",
-    "section": "Escherichia coli functional protein-protein interactions (EcoFunPPI)",
-    "text": "Escherichia coli functional protein-protein interactions (EcoFunPPI)\nEcofunPPI ia a database of functional protein-protein interactions in Escherichia coli K12 predicted using a combination of 9 machine learning methods. It is highly reliable database than several existing published database on PPI and could provide a experimentally testable hypothesis on proteins of interest."
-  },
-  {
-    "objectID": "publications.html#section-11",
-    "href": "publications.html#section-11",
-    "title": "Publications",
-    "section": "2012",
-    "text": "2012\nMuley VY, Acharya V. (2012): Genome-wide prediction and analysis of protein-protein functional linkages in bacteria, SpringerBriefs in Systems Biology, 2012 Jul 28:Volume 2, Springer Nature (ISBN 978-1-4614-4705-4), Book\nWebLink\nMuley VY, Ranjan A. (2012): Effect of reference genome selection on the performance of computational methods for genome-wide protein-protein interaction prediction, PLOS One, 2012 Jul 26;7(7):e42057\nPubMed Journal\nKamble KD, Bidwe PR, Muley VY, Kamble LH, Bhadange DG, Musaddiq M. (2012): Characterization of L-asparaginase producing bacteria from water, farm and saline soil, Bioscience discovery, 2012 Jan 1;3 (1), 116-119\nJournal\nKamble KD, More A, Muley VY. (2012): Effect of incubation on DNase production by a moderate thermophilic bacterium screened from arid land, Journal of Pure and Applied Microbiology, 2012 Mar 31;6(1):265-269\nJournal"
-  },
-  {
-    "objectID": "publications.html#in-processpreprints",
-    "href": "publications.html#in-processpreprints",
-    "title": "Publications",
-    "section": "In process/Preprints",
-    "text": "In process/Preprints\nMuley VY*, Singh A, Gruber K, Kamble KD, Varela-Echavarría A. (2023): Potential functions of the amino-terminal cytoplasmic region of SARS-CoV-2 entry protein TMPRSS2 in virion assembly and early secretory pathway, In preparation, A part of this work is available as a preprint at BioRxiv\nPreprint"
   },
   {
     "objectID": "resources.html#data-analysis",
@@ -383,5 +348,33 @@
     "title": "Resources",
     "section": "scRNA-Seq",
     "text": "scRNA-Seq\nCell cycle analysis\nhttps://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/seurat_workflow.html"
+  },
+  {
+    "objectID": "resources.html#publications-to-pathway-mapping-pub2path",
+    "href": "resources.html#publications-to-pathway-mapping-pub2path",
+    "title": "Resources",
+    "section": "Publications to Pathway mapping (pub2path)",
+    "text": "Publications to Pathway mapping (pub2path)\npub2path is a R package to reconstruct biological pathway or process of your interest without a prior knowledge of gene functions from PubMed literature. Access will be given on request since pub2path manuscript is under preparation. CDSG database (see below) was created using pub2path results."
+  },
+  {
+    "objectID": "resources.html#neurodegenerative-disease-gene-expression-database-ndgex",
+    "href": "resources.html#neurodegenerative-disease-gene-expression-database-ndgex",
+    "title": "Resources",
+    "section": "Neurodegenerative Disease Gene Expression database (NDGEx)",
+    "text": "Neurodegenerative Disease Gene Expression database (NDGEx)\nNDGEx is a database of differential expression results in 25 neurodegenerative diseases from 155 independent microarray datasets."
+  },
+  {
+    "objectID": "resources.html#cell-death-and-survival-gene-database-cdsg",
+    "href": "resources.html#cell-death-and-survival-gene-database-cdsg",
+    "title": "Resources",
+    "section": "Cell Death and Survival gene database (CDSG)",
+    "text": "Cell Death and Survival gene database (CDSG)\nCDSG ia a database of 8,380 predicted genes from 175 species linked with literature pub2path algorithm (unpublished) on cell death and survival."
+  },
+  {
+    "objectID": "resources.html#escherichia-coli-functional-protein-protein-interactions-ecofunppi",
+    "href": "resources.html#escherichia-coli-functional-protein-protein-interactions-ecofunppi",
+    "title": "Resources",
+    "section": "Escherichia coli functional protein-protein interactions (EcoFunPPI)",
+    "text": "Escherichia coli functional protein-protein interactions (EcoFunPPI)\nEcofunPPI ia a database of functional protein-protein interactions in Escherichia coli K12 predicted using a combination of 9 machine learning methods. It is highly reliable database than several existing published database on PPI and could provide a experimentally testable hypothesis on proteins of interest."
   }
 ]
