@@ -12,11 +12,18 @@ listing:
 
 ## Data analysis
 
+
 [Havard: Statistics and R](https://pll.harvard.edu/course/statistics-and-r?delta=0)
 
 [HarvardX: Data Science: Wrangling](https://www.edx.org/learn/data-science/harvard-university-data-science-wrangling)
 
 [Advanced Statistics for Data Science Specialization](https://www.coursera.org/specializations/advanced-statistics-data-science)
+
+
+### Remove unwanted varations (covariate analysis)
+
+[SVA](https://master.bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html)
+
 
 ## Study design
 
@@ -34,8 +41,6 @@ listing:
 
 [Writing in English at University](https://www.coursera.org/learn/writing-english-university)
 
-
-[]()
 []()
 []()
 []()
