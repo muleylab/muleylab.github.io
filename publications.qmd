@@ -4,6 +4,22 @@ title: "Publications"
 
 ## Published
 
+## 2025
+
+
+
+Jamdhade AR, Jadhav BR, **Muley VY**, Hivrale VK\* (2025): *Exploring the Biochemical Profile of Pheretima posthuma Intestinal Proteases: Unlocking Industrial and Biotechnological Opportunities*, Industrial Biotechnology **(In Press)** 
+
+**Muley, VY** (Ed.). (2025): *Computational virology*, Methods in Molecular Biology, 2025 May, Humana press, Springer Nature, New York, NY (ISBN 978-1-0716-4545-1), **Book**
+
+<a href="https://link.springer.com/book/9781071645451" target="_blank" class="btn btn-outline-success btn-sm" role="button">WebLink</a>
+
+
+Jamdhade AR, Hivrale VK, **Muley VY\***. (2024): *Darwin, Charles: On Evolutionary Foundation*. In: Shackelford, T. (eds) Encyclopedia of Religious Psychology and Behavior, 2024 July 23: Springer, Cham
+
+<a href="https://doi.org/10.1007/978-3-031-38971-9_834-1" target="_blank" class="btn btn-outline-success btn-sm" role="button">WebLink</a>
+
+
 ## 2024
 
 Singh MS, Pyati A,  Rubi RD, Subramanian R, **Muley VY**, Ahmed A, Yellaboina S\*. (2024): *Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis*, iScience, 2024 Mar 15;27(3):109087

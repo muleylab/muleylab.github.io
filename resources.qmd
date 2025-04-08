@@ -41,15 +41,16 @@ listing:
 
 [Writing in English at University](https://www.coursera.org/learn/writing-english-university)
 
-[]()
-[]()
-[]()
-[]()
+[Cell biology by numbers](https://book.bionumbers.org/what-is-faster-transcription-or-translation/)
+[Structural biology: How proteins got their close-up](https://knowablemagazine.org/content/article/living-world/2022/structural-biology-how-proteins-got-their-closeup)
+[The Discovery of RNA Polymerase](https://www.jbc.org/article/S0021-9258(19)47849-6/fulltext)
 []()
 
 ## Plot tables customization
 
 https://rstudio-conf-2022.github.io/get-started-quarto/materials/07-plots-tables.html#/plots-graphics-and-tables
+
+[Colors](https://visme.co/blog/website-color-schemes/)
 
 
 ## CHIP-Seq analysis
