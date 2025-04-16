@@ -1,7 +1,8 @@
 {
-  "hash": "5d08ea8e3de12cd5610f8324138b0e74",
+  "hash": "0e917949500863629e9b5cf4ce92e1e0",
   "result": {
-    "markdown": "---\ntitle: \"Members\"\n---\n\n\n#  \n\n::: {style=\"float:left;position: relative; top: 0px;\"}\n\n::: {.cell}\n::: {.cell-output-display}\n![](images/passportpic.jpeg){width=40%}\n:::\n:::\n\n:::\n\n\n## Vijaykumar Yogesh Muley\n\n<a href=\"aboutVijay.qmd\" target=\"_blank\" class=\"btn btn-outline-primary btn-sm\" role=\"button\">About me</a> \n\n<i class=\"bi bi-envelope\"></i> muleylab at gmail dot com\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n",
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Members\"\n---\n\n\n\n\n#  Page Under Construction\n\n::: {style=\"float:left;position: relative; top: 0px;\"}\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](images/passportpic.jpeg){width=40%}\n:::\n:::\n\n\n\n:::\n\n\n## Vijaykumar Yogesh Muley\n\n<a href=\"aboutVijay.qmd\" target=\"_blank\" class=\"btn btn-outline-primary btn-sm\" role=\"button\">About me</a> \n\n<i class=\"bi bi-envelope\"></i> muleylab at gmail dot com\n\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
