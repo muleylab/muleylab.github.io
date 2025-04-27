@@ -3,7 +3,9 @@
   "result": {
     "engine": "knitr",
     "markdown": "---\ntitle: \"Members\"\n---\n\n\n\n\n#  Page Under Construction\n\n::: {style=\"float:left;position: relative; top: 0px;\"}\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](images/passportpic.jpeg){width=40%}\n:::\n:::\n\n\n\n:::\n\n\n## Vijaykumar Yogesh Muley\n\n<a href=\"aboutVijay.qmd\" target=\"_blank\" class=\"btn btn-outline-primary btn-sm\" role=\"button\">About me</a> \n\n<i class=\"bi bi-envelope\"></i> muleylab at gmail dot com\n\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n",
-    "supporting": [],
+    "supporting": [
+      "team_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
