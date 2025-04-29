@@ -6,7 +6,7 @@ title: "Publications"
 
 1Jamdhade AR, Jadhav BR, **Muley VY**, Hivrale VK\* (2025): *Exploring the Biochemical Profile of Pheretima posthuma Intestinal Proteases: Unlocking Industrial and Biotechnological Opportunities*, Industrial Biotechnology, 2025 Apr 7 
 
-<a href="https://doi.org/10.1089/ind.2025.000" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
+<a href="https://doi.org/10.1089/ind.2025.0001" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
 
 
 2Singh MS, Pyati A,  Rubi RD, Subramanian R, **Muley VY**, Ahmed A, Yellaboina S\*. (2024): *Systems-wide view of host-pathogen interactions across COVID-19 severities using integrated omics analysis*, iScience, 2024 Mar 15;27(3):109087
