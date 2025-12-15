@@ -4,4 +4,4 @@ title: ""
 
 ##  
 
-Our research is dedicated to delving into the multifaceted realm of gene functionality, with a specific focus on infectious, autoimmune, neurodegenerative, and neuropsychiatric diseases and disorders. Utilizing cutting-edge methodologies, we conduct in-depth analyses of extensive data to identify essential genetic modules that play pivotal roles in the genesis and progression of these conditions.
+Our research is dedicated to delving into the multifaceted realm of gene functionality, with a specific focus on infectious, autoimmune, neurodegenerative, and neuropsychiatric diseases and disorders. Utilizing cutting-edge methodologies, we conduct in-depth analyses of extensive data to identify essential genetic modules that play pivotal roles in the genesis and progression of diseases.
