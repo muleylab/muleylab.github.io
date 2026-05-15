@@ -8,6 +8,7 @@ title: "Publications"
 
 **Muley VY\***, Delahaye-Duriez Andree\* (2025): *Transcriptional coordination between intergenic RNA polymerase II-bound regions and nearby genes reveals functional specialization and disease association in peripheral blood*, Computational and Structural Biotechnology Journal, 2025 Nov 26:27(1):5523-5536
 
+<a href="https://pubmed.ncbi.nlm.nih.gov/41446805" target="_blank" class="btn btn-primary btn-sm" role="button">PubMed</a>
 <a href="https://doi.org/10.1016/j.csbj.2025.11.060" target="_blank" class="btn btn-outline-primary btn-sm" role="button">Journal</a>
 
 
@@ -222,8 +223,7 @@ Joma MR, Bertho G, **Muley VY**, Caradeuc C, Pansiot J, Tabet L, Saleh R, Biesag
 Giraud N, Goubard A, Delahaye A, Marshall E, Pellegrin I, Salmon-Ceron D, Chaisemartin LD, Laforge M\*: *New biomarkers for long COVID diagnosis reveal specific signatures of metabolic and mitochondrial dysregulation, tissue inflammation, and vascular damage linked to pathophysiology*, **Under Review**
 
 
-Mohammed SA, Saini AK, Aman S, **Muley VY**, Wairokpam GK, Parray ZA, Sahani A, Pathania A\*: [*Global Proteome Remodelling in Rhodococcus jialingiae RS1 to Decipher its Plant Growth-Promoting and Biofertilizer Properties: Gene Identification for Transgenics*](https://doi.org/10.64898/2026.05.11.724437
-), *Under Review**. A part of this work is available as a preprint at BioRxiv
+Mohammed SA, Saini AK, Aman S, **Muley VY**, Wairokpam GK, Parray ZA, Sahani A, Pathania A\*: *Global Proteome Remodelling in Rhodococcus jialingiae RS1 to Decipher its Plant Growth-Promoting and Biofertilizer Properties: Gene Identification for Transgenics*, **Under Review**
 
 <a href="https://doi.org/10.64898/2026.05.11.724437" target="_blank" class="btn btn-outline-default btn-sm" role="button">Preprint</a>
 
