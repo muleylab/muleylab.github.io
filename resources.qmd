@@ -12,6 +12,7 @@ listing:
 
 ## Data analysis
 
+[Scikit-bio: a fundamental Python library for biological omic data analysis.](https://doi.org/10.1038/s41592-025-02981-z)
 
 [Havard: Statistics and R](https://pll.harvard.edu/course/statistics-and-r?delta=0)
 
@@ -44,7 +45,6 @@ listing:
 [Cell biology by numbers](https://book.bionumbers.org/what-is-faster-transcription-or-translation/)
 [Structural biology: How proteins got their close-up](https://knowablemagazine.org/content/article/living-world/2022/structural-biology-how-proteins-got-their-closeup)
 [The Discovery of RNA Polymerase](https://www.jbc.org/article/S0021-9258(19)47849-6/fulltext)
-[]()
 
 ## Plot tables customization
 
@@ -58,7 +58,7 @@ https://rstudio-conf-2022.github.io/get-started-quarto/materials/07-plots-tables
 https://www.bioconductor.org/help/course-materials/2017/BioC2017/Day2/Workshops/ChIP-seq/doc/workflow.html
 https://rockefelleruniversity.github.io/RU_ChIPseq/
 
-
+[ExTRI: Extraction of transcription regulation interactions from literature](https://doi.org/10.1016/j.bbagrm.2021.194778)
 
 ## scRNA-Seq
 
@@ -83,3 +83,23 @@ https://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/seurat_workflow.htm
 
 [EcofunPPI](http://www.cdfd.org.in/ecofunppi/) ia a database of functional protein-protein interactions in *Escherichia coli* K12 predicted using a combination of 9 machine learning methods. It is highly reliable database than several existing published database on PPI and could provide a experimentally testable hypothesis on proteins of interest.
 
+The ggplot2 package has become so popular over the years that there are now hundreds of extension packages specifically designed to enhance ggplot2 visualizations. These extensions make the ggplot2 syntax even more efficient and help create stunning graphs with ease.
+
+In my comprehensive data visualization course, we’ll explore some of the most useful extensions. I’ve created dedicated course modules on the following:
+
+🔹 geomtextpath: Combines text and paths for creative labeling along lines.
+🔹 gganimate: Adds dynamic animations to your visualizations.
+🔹 ggdist: Enhances visual representation of distributions and uncertainty.
+🔹 gghighlight: Highlights specific data points or groups in your plots.
+🔹 ggiraph: Makes your plots interactive with hover and click features.
+🔹 ggpubr: Simplifies publication-ready plot creation with user-friendly functions.
+🔹 ggrepel: Improves readability by preventing overlapping text labels.
+🔹 ggstatsplot: Integrates statistical tests directly into your visualizations.
+🔹 ggtext: Adds rich text formatting capabilities to your plots.
+🔹 patchwork: Easily combines multiple plots into cohesive layouts.
+
+To give you a sneak peek of my favorite extensions, I’ve released a YouTube video introducing my personal Top 5. Do you agree with my list? Let me know in the comments!
+
+Watch the video here: https://lnkd.in/eBNyngU5
+
+Interested in diving deeper? Join my online course on Data Visualization in R Using ggplot2 & Friends. 
