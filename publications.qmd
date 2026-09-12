@@ -183,9 +183,13 @@ Le HTT, Ahamad I, **Muley VY\***. (2025): *Deciphering Host Differential Gene Ex
 
 ### Reference book chapters
 
-**Muley VY\***.: *Origin of Life*. In: Shackelford, T. (eds) Encyclopedia of Religious Psychology and Behavior: Springer Nature, **Accepted**
+**Muley VY\***.: *Origin of Life*. In: Shackelford, T. (eds) Encyclopedia of Religious Psychology and Behavior, 2026 Sept 12: Springer, Cham
 
-**Muley VY\***, Jamdhade AR, Hivrale VK.: *Brain Evolution*. In: Shackelford, T. (eds) Encyclopedia of Religious Psychology and Behavior: Springer Nature, **Accepted**
+<a href="https://doi.org/10.1007/978-3-031-38971-9_409-1" target="_blank" class="btn btn-outline-success btn-sm" role="button">WebLink</a>
+
+**Muley VY\***, Jamdhade AR, Hivrale VK.: *Brain Evolution*. In: Shackelford, T. (eds) Encyclopedia of Religious Psychology and Behavior, 2026 July 24: Springer, Cham
+
+<a href="https://doi.org/10.1007/978-3-031-38971-9_834-1" target="_blank" class="btn btn-outline-success btn-sm" role="button">WebLink</a>
 
 Jamdhade AR, Hivrale VK, **Muley VY\***. (2024): *Darwin, Charles: On Evolutionary Foundation*. In: Shackelford, T. (eds) Encyclopedia of Religious Psychology and Behavior, 2024 July 23: Springer, Cham
 

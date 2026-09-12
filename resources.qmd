@@ -10,6 +10,15 @@ listing:
 
 **Page under construction**
 
+## Module identification
+
+[WGCNA]()
+
+[pyWGCNA](https://github.com/mortazavilab/PyWGCNA)
+
+[CoExpNets](https://github.com/juanbot/CoExpNets)
+
+
 ## Data analysis
 
 [Scikit-bio: a fundamental Python library for biological omic data analysis.](https://doi.org/10.1038/s41592-025-02981-z)
