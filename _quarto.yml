@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Laboratory of ProteoGenomics"
+  title: "Vijaykumar Yogesh Muley"
   page-footer: "© 2025 Vijaykumar Muley. All rights reserved."
   google-analytics:
     tracking-id: "G-B5FVC80FWJ"
@@ -13,7 +13,7 @@ website:
       - href: index.qmd
         text: Home
       - research.qmd
-      - team.qmd
+#      - team.qmd
       - publications.qmd
 #      - resources.qmd
       - protocols.qmd
