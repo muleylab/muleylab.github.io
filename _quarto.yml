@@ -16,7 +16,7 @@ website:
 #      - team.qmd
       - publications.qmd
 #      - resources.qmd
-      - protocols.qmd
+#      - protocols.qmd
 #      - positions.qmd
 
 format:

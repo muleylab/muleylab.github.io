@@ -227,11 +227,7 @@ Pathania A, **Muley VY\***. (2017): *Gene Expression Profiling*, Encyclopedia of
 ## In process/Preprints
 
 
-Joma MR, Bertho G, **Muley VY**, Caradeuc C, Pansiot J, Tabet L, Saleh R, Biesaga E,  Lebourgeois S,  Canesi F, Mauvais F, Bouchneb W,
-Giraud N, Goubard A, Delahaye A, Marshall E, Pellegrin I, Salmon-Ceron D, Chaisemartin LD, Laforge M\*: *New biomarkers for long COVID diagnosis reveal specific signatures of metabolic and mitochondrial dysregulation, tissue inflammation, and vascular damage linked to pathophysiology*, **Under Review**
-
-
-Mohammed SA, Saini AK, Aman S, **Muley VY**, Wairokpam GK, Parray ZA, Sahani A, Pathania A\*: *Global Proteome Remodelling in Rhodococcus jialingiae RS1 to Decipher its Plant Growth-Promoting and Biofertilizer Properties: Gene Identification for Transgenics*, **Under Review**
+Mohammed SA, Saini AK, Aman S, **Muley VY**, Wairokpam GK, Parray ZA, Sahani A, Pathania A\*: *Global Proteome Remodelling in Rhodococcus jialingiae RS1 to Decipher its Plant Growth-Promoting and Biofertilizer Properties: Gene Identification for Transgenics*, **Under Revision**
 
 <a href="https://doi.org/10.64898/2026.05.11.724437" target="_blank" class="btn btn-outline-default btn-sm" role="button">Preprint</a>
 
