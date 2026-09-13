@@ -10,9 +10,9 @@ website:
     anonymize-ip: true
   navbar:
     left:
-      - href: index.qmd
+      - href: research.qmd
         text: Home
-      - research.qmd
+#      - research.qmd
 #      - team.qmd
       - publications.qmd
 #      - resources.qmd
