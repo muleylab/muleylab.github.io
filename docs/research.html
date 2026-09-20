@@ -98,12 +98,8 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./research.html" aria-current="page"> 
-<span class="menu-text">Research</span></a>
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./publications.html"> 
@@ -125,12 +121,17 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#mapping-regulatory-plasticity-across-the-human-transcriptome" id="toc-mapping-regulatory-plasticity-across-the-human-transcriptome" class="nav-link active" data-scroll-target="#mapping-regulatory-plasticity-across-the-human-transcriptome">Mapping regulatory plasticity across the human transcriptome</a></li>
-  <li><a href="#enhancer-transcription-and-bloodbrain-molecular-communication" id="toc-enhancer-transcription-and-bloodbrain-molecular-communication" class="nav-link" data-scroll-target="#enhancer-transcription-and-bloodbrain-molecular-communication">Enhancer transcription and blood–brain molecular communication</a></li>
-  <li><a href="#protein-protein-interaction-networks-and-intercellular-communication" id="toc-protein-protein-interaction-networks-and-intercellular-communication" class="nav-link" data-scroll-target="#protein-protein-interaction-networks-and-intercellular-communication">Protein-protein interaction networks and intercellular communication</a></li>
-  <li><a href="#evolutionary-and-developmental-neurobiology" id="toc-evolutionary-and-developmental-neurobiology" class="nav-link" data-scroll-target="#evolutionary-and-developmental-neurobiology">Evolutionary and developmental neurobiology</a></li>
-  <li><a href="#protein-domain-evolution-and-functional-diversification" id="toc-protein-domain-evolution-and-functional-diversification" class="nav-link" data-scroll-target="#protein-domain-evolution-and-functional-diversification">Protein domain evolution and functional diversification</a></li>
-  <li><a href="#systems-biology-of-disease-toward-reprogramming-gene-expression" id="toc-systems-biology-of-disease-toward-reprogramming-gene-expression" class="nav-link" data-scroll-target="#systems-biology-of-disease-toward-reprogramming-gene-expression">Systems biology of disease: toward reprogramming gene expression</a></li>
+  <li><a href="#from-biological-data-to-biological-discovery" id="toc-from-biological-data-to-biological-discovery" class="nav-link active" data-scroll-target="#from-biological-data-to-biological-discovery">From Biological Data to Biological Discovery</a>
+  <ul class="collapse">
+  <li><a href="#integrated-biological-discovery" id="toc-integrated-biological-discovery" class="nav-link" data-scroll-target="#integrated-biological-discovery">1. Integrated Biological Discovery</a></li>
+  <li><a href="#gene-regulation-cellular-states-and-reprogramming" id="toc-gene-regulation-cellular-states-and-reprogramming" class="nav-link" data-scroll-target="#gene-regulation-cellular-states-and-reprogramming">2. Gene Regulation, Cellular States, and Reprogramming</a></li>
+  <li><a href="#networks-evolution-and-brainbody-communication" id="toc-networks-evolution-and-brainbody-communication" class="nav-link" data-scroll-target="#networks-evolution-and-brainbody-communication">3. Networks, Evolution, and Brain–Body Communication</a></li>
+  <li><a href="#metabolism-protein-domains-and-biological-innovation" id="toc-metabolism-protein-domains-and-biological-innovation" class="nav-link" data-scroll-target="#metabolism-protein-domains-and-biological-innovation">4. Metabolism, Protein Domains, and Biological Innovation</a></li>
+  <li><a href="#systems-biology-of-human-disease" id="toc-systems-biology-of-human-disease" class="nav-link" data-scroll-target="#systems-biology-of-human-disease">5. Systems Biology of Human Disease</a>
+  <ul class="collapse">
+  <li><a href="#from-biological-discovery-to-translation" id="toc-from-biological-discovery-to-translation" class="nav-link" data-scroll-target="#from-biological-discovery-to-translation">From Biological Discovery to Translation</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -156,140 +157,162 @@ gtag('config', 'G-B5FVC80FWJ', { 'anonymize_ip': true});
 </header>
 
 
-<!-- This will be displayed in the page source code but not in the output. -->
-<p>We study how genomic information is transformed into functional cellular machinery and how this orchestration breaks down in human disease. By combining multi-omics data integration, network theory, and machine learning, our research pursues a central goal: <strong>to uncover the dynamic principles of gene regulation and protein interactions with sufficient depth to enable precise, therapeutic cellular reprogramming.</strong></p>
-<p>Our work spans five interconnected scales:</p>
+<section id="from-biological-data-to-biological-discovery" class="level1">
+<h1>From Biological Data to Biological Discovery</h1>
+<p>Modern biology produces enormous amounts of data — genomes, gene expression, single-cell profiles, protein interactions, metabolic pathways, and drug responses. Each dataset provides only a partial view of how living systems work. Important biological mechanisms often become visible only when these different layers are considered <strong>together</strong>.</p>
+<p>My research develops computational approaches that integrate heterogeneous biological information to identify <strong>biological relationships, regulatory mechanisms, and molecular control points that can be experimentally tested</strong>. Rather than treating each dataset as isolated evidence, I aim to reconstruct biological systems across multiple levels of organization:</p>
+<p><strong>molecules → interactions → networks → pathways → cellular states → tissues → disease</strong></p>
+<p>This systems-level view provides a framework for moving from large-scale biological data toward experimentally testable hypotheses and, ultimately, applications in medicine and biotechnology.</p>
+<hr>
+<section id="integrated-biological-discovery" class="level2">
+<h2 class="anchored" data-anchor-id="integrated-biological-discovery">1. Integrated Biological Discovery</h2>
+<p>A central direction of my research is the development and application of computational methods for <strong>integrating diverse biological datasets</strong>. Depending on the biological question, this can involve:</p>
 <ul>
-<li><strong>Regulatory Plasticity:</strong> Mapping how transcription factor–gene networks adapt, rewire, and alter control strength across cellular contexts.</li>
-<li><strong>Cellular &amp; Inter-Organ Interactomes:</strong> Expanding protein–protein interaction networks from intracellular complexes to systemic, cross-tissue signaling pathways, with a focus on brain–body communication.</li>
-<li><strong>Evolutionary &amp; Developmental Origins:</strong> Tracking how conserved developmental networks undergo lineage-specific divergence to shape complex structures like the vertebrate brain.</li>
-<li><strong>Structural Architecture of Protein Domains:</strong> Decoding how ancient, hyper-variable domain families evolve, diversify, and organize into functional interaction networks across the tree of life.</li>
-<li><strong>Systems Medicine &amp; Therapeutic Reprogramming:</strong> Integrating single-cell, bulk multi-omics, and network topology models to isolate disease mechanisms in complex neuropsychiatric, autoimmune, and infectious disorders.</li>
+<li>Genomic and protein sequences</li>
+<li>Gene-expression and transcriptomic datasets</li>
+<li>Single-cell RNA sequencing</li>
+<li>Gene regulatory networks</li>
+<li>Protein–protein interaction networks</li>
+<li>Metabolic networks</li>
+<li>Drug–gene relationships</li>
+<li>Disease-associated molecular signatures</li>
+<li>Publicly available biological databases and literature</li>
 </ul>
-<section id="mapping-regulatory-plasticity-across-the-human-transcriptome" class="level2">
-<h2 class="anchored" data-anchor-id="mapping-regulatory-plasticity-across-the-human-transcriptome">Mapping regulatory plasticity across the human transcriptome</h2>
-<p>While classical models often depict gene regulation as a static network of interactions between transcription factors and target genes (<a href="https://doi.org/10.1016/j.biochi.2021.10.016">Muley and Koenig. Biochimie. 2022</a>), cellular identity and disease progression are ultimately driven by dynamic regulatory plasticity. Misregulation of transcriptional control leads to widespread pathological states, yet targeting individual genes in isolation offers limited therapeutic utility. Reprogramming gene expression requires systematically mapping the overarching genome-wide regulatory networks in which these genes function. By examining how transcription factor–gene relationships vary across diverse expression states, our research maps regulatory plasticity across the human transcriptome to capture the changing strength, direction, and organization of control networks across biological contexts. Distinguishing conserved regulatory programs from dynamically shifting interactions allows us to reframe transcriptional regulation as an adaptable, rewritable landscape rather than a fixed architecture. By connecting these dynamic transcriptional programs to the protein interaction networks that execute cellular function, our goal is to uncover how contextual regulatory shifts translate into functional outcomes and identify leverage points for directed cellular reprogramming.</p>
+<p>The objective is not simply to identify differentially expressed genes or individual molecular associations. Instead, I seek to determine <strong>how multiple biological components work together and which components exert disproportionate influence on a biological system</strong>. Such analyses can reveal molecular targets, regulatory factors, pathway vulnerabilities, biomarkers, and mechanisms that may not be apparent from any single dataset.</p>
+<hr>
+</section>
+<section id="gene-regulation-cellular-states-and-reprogramming" class="level2">
+<h2 class="anchored" data-anchor-id="gene-regulation-cellular-states-and-reprogramming">2. Gene Regulation, Cellular States, and Reprogramming</h2>
+<p>Gene expression is a dynamic property of biological systems. Cellular identity and function arise from the coordinated regulation of thousands of genes rather than from individual genes acting in isolation.</p>
 <div id="fig-exp1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-exp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/g2148.jpg" class="img-fluid figure-img" style="width:7.5in">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Upstream region of a gene bounded by regulatory factors dictating its expression (Left). We leverage public tissue, cell types, and time series transcriptomic datasets such as GTEx and Fantom5 platforms (Right)
+Figure&nbsp;1: Mapping regulatory plasticity across the human transcriptome. Upstream region of a gene bounded by regulatory factors dictating its expression (Left). We leverage public tissue, cell types, and time series transcriptomic datasets such as GTEx and Fantom5 platforms (Right)
 </figcaption>
 </figure>
 </div>
-</section>
-<section id="enhancer-transcription-and-bloodbrain-molecular-communication" class="level2">
-<h2 class="anchored" data-anchor-id="enhancer-transcription-and-bloodbrain-molecular-communication">Enhancer transcription and blood–brain molecular communication</h2>
-<p>Gene regulation extends beyond conventional promoters and gene bodies, with many intergenic regions occupied and transcribed by RNA polymerase II. They more often overlap with enhancer elements. We investigated the transcriptional activity of 181,547 intergenic RNAPII-bound regions (iRNAPII-BRs) and their relationships with nearby genes in human peripheral blood (<a href="https://doi.org/10.1016/j.csbj.2025.11.060"><em>Muley and Delahaye-Duriez. Comput Struct Biotechnol J. 2025</em></a>). We found that iRNAPII-BRs were frequently associated with structurally complex genes present in isolation on chromosome and showed strong transcriptional coordination with subsets of tissue-specific genes. Their transcriptional activity was particularly associated with immune and hematopoietic functions in blood, while a distinct group of nearby genes with neuronal functions showed gene expression despite limited transcriptional activity of their associated iRNAPII-BRs.</p>
-<div id="fig-exp2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-exp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/g23507.jpg" class="img-fluid figure-img" style="width:5in">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Gene ontology enrichment analysis of six gene groups defined on the basis of three binary statuses concerning gene transcription, iRNAPII-BR transcription and whether the gene was linked to an iRNAPII-BR. The first digit of the group name indicates gene transcription status (1 = transcribed, 0 = not transcribed), the second digit indicates iRNAPII-BR transcription status (1 = transcribed, 0 = not transcribed), and the third digit indicates whether the gene is linked to an iRNAPII-BR (1 = linked, 0 = not linked). This classification assigned genes to six groups based on these binary combinations.
-</figcaption>
-</figure>
-</div>
-<p>We also identified changes in iRNAPII-BRs and nearby genes in major depressive disorder, including alterations involving ADRB2, CXCL8, SFN, and GPR3, highlighting the potential relevance of intergenic transcription to disease-associated molecular states.</p>
-<div id="fig-exp3" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-exp3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/mddsig.jpg" class="img-fluid figure-img" style="width:5in">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exp3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Coordinated expression of stress- and inflammation-related genes in major depressive disorder (MDD) and control samples. Panels a and b show principal component analysis of MDD and healthy control samples based on 500 highly variable tiRNAPII-BRs and genes. Panel c shows pairwise scatterplots and a correlation matrix of log₂-transformed expression levels for four genes—ADRB2, GPR3, SFN, and CXCL8—in MDD and healthy control samples. Each point represents one sample, color-coded by group. The lower panels show scatterplots with fitted trends; the diagonal panels show gene-wise expression density distributions; the upper panels show Pearson correlation coefficients. Boxplots (right) show the distribution of gene expression in control and MDD samples. Barplots show the frequency distribution for gene expression. MDD samples displayed a coordinated upregulation of GPR3, SFN, and CXCL8, and downregulation of ADRB2, reflecting a possible disruption of adrenergic and cAMP-linked stress signaling pathways.
-</figcaption>
-</figure>
-</div>
-<p>These findings provide a starting point for investigating how regulatory processes detected in peripheral tissues may relate to molecular processes in the nervous system. Future work will extend this analysis across larger and more diverse transcriptomic datasets and integrate intergenic transcription with gene-regulatory and protein-interaction networks. A longer-term objective is to determine whether coordinated molecular signatures across blood and brain-associated tissues can identify regulatory processes involved in brain–peripheral tissue communication and their alteration in disease.</p>
-</section>
-<section id="protein-protein-interaction-networks-and-intercellular-communication" class="level2">
-<h2 class="anchored" data-anchor-id="protein-protein-interaction-networks-and-intercellular-communication">Protein-protein interaction networks and intercellular communication</h2>
-<p>Protein-protein interaction (PPI) networks dictate the functional architecture of cellular systems. By integrating complementary evolutionary, genomic, and molecular signals—including phylogenetics, gene synteny, co-evolution, domain architecture, and correlated amino-acid substitutions—our computational framework enables genome-wide prediction of intracellular interactomes across diverse genomes (<a href="https://doi.org/10.1371/journal.pone.0042057"><em>Muley and Ranjan. PLoS One. 2012</em></a>; <a href="https://doi.org/10.1371/journal.pone.0054325"><em>2013</em></a>). Moving beyond single-cell boundaries, we are now scaling this paradigm to map inter-cellular and inter-organ protein communication networks. Systematically predicting the molecular interactions that mediate cross-tissue signaling—particularly between the central nervous system and peripheral tissues—provides a structural basis for understanding how localized molecular shifts trigger coordinated systemic responses. By integrating these cross-tissue interaction maps with dynamic regulatory networks, our research ultimately addresses how complex biological systems are encoded and deployed across developmental and evolutionary time, uncovering the network principles that drove the emergence of complex organs like the vertebrate brain.</p>
-<div id="fig-brain1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/g36802.jpg" class="img-fluid figure-img" style="width:7.5in">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Protein-protein interactions subnetworks associated with cell surface regulates bacterial cell division (left panel). In the right, Highly expressed genes during telencephalon patterning in mouse and chick or in both show association with autism spectrum disorder. Top panel shows genes with high expression in both species, and bottom panel in mouse. Their brain-specific functional interaction gene network and their association with known ASD genes is shown in panel (D). Dysregulation of telencephalon patterning genes could be linked to ASD. The known ASD genes are shown in red color font, intellectual disabilities in brown, and the remaining genes in steel blue.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="evolutionary-and-developmental-neurobiology" class="level2">
-<h2 class="anchored" data-anchor-id="evolutionary-and-developmental-neurobiology">Evolutionary and developmental neurobiology</h2>
-<p>The assembly of the vertebrate brain relies on deeply conserved developmental programs that undergo lineage-specific divergence to shape distinct structural identities (<a href="https://doi.org/10.1007/978-3-319-47829-6_587-1"><em>Muley et.al. Encyclopedia of Religious Psychology and Behavior. 2019</em></a>). We investigated this process by comparing early telencephalon development in mouse and chick embryos, two vertebrate lineages whose embryonic telencephala share a common developmental origin but diverge substantially in their mature organization (<a href="https://doi.org/10.1016/j.pneurobio.2019.101735"><em>Muley et al.&nbsp;Progress in Neurobiology, 2020</em></a>). This comparative analysis revealed a broadly conserved transcriptional architecture accompanied by critical, lineage-specific divergences in chromatin modifiers and transcriptional regulators during early patterning. Crucially, many of these species-specific regulatory components overlap directly with risk genes for human neurodevelopmental disorders, demonstrating how evolutionary malleability in early brain development carries inherent disease susceptibility.</p>
-<div id="fig-brain1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/g4549.jpg" class="img-fluid figure-img" style="width:7.5in">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Nervous system schematic with bodywide extensions (left panel). A closuer look at the the hypothalamus and its connection with the pituitary gland (right panel), which together plays a critical role in regulating many of the body’s physiological processes
-</figcaption>
-</figure>
-</div>
-<div id="fig-brain1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/telencephalondeg.jpg" class="img-fluid figure-img" style="width:7.5in">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Volcano plot showing differentially expressed genes in mouse and chick. Each dot on the plot represents a gene and its l log2 -fold change value of expression between two developmental stages on the x-axis, and signi cance value on the y-axis. The E10.5 stage of embryonic development is compared to E9.5 in mouse, whereas HH24 stage is compared to HH17 in chick. Genes with log2-fold change above 4 or less than -3 are annotated in the plot. Black color dots in the plot represent genes with adjusted p-value equal to or less than 0.05, while genes with no expression di erence are shown in grey. Gene names are represented with mouse gene symbols for orthologues in chick. Many genes show similar up- or down-regulation in mouse and chick. Notably, LIM homeobox (Lhx) family proteins show up-regulation at E10.5 compared to E9.5 in mouse and the equivalent stages in chick.
-</figcaption>
-</figure>
-</div>
-<p>Building on these comparative foundations, we are developing computational frameworks to trace how these early developmental trajectories adapt across the human lifespan and break down in neuropsychiatric pathology. By mapping how perturbed neurodevelopmental programs propagate to alter brain–body signaling and by tracing the deep evolutionary history of the protein domains that execute these processes, our research integrates comparative embryology, disease genetics, and evolutionary systems biology into a unified model of brain evolution and disease.</p>
-</section>
-<section id="protein-domain-evolution-and-functional-diversification" class="level2">
-<h2 class="anchored" data-anchor-id="protein-domain-evolution-and-functional-diversification">Protein domain evolution and functional diversification</h2>
-<p>Protein domains represent structural, functional and evolutionary units that can be conserved across distantly related organisms while undergoing substantial changes in sequence, domain organization, and functional specialization. We investigate the distribution, evolution, classification, and functional diversification of protein domains across sequenced genomes by combining sequence analysis, comparative genomics, evolutionary relationships, and structural and functional information.</p>
-<p>Our earlier work focused on the PDZ domain, a structurally conserved protein-interaction domain that can be difficult to identify and classify because of substantial sequence divergence and its frequent occurrence in different multidomain protein architectures. By systematically analysing PDZ-containing proteins across more than 1,400 microbial genomes, we identified six previously uncharacterized protein families, assigned potential functions based on their genomic and molecular context, and reconstructed their evolutionary origins (<a href="https://doi.org/10.1093/gbe/evz023"><em>Muley, Akhter, Galande. Genome Biology and Evolution, 2019</em></a>).</p>
-<div id="fig-pdz" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pdz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/phylo.png" class="img-fluid figure-img" style="width:7.5in">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pdz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: The distribution of about PDZ domain containing proteins across 1,476 microbial genomes (left panel), their classification (middle panel), and the evolutionary origin (right)
-</figcaption>
-</figure>
-</div>
-<p>We are now extending this comparative framework to protein domains across a broader range of organisms, including animals, plants, and viruses. A particular focus is the <strong>haloacid dehalogenase (HAD) superfamily</strong>, one of the most widely distributed and functionally diverse groups of phosphohydrolase-related proteins. Despite conservation of characteristic structural features, HAD proteins have diversified extensively in substrate specificity, domain organization, and biological function. We aim to characterize this diversity across more than 17,000 genomes spanning the three domains of cellular life and viruses, with emphasis on identifying conserved and lineage-specific sequence features, evolutionary relationships, domain architectures, and functional diversification. By comparing these patterns across the tree of life, we seek to understand how protein domains are retained, modified, and functionally diversified during evolution.</p>
-<p>All of these threads—gene regulation, protein interactions, development, evolution, and intergenic transcription—converge in the systems-level study of disease. This is where we aim to translate mechanistic understanding into therapeutic strategies.</p>
-</section>
-<section id="systems-biology-of-disease-toward-reprogramming-gene-expression" class="level2">
-<h2 class="anchored" data-anchor-id="systems-biology-of-disease-toward-reprogramming-gene-expression">Systems biology of disease: toward reprogramming gene expression</h2>
-<p>Complex multi-system disorders—ranging from neuropsychiatric and neurodegenerative conditions to autoimmune and infectious diseases—arise from coordinated perturbations across transcriptional, proteomic, and intercellular networks. We employ systems-level computational approaches to decipher these disease mechanisms by modelling gene expression with mathematical linear programming (<a href="https://doi.org/10.1007/978-1-0716-1534-8_6"><em>Muley. Methods in Molecular Biology. 2021</em></a>), and integrating large-scale transcriptomic architectures with dynamic regulatory interaction networks.</p>
+<p>My work investigates gene regulation at the level of <strong>regulatory networks and cellular states</strong>. I have developed and applied computational approaches for studying transcriptional regulation, including large-scale analysis of gene regulatory relationships and machine-learning-based network inference (<a href="https://doi.org/10.1016/j.biochi.2021.10.016">Muley and Koenig. Biochimie. 2022</a>).</p>
+<p>Current work extends this framework toward <strong>transcription-factor influence and cellular-state transitions</strong>. Rather than relying exclusively on previously established transcription-factor/target relationships, I aim to infer regulatory influence directly from large collections of gene-expression data. This provides an opportunity to identify combinations of regulatory factors associated with particular cellular states and to formulate experimentally testable hypotheses about how one cellular state may be transformed into another.</p>
+<p>In the longer term, this work may contribute to computational strategies for <strong>cellular reprogramming, engineered cell states, and organoid-based biological models</strong>.</p>
 <div id="fig-sys1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sys1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ppi1.png" class="img-fluid figure-img" style="width:5.5in">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sys1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Transcriptional regulatory network of telencephalon patterning at E9.5 and E10.5 stages of embryonic development in mouse. The figure shows a predicted transcriptional regulatory network containing 608 transcription factors and their 2908 target genes, constituting 101,479 edges among them. Each circle represents a node (gene) colored according to their expression status at E10.5 compared to E9.5 in mouse. The rim color of each circle represents the expression status at HH24 compared to HH17 of the chick orthologue. An edge represents a directed regulatory link from a transcription factor to its target gene colored according to the expression status of the target gene in mouse (light shades of node colors). Node size is proportional to an average high centrality value of a gene, and high centrality nodes are labelled by their names. Black labels represent transcription factors whereas target genes are shown in grey. Genes up-regulated at E10.5 are likely to be targets of Neurod2, Foxf2, and Neurod1, whereas down-regulated genes are targets of Gata6, Gata5, Hand2, Hand1, Hoxa1, and Myc. Genes that are not expressed are regulated by Nr1h4, Hox and Hnf transcription factor family members, and also Lhx9. Not expressed genes are targets of Elk3, Pax9, Cdx1, and Foxb1.
+Figure&nbsp;2: Reconstructed transcriptional regulatory network underlying telencephalon patterning at E9.5 and E10.5 stages of embryonic development in mouse, with corresponding developmental stages in chick. Solid node colors indicate differential expression of transcription factors between E10.5 and E9.5 in mouse, while node border colors indicate differential expression of orthologues genes in chick
 </figcaption>
 </figure>
 </div>
-<p>We have processed thousands of microarray, bulk RNA-seq, and single-cell datasets (<a href="https://doi.org/10.1007/978-1-0716-4546-8_2"><em>Muley. Methods in Molecular Biology. 2025</em></a>), enabling the investigation of molecular changes diverse human tissues, cell types, developmental trajectories, and pathological states. By integrating these data with protein-protein interaction networks, we aim to isolate key disease-associated genes, identify vulnerable functional sub-networks, and pinpoint disrupted cellular processes within their native biological context.</p>
+<hr>
+</section>
+<section id="networks-evolution-and-brainbody-communication" class="level2">
+<h2 class="anchored" data-anchor-id="networks-evolution-and-brainbody-communication">3. Networks, Evolution, and Brain–Body Communication</h2>
+<p>My research has a long-standing foundation in the computational analysis of <strong>protein–protein interactions and molecular networks</strong>, which help define the functional architecture of cellular systems. During my doctoral and subsequent research, I developed approaches for predicting functional associations between proteins using comparative genomics, evolutionary relationships, gene organization, expression patterns, and other biological signals, with applications to the reconstruction of cellular pathways and processes (<a href="https://doi.org/10.1371/journal.pone.0042057">Muley and Ranjan. PLoS One. 2012</a>; <a href="https://doi.org/10.1371/journal.pone.0054325">2013</a>).</p>
+<p>This work has progressed from studying interactions within individual organisms toward understanding how molecular interactions connect biological processes <strong>across cells and tissues</strong>. An important future direction is the study of <strong>intercellular molecular communication</strong>: how signals originating in one tissue influence molecular and cellular states elsewhere in the organism. This perspective is particularly relevant to complex processes involving the nervous system, immune system, and peripheral tissues, where disease mechanisms cannot always be understood by studying a single organ in isolation.</p>
+<div id="fig-brain1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/g36802.jpg" class="img-fluid figure-img" style="width:7.5in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Protein-protein interactions subnetworks associated with cell surface regulates bacterial cell division (left panel). In the right, Highly expressed genes during telencephalon patterning in mouse and chick or in both show association with autism spectrum disorder (ASD).
+</figcaption>
+</figure>
+</div>
+<p>A complementary strand of this work investigates <strong>evolutionary and developmental neurobiology</strong>. The assembly of the vertebrate brain relies on deeply conserved developmental programs that undergo lineage-specific divergence to shape distinct structural identities (<a href="https://doi.org/10.1007/978-3-319-47829-6_587-1">Muley et al.&nbsp;Encyclopedia of Religious Psychology and Behavior. 2019</a>). By comparing early telencephalon development in mouse and chick embryos, we revealed a broadly conserved transcriptional architecture accompanied by critical, lineage-specific divergences in chromatin modifiers and transcriptional regulators during early patterning (<a href="https://doi.org/10.1016/j.pneurobio.2019.101735">Muley et al.&nbsp;Progress in Neurobiology, 2020</a>). Many of these species-specific regulatory components overlap with risk genes for human neurodevelopmental disorders, providing insight into how evolutionary changes in early brain development may contribute to disease susceptibility.</p>
+<div id="fig-brain1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/g4549.jpg" class="img-fluid figure-img" style="width:7.5in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brain1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Nervous system schematic with bodywide extensions (left panel). A closer look at the hypothalamus and its connection with the pituitary gland (right panel), which together play a critical role in regulating many of the body’s physiological processes
+</figcaption>
+</figure>
+</div>
+<p>Building on these comparative foundations, I am developing computational frameworks to trace how early developmental trajectories change across the human lifespan and become disrupted in neuropsychiatric disease. By examining how perturbed neurodevelopmental programs may influence brain–body signaling, and by tracing the evolutionary history of the protein domains involved in these processes, this work connects comparative embryology, disease genetics, and evolutionary systems biology.</p>
+<p><strong>Enhancer transcription and blood–brain molecular communication</strong> provides one example of this integrative approach. Gene regulation extends beyond conventional promoters and gene bodies, with many intergenic regions occupied and transcribed by RNA polymerase II. I investigated the transcriptional activity of 181,547 intergenic RNAPII-bound regions (iRNAPII-BRs) and their relationships with nearby genes in human peripheral blood (<a href="https://doi.org/10.1016/j.csbj.2025.11.060">Muley and Delahaye-Duriez. Comput Struct Biotechnol J. 2025</a>). I found that iRNAPII-BRs were frequently associated with structurally complex genes present in isolation on chromosomes and showed strong transcriptional coordination with subsets of tissue-specific genes. Their transcriptional activity was particularly associated with immune and hematopoietic functions in blood, while a distinct group of nearby genes with neuronal functions showed gene expression despite limited transcriptional activity of their associated iRNAPII-BRs.</p>
+<div id="fig-exp2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/g23507.jpg" class="img-fluid figure-img" style="width:5in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Gene ontology enrichment analysis of six gene groups defined on the basis of three binary statuses concerning gene transcription, iRNAPII-BR transcription and whether the gene was linked to an iRNAPII-BR. The first digit of the group name indicates gene transcription status (1 = transcribed, 0 = not transcribed), the second digit indicates iRNAPII-BR transcription status (1 = transcribed, 0 = not transcribed), and the third digit indicates whether the gene is linked to an iRNAPII-BR (1 = linked, 0 = not linked). This classification assigned genes to six groups based on these binary combinations.
+</figcaption>
+</figure>
+</div>
+<p>I also identified changes in iRNAPII-BRs and nearby genes in major depressive disorder, including alterations involving ADRB2, CXCL8, SFN, and GPR3. These findings provide a starting point for investigating how regulatory processes detected in peripheral tissues may relate to molecular processes in the nervous system since these genes are fundamentally connected to the Hypothalamic-Pituitary-Adrenal (HPA) axis. Future work will extend this analysis across larger and more diverse transcriptomic datasets and integrate intergenic transcription with gene-regulatory and protein-interaction networks to investigate molecular processes involved in brain–peripheral tissue communication and their alteration in disease.</p>
+<div id="fig-exp3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exp3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mddsig.jpg" class="img-fluid figure-img" style="width:5in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exp3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Coordinated expression of stress- and inflammation-related genes in major depressive disorder (MDD) and control samples.
+</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="metabolism-protein-domains-and-biological-innovation" class="level2">
+<h2 class="anchored" data-anchor-id="metabolism-protein-domains-and-biological-innovation">4. Metabolism, Protein Domains, and Biological Innovation</h2>
+<p>Metabolism provides another level at which biological systems can be studied computationally. I use <strong>genome-scale metabolic reconstruction and network analysis</strong> to investigate essential metabolic reactions, pathway dependencies, metabolic bottlenecks, network vulnerabilities, organism-specific metabolic capabilities, and potential intervention points. These approaches have applications ranging from fundamental microbial biology to therapeutic and industrial biotechnology.</p>
+<p>One important direction is the identification of <strong>pathogen-specific metabolic vulnerabilities</strong> that could provide starting points for antimicrobial or antifungal discovery. The same principles can be applied to metabolic engineering, where computational identification of pathway bottlenecks and control points can guide the development of biologically produced compounds and other industrially relevant processes.</p>
 <div id="fig-pdz" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pdz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/TMPRSS2.jpg" class="img-fluid figure-img" style="width:7.5in">
+<img src="images/keggnet.png" class="img-fluid figure-img" style="width:5.5in">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pdz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Spatial expression of TMPRSS2 in the proximal lung airway. Spatially resolved transcriptomic profiling (10x Genomics Visium) was used to examine SARS-Cov-2 receptor TMPRSS2 expression across annotated clusters of the proximal airway. Expression intensity is visualized at single‑cell resolution, with color scale indicating normalized transcript abundance and also in binary. Cluster identities were mapped to cell types (e.g., airway basal, airway luminal, mesenchyme, smooth muscle, submucosal glands, nerve bundle), revealing heterogeneous distribution of TMPRSS2 across luminal epithelial and glandular compartments. This analysis highlights the spatial heterogeneity of TMPRSS2 expression and its enrichment in airway epithelial regions, consistent with its role in respiratory biology. Data source: GEO accession - GSE178361
+Figure&nbsp;7: Metabolite changes between disease-resolved, and disease-control comparison. Network was reconstructed using KEGG data
 </figcaption>
 </figure>
 </div>
-<p>Our long-term research program maps inter-organ molecular communication—specifically the signaling axes linking the central nervous system to peripheral organ systems in development, health and disease. By uncovering the inter-cellular protein networks and systemic processes that orchestrate brain-body homeostasis, we seek to determine how localized neural perturbations trigger broader systemic responses in complex disease states.</p>
-<p>The convergence of these research directions points toward a central ambition: <strong>to achieve a level of understanding that allows us to reprogram gene expression</strong>. By mapping regulatory plasticity, characterizing protein interaction networks, understanding evolutionary and developmental constraints, and identifying disease-associated molecular states, we aim to move from description to intervention—from reading the genome to rewriting its output in a controlled and therapeutic manner.</p>
+<p>From an evolutionary perspective, my earlier research investigated the <strong>evolution and functional diversification of protein domains</strong> across large collections of microbial genomes. This work included large-scale analysis of PDZ-domain-containing proteins across more than 1,400 microbial genomes and the identification of previously uncharacterized protein families and evolutionary relationships (<a href="https://doi.org/10.1093/gbe/evz023">Muley, Akhter, Galande. Genome Biology and Evolution, 2019</a>).</p>
+<div id="fig-pdz" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pdz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/phylo.png" class="img-fluid figure-img" style="width:7.5in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pdz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: The distribution of PDZ domain containing proteins across 1,476 microbial genomes (left panel), their classification (middle panel), and the evolutionary origin (right)
+</figcaption>
+</figure>
+</div>
+<p>Current interests extend this comparative analysis to protein domains occurring across bacteria, archaea, eukaryotes, and viruses. A particular focus is the <strong>haloacid dehalogenase (HAD) superfamily</strong> — one of the most widely distributed and functionally diverse groups of phosphohydrolase-related proteins. Despite conservation of characteristic structural features, HAD proteins have diversified extensively in substrate specificity, domain organization, and biological function. I aim to characterize this diversity across more than 17,000 genomes spanning the three domains of cellular life and viruses, with emphasis on conserved and lineage-specific sequence features, evolutionary relationships, domain architectures, and functional diversification.</p>
+<p>The broader objective is to understand <strong>how molecular components evolve, acquire new functions, and become incorporated into increasingly complex biological systems</strong>. Evolutionary information can provide useful constraints for interpreting molecular interactions, biological pathways, and functional innovation.</p>
+<hr>
+</section>
+<section id="systems-biology-of-human-disease" class="level2">
+<h2 class="anchored" data-anchor-id="systems-biology-of-human-disease">5. Systems Biology of Human Disease</h2>
+<p>Complex multi-system disorders — ranging from neuropsychiatric and neurodegenerative conditions to autoimmune and infectious diseases — arise from coordinated perturbations across transcriptional, proteomic, and intercellular networks. I use systems-level computational approaches to investigate these disease mechanisms by modelling gene expression with mathematical linear programming (<a href="https://doi.org/10.1007/978-1-0716-1534-8_6">Muley. Methods in Molecular Biology. 2021</a>) and integrating large-scale transcriptomic architectures with dynamic regulatory interaction networks.</p>
+<p>I have processed thousands of microarray, bulk RNA-seq, and single-cell datasets (<a href="https://doi.org/10.1007/978-1-0716-4546-8_2">Muley. Methods in Molecular Biology. 2025</a>), enabling investigation of molecular changes across diverse human tissues, cell types, developmental trajectories, and pathological states. By integrating these data with protein–protein interaction networks, I aim to identify disease-associated genes, vulnerable functional sub-networks, and disrupted cellular processes within their biological context.</p>
+<p>An important principle underlying this work is that <strong>the most informative biological signal may not be present in any individual experiment</strong>. It may emerge only through systematic comparison and integration of many independent datasets.</p>
+<div id="fig-pdz" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pdz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/TMPRSS2.jpg" class="img-fluid figure-img" style="width:5.5in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pdz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Spatial expression of TMPRSS2 in the proximal lung airway.
+</figcaption>
+</figure>
+</div>
+<p>My long-term research program maps <strong>inter-organ molecular communication</strong> — particularly the signaling axes linking the central nervous system to peripheral organ systems in development, health, and disease. By investigating intercellular protein networks and systemic processes that contribute to brain–body homeostasis, I aim to understand how localized molecular perturbations may produce broader systemic responses in complex disease states.</p>
+<section id="from-biological-discovery-to-translation" class="level3">
+<h3 class="anchored" data-anchor-id="from-biological-discovery-to-translation">From Biological Discovery to Translation</h3>
+<p>Across these research directions, my common objective is to use computation to identify biological relationships and control points that can be tested experimentally. By integrating molecular interactions, gene regulation, cellular states, metabolism, disease-associated molecular changes, and evolutionary information, I seek to reduce complex biological systems to mechanisms that are experimentally tractable.</p>
+<p>This approach provides a foundation for moving from biological description toward intervention. Depending on the biological system, such discoveries may support therapeutic targets, antimicrobial strategies, engineered cellular states, biological models, or industrial biotechnology applications.</p>
+<p>The long-term goal is not simply to analyse increasingly large biological datasets, but to develop computational approaches that help determine <strong>which biological mechanisms matter, which can be manipulated, and which experiments are most likely to reveal something new</strong>.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
