@@ -113,7 +113,7 @@ An important principle underlying this work is that **the most informative biolo
 
 My long-term research program maps **inter-organ molecular communication** — particularly the signaling axes linking the central nervous system to peripheral organ systems in development, health, and disease. By investigating intercellular protein networks and systemic processes that contribute to brain–body homeostasis, I aim to understand how localized molecular perturbations may produce broader systemic responses in complex disease states.
 
-## 6. From Biological Discovery to Translation
+# From Biological Discovery to Translation
 
 Across these research directions, my common objective is to use computation to identify biological relationships and control points that can be tested experimentally. By integrating molecular interactions, gene regulation, cellular states, metabolism, disease-associated molecular changes, and evolutionary information, I seek to reduce complex biological systems to mechanisms that are experimentally tractable.
 
