@@ -109,7 +109,7 @@ I have processed thousands of microarray, bulk RNA-seq, and single-cell datasets
 
 An important principle underlying this work is that **the most informative biological signal may not be present in any individual experiment**. It may emerge only through systematic comparison and integration of many independent datasets.
 
-![Spatial expression of TMPRSS2 in the proximal lung airway.](images/TMPRSS2.jpg){#fig-pdz width="5.5in"}
+![Spatial expression of TMPRSS2 in the proximal lung airway. Data source - [GSE178361](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178361), [PMID:35355018](https://doi.org/10.1038/s41586-022-04541-3)](images/TMPRSS2.jpg){#fig-pdz width="5.5in"}
 
 My long-term research program maps **inter-organ molecular communication** — particularly the signaling axes linking the central nervous system to peripheral organ systems in development, health, and disease. By investigating intercellular protein networks and systemic processes that contribute to brain–body homeostasis, I aim to understand how localized molecular perturbations may produce broader systemic responses in complex disease states.
 
